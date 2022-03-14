@@ -1,0 +1,16 @@
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+True
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [3980, 11415], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+{'code': ['101S3000'], 'myhave_cnt': [4], 'sell_or_buy': [1]}
+{'deposit_money': ['83,283,581'], 'margin_call': ['32,250,150'], 'order_able': ['51,033,431'], 'total_money': ['79,883,581']}
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+{'code': ['101S3000'], 'myhave_cnt': [4], 'sell_or_buy': [1]}
+{'deposit_money': ['83,283,581'], 'margin_call': ['32,250,150'], 'order_able': ['51,033,431'], 'total_money': ['79,883,581']}
+콜/풋 월별시세요청 완료 timer1 시작

@@ -1,0 +1,3 @@
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['21,732,410'], 'margin_call': ['-147,500'], 'order_able': ['21,867,149'], 'total_money': ['21,867,200']}
+True

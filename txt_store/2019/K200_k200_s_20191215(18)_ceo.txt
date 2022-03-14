@@ -1,0 +1,6 @@
+option_back_test 테이블
+['2019']
+self.option_back_test_put_delta_ave / self.option_back_test_call_delta_ave
+136.04280890581174
+138.96517535635365
+콜/풋 월별시세요청 완료 timer1 시작

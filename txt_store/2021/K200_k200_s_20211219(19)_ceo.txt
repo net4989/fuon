@@ -1,0 +1,29 @@
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+True
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+{'code': ['101S3000', '101S6000', '201S1400'], 'myhave_cnt': [4, 3, 4], 'sell_or_buy': [1, 1, 2]}
+{'deposit_money': ['493,453,530'], 'margin_call': ['28,836,764'], 'order_able': ['464,616,766'], 'total_money': ['496,193,530']}
+콜/풋 월별시세요청 완료 timer1 시작
+True
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+{'code': ['101S3000', '101S6000', '201S1400'], 'myhave_cnt': [4, 3, 4], 'sell_or_buy': [1, 1, 2]}
+{'deposit_money': ['493,453,530'], 'margin_call': ['28,836,764'], 'order_able': ['464,616,766'], 'total_money': ['496,193,530']}
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+True
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}

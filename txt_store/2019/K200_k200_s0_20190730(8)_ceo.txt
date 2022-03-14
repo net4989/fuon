@@ -1,0 +1,2295 @@
+중심가 생성timer_empty 중지
+중심가 생성 timer1 재시작
+-----
+Tue Jul 30 09:25:12 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.1)
+Tue Jul 30 09:25:39 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3, 2, 0, 2], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.17, 5.37], '1': [3.54, 3.64], '0': [2.18, 2.25], '-1': [1.2, 1.25], '-2': [0.58, 0.61]}
+{'2': [6.74, 6.74], '1': [4.8, 4.7], '0': [3.31, 3.2], '-1': [2.17, 2.09], '-2': [1.38, 1.32]}
+[269.1]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+[]
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+[]
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 268.83)
+Tue Jul 30 09:26:32 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3, 2, 0, 2], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.37, 5.29], '1': [3.64, 3.59], '0': [2.25, 2.21], '-1': [1.25, 1.22], '-2': [0.61, 0.59]}
+{'2': [6.74, 6.49], '1': [4.7, 4.76], '0': [3.2, 3.25], '-1': [2.09, 2.13], '-2': [1.32, 1.35]}
+[269.1, 268.83]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 09:26:48 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.56)
+Tue Jul 30 09:27:50 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3, 2, 0, 2, 0, 0, 3], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.29, 5.2], '1': [3.59, 3.47], '0': [2.21, 2.14], '-1': [1.22, 1.18], '-2': [0.59, 0.57]}
+{'2': [6.49, 6.7], '1': [4.76, 4.88], '0': [3.25, 3.36], '-1': [2.13, 2.21], '-2': [1.35, 1.39]}
+[269.1, 268.83, 268.56]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3], 'dn2_p_d': [0]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 09:28:37 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.83)
+Tue Jul 30 09:29:20 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3, 2, 0, 2, 0, 0, 3, 2], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.2, 5.28], '1': [3.47, 3.6], '0': [2.14, 2.22], '-1': [1.18, 1.23], '-2': [0.57, 0.6]}
+{'2': [6.7, 6.7], '1': [4.88, 4.76], '0': [3.36, 3.26], '-1': [2.21, 2.13], '-2': [1.39, 1.35]}
+[269.1, 268.83, 268.56, 268.83]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3, 2], 'dn2_p_d': [0]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 09:30:11 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:30:56 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.15)
+Tue Jul 30 09:32:10 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3, 2, 0, 2, 0, 0, 3, 2, 3, 0, 0, 0, 0, 3, 2], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.28, 5.35], '1': [3.6, 3.63], '0': [2.22, 2.25], '-1': [1.23, 1.24], '-2': [0.6, 0.6]}
+{'2': [6.7, 6.7], '1': [4.76, 4.69], '0': [3.26, 3.22], '-1': [2.13, 2.11], '-2': [1.35, 1.33]}
+[269.1, 268.83, 268.56, 268.83, 269.15]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 268.87)
+Tue Jul 30 09:35:50 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3, 2, 0, 2, 0, 0, 3, 2, 3, 0, 0, 0, 0, 3, 2], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.35, 5.32], '1': [3.63, 3.58], '0': [2.25, 2.22], '-1': [1.24, 1.22], '-2': [0.6, 0.59]}
+{'2': [6.7, 6.53], '1': [4.69, 4.76], '0': [3.22, 3.25], '-1': [2.11, 2.15], '-2': [1.33, 1.35]}
+[269.1, 268.83, 268.56, 268.83, 269.15, 268.87]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 09:36:19 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:40:36 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.55)
+Tue Jul 30 09:40:45 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3, 2, 0, 2, 0, 0, 3, 2, 3, 0, 0, 0, 0, 3, 2, 0, 0, 0, 3, 2, 3], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.32, 5.14], '1': [3.58, 3.45], '0': [2.22, 2.11], '-1': [1.22, 1.15], '-2': [0.59, 0.55]}
+{'2': [6.53, 6.8], '1': [4.76, 4.94], '0': [3.25, 3.41], '-1': [2.15, 2.25], '-2': [1.35, 1.43]}
+[269.1, 268.83, 268.56, 268.83, 269.15, 268.87, 268.55]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3, 2, 3], 'dn2_p_d': [0]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 09:40:58 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:41:53 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:42:45 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:42:49 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:42:58 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:43:53 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:44:49 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[2, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.84)
+Tue Jul 30 09:46:03 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0, 0, 0, 2], 'up1_p_d': [0, 3, 2, 3, 2, 0, 0, 0, 0, 0, 2, 0, 0, 2, 3, 2, 3, 0, 0, 2, 0, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 2, 3, 0, 2], 'dn1_p_d': [0, 3, 2, 0, 2, 0, 0, 3, 2, 3, 0, 0, 0, 0, 3, 2, 0, 0, 0, 3, 2, 3], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.14, 5.19], '1': [3.45, 3.51], '0': [2.11, 2.15], '-1': [1.15, 1.18], '-2': [0.55, 0.56]}
+{'2': [6.8, 6.75], '1': [4.94, 4.89], '0': [3.41, 3.37], '-1': [2.25, 2.21], '-2': [1.43, 1.41]}
+[269.1, 268.83, 268.56, 268.83, 269.15, 268.87, 268.55, 268.84]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 09:48:27 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:49:05 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.57)
+Tue Jul 30 09:50:11 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0, 0, 0, 2], 'up1_p_d': [0, 3, 2, 3, 2, 0, 0, 0, 0, 0, 2, 0, 0, 2, 3, 2, 3, 0, 0, 2, 0, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 2, 3, 0, 2, 3, 0, 0, 0, 0, 0, 2, 3], 'dn1_p_d': [0, 3, 2, 0, 2, 0, 0, 3, 2, 3, 0, 0, 0, 0, 3, 2, 0, 0, 0, 3, 2, 3], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.19, 5.1], '1': [3.51, 3.39], '0': [2.15, 2.06], '-1': [1.18, 1.12], '-2': [0.56, 0.53]}
+{'2': [6.75, 6.85], '1': [4.89, 5.03], '0': [3.37, 3.48], '-1': [2.21, 2.3], '-2': [1.41, 1.47]}
+[269.1, 268.83, 268.56, 268.83, 269.15, 268.87, 268.55, 268.84, 268.57]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0, 3], 'dn1_p_d': [0, 3, 2, 3], 'dn2_p_d': [0]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 09:50:47 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:52:05 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:52:59 2019
+def cross_ok_order_ok
+cross_index
+0
+self.cross_true_listed_var
+[3, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:53:34 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[3, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:53:45 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[3, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[2, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+중심가 생성timer_empty 중지
+중심가 생성 timer1 재시작
+-----
+Tue Jul 30 09:58:21 2019
+def cross_ok_order_ok
+cross_index
+8
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 09:59:13 2019
+def cross_ok_order_ok
+cross_index
+8
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.66)
+Tue Jul 30 10:00:08 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0, 2], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [7.27, 7.27], '1': [5.13, 5.13], '0': [3.42, 3.49], '-1': [2.08, 2.14], '-2': [1.13, 1.17]}
+{'2': [4.96, 4.88], '1': [3.43, 3.35], '0': [2.26, 2.2], '-1': [1.44, 1.41], '-2': [0.89, 0.88]}
+[268.66]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0, 2], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 10:01:34 2019
+def cross_ok_order_ok
+cross_index
+9
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:02:03 2019
+def cross_ok_order_ok
+cross_index
+9
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:03:04 2019
+def cross_ok_order_ok
+cross_index
+9
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:10:41 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.6)
+Tue Jul 30 10:12:14 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.27, 5.18], '1': [3.57, 3.49], '0': [2.19, 2.14], '-1': [1.21, 1.17], '-2': [0.58, 0.55]}
+{'2': [6.71, 6.8], '1': [4.8, 4.86], '0': [3.29, 3.34], '-1': [2.15, 2.19], '-2': [1.36, 1.38]}
+[268.6]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3], 'dn2_p_d': [0]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 10:21:48 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:21:52 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:24:07 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:24:13 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:24:26 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:24:49 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:25:14 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 3, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.95)
+Tue Jul 30 10:31:22 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.26, 5.35], '1': [3.54, 3.6], '0': [2.17, 2.22], '-1': [1.18, 1.21], '-2': [0.56, 0.58]}
+{'2': [6.67, 6.55], '1': [4.75, 4.65], '0': [3.23, 3.17], '-1': [2.1, 2.07], '-2': [1.32, 1.3]}
+[268.95]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 10:32:28 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.23)
+Tue Jul 30 10:32:30 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 2]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.35, 5.45], '1': [3.6, 3.69], '0': [2.22, 2.29], '-1': [1.21, 1.26], '-2': [0.58, 0.6]}
+{'2': [6.55, 6.43], '1': [4.65, 4.56], '0': [3.17, 3.1], '-1': [2.07, 2.0], '-2': [1.3, 1.25]}
+[268.95, 269.23]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 2]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 10:34:29 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:35:13 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.96)
+Tue Jul 30 10:36:31 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 2, 0, 0, 2, 0, 2, 0, 3, 0, 0, 0, 0, 0, 3]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.45, 5.36], '1': [3.69, 3.65], '0': [2.29, 2.25], '-1': [1.26, 1.23], '-2': [0.6, 0.58]}
+{'2': [6.43, 6.45], '1': [4.56, 4.61], '0': [3.1, 3.15], '-1': [2.0, 2.04], '-2': [1.25, 1.28]}
+[268.95, 269.23, 268.96]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 2, 3]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 10:50:20 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.66)
+Tue Jul 30 10:51:16 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 0, 2, 0, 0, 3], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.3, 5.12], '1': [3.58, 3.42], '0': [2.2, 2.08], '-1': [1.19, 1.12], '-2': [0.57, 0.53]}
+{'2': [6.56, 6.62], '1': [4.65, 4.84], '0': [3.19, 3.33], '-1': [2.07, 2.18], '-2': [1.3, 1.37]}
+[268.66]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3], 'dn2_p_d': [0]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 10:51:30 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:54:19 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 10:55:03 2019
+def cross_ok_order_ok
+cross_index
+1
+self.cross_true_listed_var
+[0, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.93)
+Tue Jul 30 11:00:02 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0, 3, 2, 0, 0, 2, 0, 0, 0, 0, 2, 0, 3, 2, 0, 0, 3, 2], 'dn1_p_d': [0, 0, 2, 0, 0, 3], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.12, 5.17], '1': [3.42, 3.46], '0': [2.08, 2.11], '-1': [1.12, 1.14], '-2': [0.53, 0.54]}
+{'2': [6.62, 6.76], '1': [4.84, 4.82], '0': [3.33, 3.31], '-1': [2.18, 2.16], '-2': [1.37, 1.36]}
+[268.66, 268.93]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 11:00:34 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 11:00:39 2019
+def cross_ok_order_ok
+cross_index
+2
+self.cross_true_listed_var
+[0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.07)
+Tue Jul 30 11:13:34 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.39, 5.39], '1': [3.63, 3.63], '0': [2.24, 2.24], '-1': [1.22, 1.22], '-2': [0.58, 0.58]}
+{'2': [6.45, 6.45], '1': [4.58, 4.58], '0': [3.1, 3.1], '-1': [2.01, 2.01], '-2': [1.25, 1.25]}
+[269.07]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+[]
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+[]
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 11:16:36 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.36)
+Tue Jul 30 11:17:42 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 0, 2]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.39, 5.52], '1': [3.63, 3.76], '0': [2.24, 2.33], '-1': [1.22, 1.28], '-2': [0.58, 0.61]}
+{'2': [6.45, 6.32], '1': [4.58, 4.45], '0': [3.1, 2.99], '-1': [2.01, 1.92], '-2': [1.25, 1.2]}
+[269.07, 269.36]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 2]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 269.07)
+Tue Jul 30 11:23:26 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 0, 2]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.52, 5.53], '1': [3.76, 3.77], '0': [2.33, 2.34], '-1': [1.28, 1.28], '-2': [0.61, 0.61]}
+{'2': [6.32, 6.31], '1': [4.45, 4.44], '0': [2.99, 3.01], '-1': [1.92, 1.93], '-2': [1.2, 1.2]}
+[269.07, 269.36, 269.07]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 269.43)
+Tue Jul 30 11:28:56 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.53, 5.63], '1': [3.78, 3.85], '0': [2.34, 2.39], '-1': [1.29, 1.33], '-2': [0.61, 0.64]}
+{'2': [6.3, 6.15], '1': [4.45, 4.34], '0': [2.99, 2.91], '-1': [1.93, 1.87], '-2': [1.2, 1.15]}
+[269.43]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+[]
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+[]
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 269.4)
+Tue Jul 30 11:57:26 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.6, 5.6], '1': [3.82, 3.82], '0': [2.37, 2.37], '-1': [1.3, 1.3], '-2': [0.62, 0.62]}
+{'2': [6.15, 6.15], '1': [4.35, 4.35], '0': [2.91, 2.91], '-1': [1.87, 1.87], '-2': [1.16, 1.16]}
+[269.4]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 269.67)
+Tue Jul 30 12:17:44 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.6, 5.64], '1': [3.82, 3.95], '0': [2.37, 2.47], '-1': [1.3, 1.37], '-2': [0.62, 0.66]}
+{'2': [6.15, 6.0], '1': [4.35, 4.21], '0': [2.91, 2.81], '-1': [1.87, 1.79], '-2': [1.16, 1.11]}
+[269.4, 269.67]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 12:20:10 2019
+def cross_ok_order_ok
+cross_index
+4
+self.cross_true_listed_var
+[0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 12:22:08 2019
+def cross_ok_order_ok
+cross_index
+4
+self.cross_true_listed_var
+[0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.37)
+Tue Jul 30 12:55:06 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0, 2, 0, 0, 0, 3, 2, 0, 0, 0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.64, 5.66], '1': [3.95, 3.83], '0': [2.47, 2.36], '-1': [1.37, 1.29], '-2': [0.66, 0.61]}
+{'2': [6.0, 6.04], '1': [4.21, 4.31], '0': [2.81, 2.89], '-1': [1.79, 1.85], '-2': [1.11, 1.14]}
+[269.4, 269.67, 269.37]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 269.09)
+Tue Jul 30 13:08:31 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0, 2, 0, 0, 0, 3, 2, 0, 0, 0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.66, 5.55], '1': [3.83, 3.74], '0': [2.36, 2.29], '-1': [1.29, 1.25], '-2': [0.61, 0.59]}
+{'2': [6.04, 6.19], '1': [4.31, 4.4], '0': [2.89, 2.95], '-1': [1.85, 1.88], '-2': [1.14, 1.16]}
+[269.4, 269.67, 269.37, 269.09]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 13:15:07 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.36)
+Tue Jul 30 13:24:33 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0, 2, 0, 0, 0, 3, 2, 0, 0, 0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.55, 5.48], '1': [3.74, 3.66], '0': [2.29, 2.24], '-1': [1.25, 1.21], '-2': [0.59, 0.57]}
+{'2': [6.19, 6.25], '1': [4.4, 4.49], '0': [2.95, 3.0], '-1': [1.88, 1.93], '-2': [1.16, 1.19]}
+[269.4, 269.67, 269.37, 269.09, 269.36]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 269.08)
+Tue Jul 30 13:24:59 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0, 2, 0, 0, 0, 3, 2, 0, 0, 0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.48, 5.44], '1': [3.66, 3.68], '0': [2.24, 2.26], '-1': [1.21, 1.22], '-2': [0.57, 0.58]}
+{'2': [6.25, 6.3], '1': [4.49, 4.46], '0': [3.0, 2.99], '-1': [1.93, 1.92], '-2': [1.19, 1.18]}
+[269.4, 269.67, 269.37, 269.09, 269.36, 269.08]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 13:26:05 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.35)
+Tue Jul 30 13:26:09 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0, 2, 0, 0, 0, 3, 2, 0, 0, 0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 2, 0, 2, 3]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.44, 5.4], '1': [3.68, 3.63], '0': [2.26, 2.22], '-1': [1.22, 1.2], '-2': [0.58, 0.57]}
+{'2': [6.3, 6.3], '1': [4.46, 4.5], '0': [2.99, 3.04], '-1': [1.92, 1.96], '-2': [1.18, 1.21]}
+[269.4, 269.67, 269.37, 269.09, 269.36, 269.08, 269.35]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 13:26:16 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.04)
+Tue Jul 30 13:27:54 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0, 2, 0, 0, 0, 3, 2, 0, 0, 0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 2, 0, 2, 3, 2, 0, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 3]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.4, 5.41], '1': [3.63, 3.65], '0': [2.22, 2.23], '-1': [1.2, 1.21], '-2': [0.57, 0.57]}
+{'2': [6.3, 6.37], '1': [4.5, 4.53], '0': [3.04, 3.06], '-1': [1.96, 1.97], '-2': [1.21, 1.22]}
+[269.4, 269.67, 269.37, 269.09, 269.36, 269.08, 269.35, 269.04]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 13:28:27 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.32)
+Tue Jul 30 13:28:39 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0, 2, 0, 0, 0, 3, 2, 0, 0, 0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 2, 0, 2, 3, 2, 0, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 2]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.41, 5.41], '1': [3.65, 3.69], '0': [2.23, 2.27], '-1': [1.21, 1.23], '-2': [0.57, 0.58]}
+{'2': [6.37, 6.37], '1': [4.53, 4.46], '0': [3.06, 3.0], '-1': [1.97, 1.94], '-2': [1.22, 1.2]}
+[269.4, 269.67, 269.37, 269.09, 269.36, 269.08, 269.35, 269.04, 269.32]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3, 2]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 13:30:56 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 13:31:08 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.0)
+Tue Jul 30 13:31:46 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0, 2, 0, 0, 0, 3, 2, 0, 0, 0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 2, 0, 2, 3, 2, 0, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.41, 5.39], '1': [3.69, 3.64], '0': [2.27, 2.23], '-1': [1.23, 1.21], '-2': [0.58, 0.57]}
+{'2': [6.37, 6.31], '1': [4.46, 4.55], '0': [3.0, 3.08], '-1': [1.94, 2.0], '-2': [1.2, 1.24]}
+[269.4, 269.67, 269.37, 269.09, 269.36, 269.08, 269.35, 269.04, 269.32, 269.0]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3, 2, 3]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 13:35:18 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 13:35:57 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 13:36:50 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 13:45:22 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 13:45:48 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.27)
+Tue Jul 30 13:49:30 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0, 2, 0, 0, 0, 3, 2, 0, 0, 0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 0, 0, 2, 0, 2, 3, 2, 0, 0, 0, 0, 0, 3, 0, 3, 0, 3, 0, 0, 3, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 3, 2, 0, 0, 3, 0, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 3, 2, 0, 0, 2]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.39, 5.5], '1': [3.64, 3.77], '0': [2.23, 2.33], '-1': [1.21, 1.28], '-2': [0.57, 0.62]}
+{'2': [6.31, 6.2], '1': [4.55, 4.39], '0': [3.08, 2.94], '-1': [2.0, 1.88], '-2': [1.24, 1.15]}
+[269.4, 269.67, 269.37, 269.09, 269.36, 269.08, 269.35, 269.04, 269.32, 269.0, 269.27]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3, 2, 3, 2]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 14:43:24 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 14:43:37 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 14:44:24 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 14:45:37 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 14:47:25 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 14:48:06 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 14:49:09 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.73)
+Tue Jul 30 14:52:22 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 3, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.5, 5.26], '1': [3.74, 3.53], '0': [2.3, 2.15], '-1': [1.26, 1.16], '-2': [0.6, 0.54]}
+{'2': [6.36, 6.6], '1': [4.49, 4.72], '0': [3.03, 3.2], '-1': [1.97, 2.09], '-2': [1.22, 1.29]}
+[268.73]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+[]
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+[]
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 268.65)
+Tue Jul 30 14:54:03 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.29, 5.29], '1': [3.57, 3.58], '0': [2.18, 2.19], '-1': [1.19, 1.18], '-2': [0.56, 0.56]}
+{'2': [6.6, 6.6], '1': [4.66, 4.66], '0': [3.16, 3.17], '-1': [2.06, 2.07], '-2': [1.28, 1.28]}
+[268.65]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 268.94)
+Tue Jul 30 14:54:25 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.29, 5.29], '1': [3.58, 3.57], '0': [2.19, 2.17], '-1': [1.18, 1.18], '-2': [0.56, 0.56]}
+{'2': [6.6, 6.6], '1': [4.66, 4.67], '0': [3.17, 3.18], '-1': [2.07, 2.06], '-2': [1.28, 1.28]}
+[268.65, 268.94]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 15:01:13 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 15:02:27 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 15:04:22 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 269.21)
+Tue Jul 30 15:09:19 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 2, 0, 3, 2, 3]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.29, 5.41], '1': [3.57, 3.66], '0': [2.17, 2.25], '-1': [1.18, 1.22], '-2': [0.56, 0.58]}
+{'2': [6.6, 6.37], '1': [4.67, 4.56], '0': [3.18, 3.09], '-1': [2.06, 2.01], '-2': [1.28, 1.25]}
+[268.65, 268.94, 269.21]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+Tue Jul 30 15:16:21 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+Tue Jul 30 15:16:43 2019
+def cross_ok_order_ok
+cross_index
+3
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0]
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+-----
+future_s_change_ret
+(True, 268.89)
+Tue Jul 30 15:18:01 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.49, 5.33], '1': [3.71, 3.62], '0': [2.28, 2.22], '-1': [1.24, 1.2], '-2': [0.58, 0.56]}
+{'2': [6.35, 6.4], '1': [4.48, 4.55], '0': [3.02, 3.1], '-1': [1.96, 2.02], '-2': [1.21, 1.25]}
+[268.89]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3]}
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 269.17)
+Tue Jul 30 15:18:08 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.33, 5.33], '1': [3.62, 3.64], '0': [2.22, 2.22], '-1': [1.2, 1.2], '-2': [0.56, 0.56]}
+{'2': [6.4, 6.4], '1': [4.55, 4.55], '0': [3.1, 3.1], '-1': [2.02, 2.02], '-2': [1.25, 1.25]}
+[268.89, 269.17]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+future_s_change_ret
+(True, 268.89)
+Tue Jul 30 15:30:12 2019
+self.cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3]}
+self.slow_cmp_call + self.slow_cmp_put
+{'2': [5.33, 5.28], '1': [3.64, 3.58], '0': [2.22, 2.18], '-1': [1.2, 1.18], '-2': [0.56, 0.55]}
+{'2': [6.4, 6.62], '1': [4.55, 4.67], '0': [3.1, 3.16], '-1': [2.02, 2.05], '-2': [1.25, 1.27]}
+[268.89, 269.17, 268.89]
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['0'], 'margin_call': ['0'], 'order_able': ['0'], 'total_money': ['0']}
+self.call_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+self.put_cross_order_listed_var
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+진교차,가교차 <- slow 교차교차 보정
+self.cross_true_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.cross_false_listed_var
+[0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0]
+self.volume_auto_cnt
+[]
+stock_buy_ready_fn 시작 timer1 중지
+['20190730', '20190729', '20190728', '20190727', '20190726', '20190725']
+[]
+['20190730']
+[]
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': [], 'ref_up_cnt': [], 'deal_power_ave': []}
+['20190730']
+{'stock_no': [], 'deal_power': []}
+{'stock_no': [], 'deal_power': []}
+계좌평가잔고내역요청 전송
+
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+stock_buy_ready_fn 끝 timer1 재시작

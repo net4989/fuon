@@ -1,0 +1,7 @@
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220308']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220308']
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['80,647,161'], 'margin_call': ['-1,362,500'], 'order_able': ['82,007,056'], 'total_money': ['82,007,061']}

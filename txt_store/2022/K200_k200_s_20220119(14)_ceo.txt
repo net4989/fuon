@@ -1,0 +1,1051 @@
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+True
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['114800'], 'stock_name': ['KODEX 인버스'], 'market_in_price': [4053], 'myhave_cnt': [73], 'run_price': [4170], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+-----
+09:08:02.874410
+self.db_overlap_time_list
+['09:04', '09:08']
+future_s_change_ret
+(True, 378.8)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2], 'up1_c_d': [0, 2], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+[378.8]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['114800'], 'stock_name': ['KODEX 인버스'], 'market_in_price': [4053], 'myhave_cnt': [73], 'run_price': [4160], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,173,758
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:12:35.696139
+self.db_overlap_time_list
+['09:04', '09:08', '09:12']
+future_s_change_ret
+(True, 378.0)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2, 3], 'up1_c_d': [0, 2], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2, 3], 'up1_c_d': [0, 2, 3], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+[378.8, 378.0]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['114800'], 'stock_name': ['KODEX 인버스'], 'market_in_price': [4053], 'myhave_cnt': [73], 'run_price': [4175], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,174,853
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+매도종목검색 실행시간 : 09:12:37
+sell_item_list.append(strCode)
+114800
+market_in_price / run_price
+4,053
+4,170
+market_out_cnt
+73
+목표수익 도달 청산
+7004
+['114800']
+[0]
+['114800']
+[73]
+Wed Jan 19 09:12:38 2022
+['전송', 1, '114800', 73, 4170, '']
+전송
+Wed Jan 19 09:12:38 2022
+['접수', 1, '114800', 73, 4170, '0004342']
+접수
+Wed Jan 19 09:12:38 2022
+['체결', 1, '114800', 73, 4170, '0004342']
+체결
+OrderComplete_stock
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [1], 'OrderRunCode': ['114800'], 'OrderRunVolume': [73], 'OrderRunPrice': [4170], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [1], 'OrderRunCode': ['114800'], 'OrderRunVolume': [73], 'OrderRunPrice': [4170], 'OrgOrderNo': ['0004342'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [1], 'OrderRunCode': ['114800'], 'OrderRunVolume': [73], 'OrderRunPrice': [4170], 'OrgOrderNo': ['0004342'], 'modify_item': ['']}
+-----
+09:17:24.451969
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17']
+future_s_change_ret
+(True, 378.8)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2, 3, 2], 'up1_c_d': [0, 2, 3], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2, 3, 2], 'up1_c_d': [0, 2, 3, 2], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+[378.8, 378.0, 378.8]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:22:14.224882
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22']
+future_s_change_ret
+(True, 379.6)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2, 3, 2], 'up1_c_d': [0, 2, 3, 2], 'dn1_c_d': [0, 2], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2, 3, 2], 'up1_c_d': [0, 2, 3, 2], 'dn1_c_d': [0, 2], 'dn2_c_d': [0, 2], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+# 중심가 중심인덱스
+True
+40
+380.00
+# 차월물 중심가 중심인덱스
+True
+54
+380.00
+[378.8, 378.0, 378.8, 379.6]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:39:27.956313
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39']
+future_s_change_ret
+(True, 380.4)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0], 'up1_c_d': [0, 2, 3, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0], 'up1_c_d': [0, 2, 3, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0], 'up1_c_d': [0, 2, 3, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+[378.8, 378.0, 378.8, 379.6, 380.4]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:51:34.656321
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51']
+future_s_change_ret
+(True, 379.6)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0], 'up1_c_d': [0, 2, 3, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3], 'dn1': [0, 0, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0], 'up1_c_d': [0, 2, 3, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+10:04:40.551365
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04']
+future_s_change_ret
+(True, 380.45)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 0, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0], 'up1_c_d': [0, 2, 3, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 0, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0], 'up1_c_d': [0, 2, 3, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+10:13:43.283440
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13']
+future_s_change_ret
+(True, 381.25)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 0, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2], 'up1_c_d': [0, 2, 3, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 0, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2], 'up1_c_d': [0, 2, 3, 0, 2], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+10:54:04.064462
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54']
+future_s_change_ret
+(True, 380.45)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 0, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 0, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+11:16:15.895282
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16']
+future_s_change_ret
+(True, 381.25)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 0, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2], 'up1_c_d': [0, 2, 3, 0, 2, 3], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 0, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+11:28:49.578611
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16', '11:28']
+future_s_change_ret
+(True, 380.45)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 0, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 0, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25, 380.45]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+11:43:38.314528
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16', '11:28', '11:43']
+future_s_change_ret
+(True, 379.65)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 0, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 0, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25, 380.45, 379.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+11:53:02.069499
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16', '11:28', '11:43', '11:53']
+future_s_change_ret
+(True, 378.85)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 3], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 0, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 3], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 0, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2, 3]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25, 380.45, 379.65, 378.85]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+12:25:02.900775
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16', '11:28', '11:43', '11:53', '12:25']
+future_s_change_ret
+(True, 378.05)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 3], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 0, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2, 3], 'dn2_p_d': [2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 3], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 0, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2, 3], 'dn1_p_d': [2, 3], 'dn2_p_d': [2, 3]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25, 380.45, 379.65, 378.85, 378.05]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+13:00:35.723457
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16', '11:28', '11:43', '11:53', '12:25', '13:00']
+future_s_change_ret
+(True, 377.25)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 3], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 0, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2, 3], 'up1_p_d': [2, 3], 'dn1_p_d': [2, 3], 'dn2_p_d': [2, 3]}
+# 중심가 중심인덱스
+True
+41
+377.50
+# 차월물 중심가 중심인덱스
+True
+55
+377.50
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25, 380.45, 379.65, 378.85, 378.05, 377.25]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+13:06:09.488579
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16', '11:28', '11:43', '11:53', '12:25', '13:00', '13:06']
+future_s_change_ret
+(True, 378.05)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2], 'dn1': [0, 0, 3, 2, 0], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'dn1_c_d': [0, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2], 'dn1': [0, 0, 3, 2, 0, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'dn1_c_d': [0, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25, 380.45, 379.65, 378.85, 378.05, 377.25, 378.05]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+13:31:02.313927
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16', '11:28', '11:43', '11:53', '12:25', '13:00', '13:06', '13:31']
+future_s_change_ret
+(True, 378.9)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2], 'dn1': [0, 0, 3, 2, 0, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2], 'dn1_c_d': [0, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2], 'dn1': [0, 0, 3, 2, 0, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2], 'dn1_c_d': [0, 3, 2], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25, 380.45, 379.65, 378.85, 378.05, 377.25, 378.05, 378.9]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+13:37:07.071975
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16', '11:28', '11:43', '11:53', '12:25', '13:00', '13:06', '13:31', '13:37']
+future_s_change_ret
+(True, 378.1)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2], 'dn1': [0, 0, 3, 2, 0, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2], 'dn1_c_d': [0, 3, 2], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2], 'dn1': [0, 0, 3, 2, 0, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2, 3], 'dn1_c_d': [0, 3, 2], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2], 'dn1': [0, 0, 3, 2, 0, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2, 3], 'dn1_c_d': [0, 3, 2, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25, 380.45, 379.65, 378.85, 378.05, 377.25, 378.05, 378.9, 378.1]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+14:02:21.793276
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16', '11:28', '11:43', '11:53', '12:25', '13:00', '13:06', '13:31', '13:37', '14:02']
+future_s_change_ret
+(True, 377.3)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2, 3], 'dn1': [0, 0, 3, 2, 0, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2, 3], 'dn1_c_d': [0, 3, 2, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2, 3], 'dn1': [0, 0, 3, 2, 0, 2, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2, 3], 'dn1_c_d': [0, 3, 2, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2, 3], 'dn1': [0, 0, 3, 2, 0, 2, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2, 3], 'dn1_c_d': [0, 3, 2, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25, 380.45, 379.65, 378.85, 378.05, 377.25, 378.05, 378.9, 378.1, 377.3]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+15:07:19.703041
+self.db_overlap_time_list
+['09:04', '09:08', '09:12', '09:17', '09:22', '09:39', '09:51', '10:04', '10:13', '10:54', '11:16', '11:28', '11:43', '11:53', '12:25', '13:00', '13:06', '13:31', '13:37', '14:02', '15:07']
+future_s_change_ret
+(True, 378.15)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2, 3, 2], 'dn1': [0, 0, 3, 2, 0, 2, 3], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2, 3], 'dn1_c_d': [0, 3, 2, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 2, 3, 2], 'dn1': [0, 0, 3, 2, 0, 2, 3, 2], 'dn2': [0], 'up2_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2, 3], 'up1_c_d': [0, 2, 3, 0, 2, 3, 2, 3, 2, 3], 'dn1_c_d': [0, 3, 2, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+[378.8, 378.0, 378.8, 379.6, 380.4, 379.6, 380.45, 381.25, 380.45, 381.25, 380.45, 379.65, 378.85, 378.05, 377.25, 378.05, 378.9, 378.1, 377.3, 378.15]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['114800']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220118']
+stock_trend_line_of_ai_month_able
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+3
+['011070', '114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220118']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산
+5,174,488
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+self.future_s_option_s_new_order_able_cnt
+10
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['88,323,221'], 'margin_call': ['0'], 'order_able': ['88,323,221'], 'total_money': ['88,323,221']}
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+c
+장마감 c
+Wed Jan 19 16:00:01 2022
+self.MarketEndingVar = cf

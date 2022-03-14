@@ -1,0 +1,2 @@
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': [], 'margin_call': [], 'order_able': [], 'total_money': []}

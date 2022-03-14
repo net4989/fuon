@@ -1,0 +1,1012 @@
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+True
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [4000, 11380], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [4, 3], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['11,871,394'], 'order_able': ['68,669,057'], 'total_money': ['82,565,451']}
+3
+장시작 알림 3
+-----
+08:59:59.215608
+future_s_change_ret
+(True, 395.5)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0, 2], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0, 2], 'dn1_c_d': [0, 2], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0, 2], 'dn1_c_d': [0, 2], 'dn2_c_d': [0, 2], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+# 중심가 중심인덱스
+True
+34
+395.00
+# 차월물 중심가 중심인덱스
+True
+34
+395.00
+[395.5]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [4000, 11380], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,030,665
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [4, 3], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['11,871,394'], 'order_able': ['68,669,057'], 'total_money': ['81,505,451']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+가격비교 콜매수
+-----
+Tue Dec 28 09:01:18 2021
+item_list_cnt
+{'code_no': ['201S1400'], 'cnt': [1]}
+Send Option Order
+# 콜매수
+2004
+volume_listed_var / item_list
+[1]
+['201S1400']
+Tue Dec 28 09:01:19 2021
+['전송', 2, '201S1400', 1, 2.92, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 09:01:19 2021
+['접수', 2, '201S1400', 1, 2.92, '0000696']
+접수
+['']
+Tue Dec 28 09:01:19 2021
+['체결', 2, '201S1400', 1, 2.91, '0000696']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [2], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.92], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [2], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.92], 'OrgOrderNo': ['0000696'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [2], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.91], 'OrgOrderNo': ['0000696'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [4, 4], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['5,793,555'], 'order_able': ['74,745,749'], 'total_money': ['82,221,811']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+09:01:29.902721
+future_s_change_ret
+(True, 394.7)
+[395.5, 394.7]
+한홀에서는 +1step 주문 카운터 in/out
+1
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+['201S1400']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [4000, 11825], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,061,360
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [4, 4], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['5,793,555'], 'order_able': ['74,745,749'], 'total_money': ['82,321,811']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+가격비교 콜매수
+-----
+Tue Dec 28 09:08:41 2021
+item_list_cnt
+{'code_no': ['201S1400'], 'cnt': [1]}
+Send Option Order
+# 콜매수
+2004
+volume_listed_var / item_list
+[1]
+['201S1400']
+Tue Dec 28 09:08:41 2021
+['전송', 2, '201S1400', 1, 2.69, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 09:08:41 2021
+['접수', 2, '201S1400', 1, 2.69, '0000925']
+접수
+['']
+Tue Dec 28 09:08:42 2021
+['체결', 2, '201S1400', 1, 2.69, '0000925']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [2], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.69], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [2], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.69], 'OrgOrderNo': ['0000925'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [2], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.69], 'OrgOrderNo': ['0000925'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [4, 5], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['3,720,813'], 'order_able': ['76,817,424'], 'total_money': ['82,713,241']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+09:09:11.583880
+future_s_change_ret
+(True, 393.9)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [0], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [0], 'up1_p_d': [2], 'dn1_p_d': [2, 3], 'dn2_p_d': [2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [0], 'up1_p_d': [2, 3], 'dn1_p_d': [2, 3], 'dn2_p_d': [2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [0, 3], 'up1_p_d': [2, 3], 'dn1_p_d': [2, 3], 'dn2_p_d': [2, 3]}
+# 중심가 중심인덱스
+True
+35
+392.50
+# 차월물 중심가 중심인덱스
+True
+35
+392.50
+[395.5, 394.7, 393.9]
+한홀에서는 +1step 주문 카운터 in/out
+1
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+['201S1400', '201S1400']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [4005, 11815], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,063,845
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [4, 5], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['3,720,813'], 'order_able': ['76,817,424'], 'total_money': ['82,800,741']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:19:30.312620
+future_s_change_ret
+(True, 393.1)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3], 'dn2': [0], 'up2_c_d': [3], 'up1_c_d': [0, 3], 'dn1_c_d': [0, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+[395.5, 394.7, 393.9, 393.1]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+['201S1400', '201S1400']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [4015, 11815], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,070,195
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [4, 5], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['3,720,813'], 'order_able': ['76,817,424'], 'total_money': ['83,388,241']}
+당월물 재고있음 선물매수(2) 신호발생
+매도재고 있음
+당월물 청산
+item_list_cnt_type
+{'code_no': ['101S3000'], 'cnt': [1], 'sell_buy_type': [2]}
+-----
+Tue Dec 28 09:19:31 2021
+item_list_cnt_type
+{'code_no': ['101S3000'], 'cnt': [1], 'sell_buy_type': [2]}
+Send futrue_s Order
+# 선물매수
+4004
+volume_listed_var / item_list
+[1]
+['101S3000']
+Tue Dec 28 09:19:31 2021
+['전송', 2, '101S3000', 1, 393.1, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 09:19:32 2021
+['접수', 2, '101S3000', 1, 393.1, '0001195']
+접수
+['']
+Tue Dec 28 09:19:56 2021
+['체결', 2, '101S3000', 1, 393.1, '0001195']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [2], 'OrderRunCode': ['101S3000'], 'OrderRunVolume': [1], 'OrderRunPrice': [393.1], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [2], 'OrderRunCode': ['101S3000'], 'OrderRunVolume': [1], 'OrderRunPrice': [393.1], 'OrgOrderNo': ['0001195'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [2], 'OrderRunCode': ['101S3000'], 'OrderRunVolume': [1], 'OrderRunPrice': [393.1], 'OrgOrderNo': ['0001195'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [3, 5], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['1,144,389'], 'order_able': ['79,390,900'], 'total_money': ['83,372,801']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+매도종목검색 실행시간 : 09:20:04
+sell_item_list.append(strCode)
+114800
+market_in_price / run_price
+4,067
+4,020
+market_out_cnt
+138
+목표수익 도달 청산
+7004
+['114800']
+[0]
+['114800']
+[138]
+Tue Dec 28 09:20:04 2021
+['전송', 1, '114800', 138, 4020, '']
+전송
+Tue Dec 28 09:20:05 2021
+['접수', 1, '114800', 138, 4020, '0006908']
+접수
+콜청산 재고있음 가격비교 콜청산
+Send Option Order
+# 콜청산
+8004
+total_volume_listed_var / total_item_list
+[1]
+['201S1400']
+Tue Dec 28 09:26:49 2021
+['전송', 1, '201S1400', 1, 2.57, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 09:26:49 2021
+['접수', 1, '201S1400', 1, 2.57, '0001362']
+접수
+['']
+Tue Dec 28 09:27:31 2021
+['체결', 1, '201S1400', 1, 2.57, '0001362']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.57], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.57], 'OrgOrderNo': ['0001362'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.57], 'OrgOrderNo': ['0001362'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [3, 4], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['1,776,027'], 'order_able': ['78,758,240'], 'total_money': ['83,114,281']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+09:28:35.502396
+future_s_change_ret
+(True, 393.9)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3], 'up1_c_d': [0, 3], 'dn1_c_d': [0, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+[395.5, 394.7, 393.9, 393.1, 393.9]
+한홀에서는 +1step 주문 카운터 in/out
+0
+1
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['201S1400']
+# 당일 매수 종목 찾기
+['201S1400', '201S1400', '101S3000']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [4005, 11815], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,063,845
+stock_buy_ready_fn 끝 timer1 재시작
+콜청산 재고있음 가격비교 콜청산
+Send Option Order
+# 콜청산
+8004
+total_volume_listed_var / total_item_list
+[1]
+['201S1400']
+Tue Dec 28 09:43:36 2021
+['전송', 1, '201S1400', 1, 2.71, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 09:43:36 2021
+['접수', 1, '201S1400', 1, 2.71, '0001703']
+접수
+['']
+Tue Dec 28 09:43:36 2021
+['체결', 1, '201S1400', 1, 2.72, '0001703']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.71], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.71], 'OrgOrderNo': ['0001703'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.72], 'OrgOrderNo': ['0001703'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [3, 3], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['3,577,041'], 'order_able': ['76,956,148'], 'total_money': ['82,623,201']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+09:44:14.242613
+future_s_change_ret
+(True, 394.7)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2], 'up1_c_d': [0, 3], 'dn1_c_d': [0, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2], 'up1_c_d': [0, 3, 2], 'dn1_c_d': [0, 3], 'dn2_c_d': [0, 3], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2], 'up1_c_d': [0, 3, 2], 'dn1_c_d': [0, 3, 2], 'dn2_c_d': [0, 3], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2], 'up1_c_d': [0, 3, 2], 'dn1_c_d': [0, 3, 2], 'dn2_c_d': [0, 3, 0], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+[395.5, 394.7, 393.9, 393.1, 393.9, 394.7]
+한홀에서는 +1step 주문 카운터 in/out
+0
+1
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['201S1400', '201S1400']
+# 당일 매수 종목 찾기
+['201S1400', '201S1400', '101S3000']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [4000, 11805], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,059,980
+stock_buy_ready_fn 끝 timer1 재시작
+콜청산 재고있음 가격비교 콜청산
+Send Option Order
+# 콜청산
+8004
+total_volume_listed_var / total_item_list
+[1]
+['201S1400']
+Tue Dec 28 09:57:42 2021
+['전송', 1, '201S1400', 1, 2.94, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 09:57:42 2021
+['접수', 1, '201S1400', 1, 2.94, '0002019']
+접수
+['']
+Tue Dec 28 09:57:42 2021
+['체결', 1, '201S1400', 1, 2.94, '0002019']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.94], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.94], 'OrgOrderNo': ['0002019'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.94], 'OrgOrderNo': ['0002019'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [3, 2], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['9,647,380'], 'order_able': ['70,884,651'], 'total_money': ['82,242,051']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+가격비교 콜매수
+-----
+Tue Dec 28 10:32:02 2021
+item_list_cnt
+{'code_no': ['201S1402'], 'cnt': [1]}
+Send Option Order
+# 콜매수
+2004
+volume_listed_var / item_list
+[1]
+['201S1402']
+Tue Dec 28 10:32:02 2021
+['전송', 2, '201S1402', 1, 1.91, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 10:32:02 2021
+['접수', 2, '201S1402', 1, 1.91, '0002515']
+접수
+['']
+Tue Dec 28 10:32:03 2021
+['체결', 2, '201S1402', 1, 1.91, '0002515']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [2], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [1.91], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [2], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [1.91], 'OrgOrderNo': ['0002515'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [2], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [1.91], 'OrgOrderNo': ['0002515'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400', '201S1402'], 'myhave_cnt': [3, 2, 1], 'sell_or_buy': [1, 2, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['3,943,867'], 'order_able': ['76,587,447'], 'total_money': ['82,933,841']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+가격비교 콜매수
+-----
+Tue Dec 28 10:32:09 2021
+item_list_cnt
+{'code_no': ['201S1402'], 'cnt': [1]}
+Send Option Order
+# 콜매수
+2004
+volume_listed_var / item_list
+[1]
+['201S1402']
+Tue Dec 28 10:32:09 2021
+['전송', 2, '201S1402', 1, 1.91, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 10:32:10 2021
+['접수', 2, '201S1402', 1, 1.91, '0002522']
+접수
+['']
+Tue Dec 28 10:32:10 2021
+['체결', 2, '201S1402', 1, 1.91, '0002522']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [2], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [1.91], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [2], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [1.91], 'OrgOrderNo': ['0002522'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [2], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [1.91], 'OrgOrderNo': ['0002522'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400', '201S1402'], 'myhave_cnt': [3, 2, 2], 'sell_or_buy': [1, 2, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['2,198,308'], 'order_able': ['78,332,290'], 'total_money': ['82,965,621']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+10:33:25.665752
+future_s_change_ret
+(True, 393.9)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3], 'up1_c_d': [0, 3, 2], 'dn1_c_d': [0, 3, 2], 'dn2_c_d': [0, 3, 0], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3], 'up1_c_d': [0, 3, 2, 3], 'dn1_c_d': [0, 3, 2], 'dn2_c_d': [0, 3, 0], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3], 'up1_c_d': [0, 3, 2, 3], 'dn1_c_d': [0, 3, 2, 3], 'dn2_c_d': [0, 3, 0], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3], 'up1_c_d': [0, 3, 2, 3], 'dn1_c_d': [0, 3, 2, 3], 'dn2_c_d': [0, 3, 0, 3], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+[395.5, 394.7, 393.9, 393.1, 393.9, 394.7, 393.9]
+한홀에서는 +1step 주문 카운터 in/out
+2
+1
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['201S1400', '201S1400', '201S1400']
+# 당일 매수 종목 찾기
+['201S1400', '201S1400', '101S3000', '201S1402', '201S1402']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [4005, 11840], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,065,570
+stock_buy_ready_fn 끝 timer1 재시작
+콜청산 재고있음 가격비교 콜청산
+Send Option Order
+# 콜청산
+8004
+total_volume_listed_var / total_item_list
+[1]
+['201S1402']
+Tue Dec 28 10:54:38 2021
+['전송', 1, '201S1402', 1, 1.95, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 10:54:38 2021
+['접수', 1, '201S1402', 1, 1.95, '0002844']
+접수
+['']
+Tue Dec 28 10:54:38 2021
+['체결', 1, '201S1402', 1, 1.95, '0002844']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [1], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [1.95], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [1], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [1.95], 'OrgOrderNo': ['0002844'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [1], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [1.95], 'OrgOrderNo': ['0002844'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400', '201S1402'], 'myhave_cnt': [3, 2, 1], 'sell_or_buy': [1, 2, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['3,933,867'], 'order_able': ['76,596,000'], 'total_money': ['82,727,391']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+11:09:10.571265
+future_s_change_ret
+(True, 394.7)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3, 2], 'up1_c_d': [0, 3, 2, 3], 'dn1_c_d': [0, 3, 2, 3], 'dn2_c_d': [0, 3, 0, 3], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3, 2], 'up1_c_d': [0, 3, 2, 3, 2], 'dn1_c_d': [0, 3, 2, 3], 'dn2_c_d': [0, 3, 0, 3], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3, 2], 'up1_c_d': [0, 3, 2, 3, 2], 'dn1_c_d': [0, 3, 2, 3, 2], 'dn2_c_d': [0, 3, 0, 3], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3, 2], 'up1_c_d': [0, 3, 2, 3, 2], 'dn1_c_d': [0, 3, 2, 3, 2], 'dn2_c_d': [0, 3, 0, 3, 0], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+[395.5, 394.7, 393.9, 393.1, 393.9, 394.7, 393.9, 394.7]
+한홀에서는 +1step 주문 카운터 in/out
+0
+1
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['201S1400', '201S1400', '201S1400', '201S1402']
+# 당일 매수 종목 찾기
+['201S1400', '201S1400', '101S3000', '201S1402', '201S1402']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [4000, 11830], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,061,705
+stock_buy_ready_fn 끝 timer1 재시작
+콜청산 재고있음 가격비교 콜청산
+Send Option Order
+# 콜청산
+8004
+total_volume_listed_var / total_item_list
+[1]
+['201S1402']
+Tue Dec 28 12:54:10 2021
+['전송', 1, '201S1402', 1, 2.12, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 12:54:10 2021
+['접수', 1, '201S1402', 1, 2.12, '0003835']
+접수
+['']
+Tue Dec 28 12:54:10 2021
+['체결', 1, '201S1402', 1, 2.12, '0003835']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [1], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.12], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [1], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.12], 'OrgOrderNo': ['0003835'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [1], 'OrderRunCode': ['201S1402'], 'OrderRunVolume': [1], 'OrderRunPrice': [2.12], 'OrgOrderNo': ['0003835'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [3, 2], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['9,584,880'], 'order_able': ['70,944,192'], 'total_money': ['82,239,101']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+14:35:30.642758
+future_s_change_ret
+(True, 395.5)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0, 3, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3, 2], 'up1_c_d': [0, 3, 2, 3, 2], 'dn1_c_d': [0, 3, 2, 3, 2], 'dn2_c_d': [0, 3, 0, 3, 0, 2], 'up2_p_d': [0, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+# 중심가 중심인덱스
+True
+34
+395.00
+# 차월물 중심가 중심인덱스
+True
+34
+395.00
+[395.5, 394.7, 393.9, 393.1, 393.9, 394.7, 393.9, 394.7, 395.5]
+한홀에서는 +1step 주문 카운터 in/out
+0
+1
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['201S1400', '201S1400', '201S1400', '201S1402', '201S1402']
+# 당일 매수 종목 찾기
+['201S1400', '201S1400', '101S3000', '201S1402', '201S1402']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [3990, 11860], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,057,425
+stock_buy_ready_fn 끝 timer1 재시작
+콜청산 재고있음 가격비교 콜청산
+Send Option Order
+# 콜청산
+8004
+total_volume_listed_var / total_item_list
+[1]
+['201S1400']
+Tue Dec 28 14:47:50 2021
+['전송', 1, '201S1400', 1, 3.13, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 14:47:50 2021
+['접수', 1, '201S1400', 1, 3.13, '0004743']
+접수
+['']
+Tue Dec 28 14:47:50 2021
+['체결', 1, '201S1400', 1, 3.13, '0004743']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [3.13], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [3.13], 'OrgOrderNo': ['0004743'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [3.13], 'OrgOrderNo': ['0004743'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000', '201S1400'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 2]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['15,607,719'], 'order_able': ['64,920,125'], 'total_money': ['81,800,371']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+14:49:29.533916
+future_s_change_ret
+(True, 396.3)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0], 'dn1': [0, 3, 0], 'dn2': [0], 'up2_c_d': [3, 2, 3, 0], 'up1_c_d': [0, 3, 2, 3, 0], 'dn1_c_d': [0, 3, 2, 3, 0], 'dn2_c_d': [0, 3, 0, 3, 0, 0], 'up2_p_d': [0, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2], 'dn1': [0, 3, 0], 'dn2': [0], 'up2_c_d': [3, 2, 3, 0], 'up1_c_d': [0, 3, 2, 3, 0], 'dn1_c_d': [0, 3, 2, 3, 0], 'dn2_c_d': [0, 3, 0, 3, 0, 0], 'up2_p_d': [0, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2], 'dn1': [0, 3, 0, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3, 0], 'up1_c_d': [0, 3, 2, 3, 0], 'dn1_c_d': [0, 3, 2, 3, 0], 'dn2_c_d': [0, 3, 0, 3, 0, 0], 'up2_p_d': [0, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+[395.5, 394.7, 393.9, 393.1, 393.9, 394.7, 393.9, 394.7, 395.5, 396.3]
+한홀에서는 +1step 주문 카운터 in/out
+0
+1
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['201S1400', '201S1400', '201S1400', '201S1402', '201S1402', '201S1400']
+# 당일 매수 종목 찾기
+['201S1400', '201S1400', '101S3000', '201S1402', '201S1402']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [3985, 11860], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,054,260
+stock_buy_ready_fn 끝 timer1 재시작
+콜청산 재고있음 가격비교 콜청산
+Send Option Order
+# 콜청산
+8004
+total_volume_listed_var / total_item_list
+[1]
+['201S1400']
+Tue Dec 28 14:58:02 2021
+['전송', 1, '201S1400', 1, 3.45, '']
+전송
+타이머 중지
+정정 타이머 시작
+Tue Dec 28 14:58:02 2021
+['접수', 1, '201S1400', 1, 3.45, '0004898']
+접수
+['']
+Tue Dec 28 14:58:02 2021
+['체결', 1, '201S1400', 1, 3.45, '0004898']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [3.45], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [3.45], 'OrgOrderNo': ['0004898'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [1], 'OrderRunCode': ['201S1400'], 'OrderRunVolume': [1], 'OrderRunPrice': [3.45], 'OrgOrderNo': ['0004898'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S3000'], 'myhave_cnt': [3], 'sell_or_buy': [1]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['21,550,558'], 'order_able': ['58,975,940'], 'total_money': ['81,241,521']}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+15:02:27.485470
+future_s_change_ret
+(True, 397.1)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2], 'dn1': [0, 3, 0, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3, 0, 2], 'up1_c_d': [0, 3, 2, 3, 0], 'dn1_c_d': [0, 3, 2, 3, 0], 'dn2_c_d': [0, 3, 0, 3, 0, 0], 'up2_p_d': [0, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2], 'dn1': [0, 3, 0, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3, 0, 2], 'up1_c_d': [0, 3, 2, 3, 0, 2], 'dn1_c_d': [0, 3, 2, 3, 0], 'dn2_c_d': [0, 3, 0, 3, 0, 0], 'up2_p_d': [0, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+[395.5, 394.7, 393.9, 393.1, 393.9, 394.7, 393.9, 394.7, 395.5, 396.3, 397.1]
+한홀에서는 +1step 주문 카운터 in/out
+0
+1
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['201S1400', '201S1400', '201S1400', '201S1402', '201S1402', '201S1400', '201S1400']
+# 당일 매수 종목 찾기
+['201S1400', '201S1400', '101S3000', '201S1402', '201S1402']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [3980, 11840], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,049,705
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [3], 'sell_or_buy': [1]}
+{'deposit_money': ['80,540,451'], 'margin_call': ['21,550,558'], 'order_able': ['58,975,940'], 'total_money': ['81,091,521']}
+# roll_over 실행
+당월물 매도 재고 있음
+-47
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+15:45:01.318484
+future_s_change_ret
+(True, 398.3)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2], 'dn1': [0, 3, 0, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3, 0, 2], 'up1_c_d': [0, 3, 2, 3, 0, 2], 'dn1_c_d': [0, 3, 2, 3, 0, 2], 'dn2_c_d': [0, 3, 0, 3, 0, 0], 'up2_p_d': [0, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2], 'dn1': [0, 3, 0, 2], 'dn2': [0], 'up2_c_d': [3, 2, 3, 0, 2], 'up1_c_d': [0, 3, 2, 3, 0, 2], 'dn1_c_d': [0, 3, 2, 3, 0, 2], 'dn2_c_d': [0, 3, 0, 3, 0, 0, 2], 'up2_p_d': [0, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+# 중심가 중심인덱스
+True
+33
+397.50
+# 차월물 중심가 중심인덱스
+True
+33
+397.50
+[395.5, 394.7, 393.9, 393.1, 393.9, 394.7, 393.9, 394.7, 395.5, 396.3, 397.1, 398.3]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['201S1400', '201S1400', '201S1400', '201S1402', '201S1402', '201S1400', '201S1400']
+# 당일 매수 종목 찾기
+['201S1400', '201S1400', '101S3000', '201S1402', '201S1402']
+# self.favorites_item_list
+['261220', '114800', '069500']
+['10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20211227']
+stock_trend_line_of_ai_month_able
+1
+['114800']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['114800']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20211227']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+2
+{'stock_no': ['114800', '261220'], 'stock_name': ['KODEX 인버스', 'KODEX WTI원유선물(H)'], 'market_in_price': [4067, 10801], 'myhave_cnt': [635, 69], 'run_price': [3980, 11850], 'sell_price': [0, 0], 'sell_cnt': [0, 0], 'buy_price': [0, 0], 'buy_cnt': [0, 0], 'vol_cnt': [0, 0], 'deal_power': [0.0, 0.0]}
+# 추정예탁자산
+5,050,395
+stock_buy_ready_fn 끝 timer1 재시작
+c
+장마감 c
+Tue Dec 28 16:00:00 2021

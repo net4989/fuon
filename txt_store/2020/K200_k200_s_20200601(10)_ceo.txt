@@ -1,0 +1,9 @@
+# self.deal_power_data
+{'stock_no': [], 'stock_name': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+즐겨찾기 테이블
+['20200522', '20200525', '20200526', '20200527', '20200528', '20200529']
+# self.deal_power_data_ave
+None
+# deal_power_tarket_item_list
+[]
+stock_buy_ready_fn 끝 timer1 재시작

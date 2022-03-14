@@ -1,0 +1,5 @@
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['22,000,000'], 'margin_call': ['-45,000'], 'order_able': ['22,036,195'], 'total_money': ['22,036,220']}
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['22,000,000'], 'margin_call': ['-45,000'], 'order_able': ['22,036,195'], 'total_money': ['22,036,220']}
+True

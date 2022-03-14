@@ -1,0 +1,918 @@
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+True
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [325000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['88,777,551']}
+3
+장시작 알림 3
+-----
+08:59:53.784784
+self.db_overlap_time_list
+['08:57', '08:59']
+future_s_change_ret
+(True, 362.4)
+[362.4]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [325000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,117,174
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['90,277,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:01:02.255126
+self.db_overlap_time_list
+['08:57', '08:59', '09:01']
+future_s_change_ret
+(True, 361.65)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 3], 'zero': [0, 3], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 3], 'zero': [0, 3], 'dn1': [0, 3], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 3], 'zero': [0, 3], 'dn1': [0, 3], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 3], 'zero': [0, 3], 'dn1': [0, 3], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 3], 'zero': [0, 3], 'dn1': [0, 3], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0, 3], 'dn2_p_d': [0, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 3], 'zero': [0, 3], 'dn1': [0, 3], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0, 3], 'dn1_p_d': [0, 3], 'dn2_p_d': [0, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 3], 'zero': [0, 3], 'dn1': [0, 3], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0, 3], 'up1_p_d': [0, 3], 'dn1_p_d': [0, 3], 'dn2_p_d': [0, 3]}
+# 중심가 중심인덱스
+True
+61
+362.50
+# 차월물 중심가 중심인덱스
+True
+63
+362.50
+[362.4, 361.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [318500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,097,719
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['90,490,051']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:02:38.965520
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02']
+future_s_change_ret
+(True, 362.4)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2], 'zero': [0, 0], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0], 'dn2_p_d': [0, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2], 'zero': [0, 0], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0], 'dn2_p_d': [0, 0, 2]}
+[362.4, 361.65, 362.4]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [318500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,097,719
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['90,277,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:05:36.993221
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05']
+future_s_change_ret
+(True, 361.65)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3], 'zero': [0, 0], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0], 'dn2_p_d': [0, 0, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3], 'zero': [0, 0], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0], 'dn2_p_d': [0, 0, 2, 3]}
+[362.4, 361.65, 362.4, 361.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [316500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,091,733
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['90,440,051']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:09:38.687833
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09']
+future_s_change_ret
+(True, 360.9)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3], 'zero': [0, 0], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0, 3], 'dn2_p_d': [0, 0, 2, 3]}
+[362.4, 361.65, 362.4, 361.65, 360.9]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [314000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,084,250
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['90,652,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:13:22.442893
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13']
+future_s_change_ret
+(True, 361.65)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3], 'zero': [0, 0], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [314500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,085,747
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['90,452,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:33:07.665003
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33']
+future_s_change_ret
+(True, 362.4)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 2], 'zero': [0, 0], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 2], 'zero': [0, 0], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [311500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,076,768
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['90,252,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:50:12.289186
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50']
+future_s_change_ret
+(True, 363.15)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 2], 'zero': [0, 0, 2], 'dn1': [0, 0], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 2], 'zero': [0, 0, 2], 'dn1': [0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [312500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,079,760
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['90,090,051']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:54:01.916616
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54']
+future_s_change_ret
+(True, 363.95)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 2], 'zero': [0, 0, 2], 'dn1': [0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 2], 'up1_c_d': [3], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 2], 'zero': [0, 0, 2], 'dn1': [0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 2], 'up1_c_d': [3, 2], 'dn1_c_d': [3], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [312500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,079,760
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['89,877,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:55:41.666509
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54', '09:55']
+future_s_change_ret
+(True, 364.7)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 2], 'zero': [0, 0, 2], 'dn1': [0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 2], 'up1_c_d': [3, 2], 'dn1_c_d': [3, 2], 'dn2_c_d': [3], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 2], 'zero': [0, 0, 2], 'dn1': [0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 2], 'up1_c_d': [3, 2], 'dn1_c_d': [3, 2], 'dn2_c_d': [3, 2], 'up2_p_d': [0, 0], 'up1_p_d': [0, 0], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2]}
+# 중심가 중심인덱스
+True
+60
+365.00
+# 차월물 중심가 중심인덱스
+True
+62
+365.00
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95, 364.7]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [313500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,082,754
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['89,702,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+10:02:26.594422
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54', '09:55', '10:02']
+future_s_change_ret
+(True, 363.95)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3], 'zero': [0, 0, 0], 'dn1': [0, 0, 0], 'dn2': [0], 'up2_c_d': [0, 3, 0], 'up1_c_d': [3, 0], 'dn1_c_d': [3, 0], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3], 'zero': [0, 0, 0], 'dn1': [0, 0, 0], 'dn2': [0], 'up2_c_d': [0, 3, 0], 'up1_c_d': [3, 0], 'dn1_c_d': [3, 0], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95, 364.7, 363.95]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [313000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,081,257
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['89,877,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+10:05:35.277743
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54', '09:55', '10:02', '10:05']
+future_s_change_ret
+(True, 364.7)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3], 'zero': [0, 0, 0], 'dn1': [0, 0, 0], 'dn2': [0], 'up2_c_d': [0, 3, 0], 'up1_c_d': [3, 0], 'dn1_c_d': [3, 0], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95, 364.7, 363.95, 364.7]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [313500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,082,754
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['89,715,051']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+10:12:56.025983
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54', '09:55', '10:02', '10:05', '10:12']
+future_s_change_ret
+(True, 365.45)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 2], 'zero': [0, 0, 0], 'dn1': [0, 0, 0], 'dn2': [0], 'up2_c_d': [0, 3, 0], 'up1_c_d': [3, 0], 'dn1_c_d': [3, 0], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 2], 'zero': [0, 0, 0, 2], 'dn1': [0, 0, 0], 'dn2': [0], 'up2_c_d': [0, 3, 0], 'up1_c_d': [3, 0], 'dn1_c_d': [3, 0], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 2], 'zero': [0, 0, 0, 2], 'dn1': [0, 0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 0], 'up1_c_d': [3, 0], 'dn1_c_d': [3, 0], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95, 364.7, 363.95, 364.7, 365.45]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [314500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,085,747
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['89,527,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+10:35:42.714779
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54', '09:55', '10:02', '10:05', '10:12', '10:35']
+future_s_change_ret
+(True, 366.2)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 2], 'zero': [0, 0, 0, 2], 'dn1': [0, 0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 0, 2], 'up1_c_d': [3, 0], 'dn1_c_d': [3, 0], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 2], 'zero': [0, 0, 0, 2], 'dn1': [0, 0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 0, 2], 'up1_c_d': [3, 0, 2], 'dn1_c_d': [3, 0], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95, 364.7, 363.95, 364.7, 365.45, 366.2]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [316500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,091,733
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['89,315,051']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+11:33:50.494962
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54', '09:55', '10:02', '10:05', '10:12', '10:35', '11:33']
+future_s_change_ret
+(True, 366.95)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 2], 'zero': [0, 0, 0, 2], 'dn1': [0, 0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 0, 2], 'up1_c_d': [3, 0, 2], 'dn1_c_d': [3, 0, 2], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95, 364.7, 363.95, 364.7, 365.45, 366.2, 366.95]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [315000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,087,243
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['89,140,051']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+12:33:23.232701
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54', '09:55', '10:02', '10:05', '10:12', '10:35', '11:33', '12:33']
+future_s_change_ret
+(True, 366.2)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 2], 'zero': [0, 0, 0, 2], 'dn1': [0, 0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 0, 2], 'up1_c_d': [3, 0, 2], 'dn1_c_d': [3, 0, 2, 3], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95, 364.7, 363.95, 364.7, 365.45, 366.2, 366.95, 366.2]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [315000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,087,243
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['89,340,051']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+13:30:24.524397
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54', '09:55', '10:02', '10:05', '10:12', '10:35', '11:33', '12:33', '13:30']
+future_s_change_ret
+(True, 366.95)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 2], 'zero': [0, 0, 0, 2], 'dn1': [0, 0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 0, 2], 'up1_c_d': [3, 0, 2], 'dn1_c_d': [3, 0, 2, 3, 2], 'dn2_c_d': [3, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95, 364.7, 363.95, 364.7, 365.45, 366.2, 366.95, 366.2, 366.95]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [315000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,087,243
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['89,152,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+13:45:25.324380
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54', '09:55', '10:02', '10:05', '10:12', '10:35', '11:33', '12:33', '13:30', '13:45']
+future_s_change_ret
+(True, 367.7)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 2], 'zero': [0, 0, 0, 2], 'dn1': [0, 0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 0, 2], 'up1_c_d': [3, 0, 2], 'dn1_c_d': [3, 0, 2, 3, 2], 'dn2_c_d': [3, 0, 2], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+# 중심가 중심인덱스
+True
+59
+367.50
+# 차월물 중심가 중심인덱스
+True
+61
+367.50
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95, 364.7, 363.95, 364.7, 365.45, 366.2, 366.95, 366.2, 366.95, 367.7]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [316000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,090,236
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['88,952,551']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+15:07:24.256289
+self.db_overlap_time_list
+['08:57', '08:59', '09:01', '09:02', '09:05', '09:09', '09:13', '09:33', '09:50', '09:54', '09:55', '10:02', '10:05', '10:12', '10:35', '11:33', '12:33', '13:30', '13:45', '15:07']
+future_s_change_ret
+(True, 368.45)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 0], 'zero': [0, 0, 0, 0], 'dn1': [0, 0, 0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 0, 0], 'up1_c_d': [3, 0, 0], 'dn1_c_d': [3, 0, 2, 3, 0], 'dn2_c_d': [3, 0, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 0, 2, 3, 0, 3, 0], 'zero': [0, 0, 0, 0], 'dn1': [0, 0, 0, 0, 2], 'dn2': [0], 'up2_c_d': [0, 3, 0, 0, 2], 'up1_c_d': [3, 0, 0], 'dn1_c_d': [3, 0, 2, 3, 0], 'dn2_c_d': [3, 0, 0], 'up2_p_d': [0, 2], 'up1_p_d': [0, 2], 'dn1_p_d': [0, 0, 3, 2], 'dn2_p_d': [0, 0, 2, 3, 2, 3, 2]}
+[362.4, 361.65, 362.4, 361.65, 360.9, 361.65, 362.4, 363.15, 363.95, 364.7, 363.95, 364.7, 365.45, 366.2, 366.95, 366.2, 366.95, 367.7, 368.45]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '114800', '069500', '011070']
+['10', '10', '10', '10']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220218']
+stock_trend_line_of_ai_month_able
+2
+['114800', '011070']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+2
+['114800', '011070']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220218']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['011070'], 'stock_name': ['LG이노텍'], 'market_in_price': [341125], 'myhave_cnt': [3], 'run_price': [320500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산
+5,103,705
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['88,765,051']}
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+{'code': ['101S3000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+{'deposit_money': ['88,777,551'], 'margin_call': ['8,015,963'], 'order_able': ['80,761,588'], 'total_money': ['88,777,551']}
+# roll_over 실행
+당월물 매도 재고 있음
+-9
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+c
+장마감 c
+Mon Feb 21 16:00:00 2022
+self.MarketEndingVar = cf

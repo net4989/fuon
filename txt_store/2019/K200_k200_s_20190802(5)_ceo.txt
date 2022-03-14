@@ -1,0 +1,13 @@
+button_crosscheck_1_run(self):
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['30,000,000'], 'margin_call': ['0'], 'order_able': ['30,000,000'], 'total_money': ['30,000,000']}
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['30,000,000'], 'margin_call': ['0'], 'order_able': ['30,000,000'], 'total_money': ['30,000,000']}
+True
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['30,000,000'], 'margin_call': ['0'], 'order_able': ['30,000,000'], 'total_money': ['30,000,000']}
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['30,000,000'], 'margin_call': ['0'], 'order_able': ['30,000,000'], 'total_money': ['30,000,000']}
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+{'deposit_money': ['30,000,000'], 'margin_call': ['0'], 'order_able': ['30,000,000'], 'total_money': ['30,000,000']}
+True
