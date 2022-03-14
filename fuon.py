@@ -1400,7 +1400,7 @@ class MyWindow(Layout):
         sScreenNo = "20010"
         # 서버요청
         self.server_set_rq_OptionMoney(sID1, accountrunVar, sID2, sValue2, sID3, sValue3, sRQName, sTrCode, nPrevNext, sScreenNo)
-        self.printt(self.option_mymoney)
+        print(self.option_mymoney)
 
     # 선옵계좌별주문가능수량요청 - 이벤트 슬롯
     def future_s_option_s_order_able_cnt_rq(self, item_code, sell_or_buy_type, price_type, item_order_price):
@@ -6212,8 +6212,8 @@ class MyWindow(Layout):
         self.printt(self.stock_have_data)
 
         # 추정예탁자산/총평가금액
-        self.printt('# 추정예탁자산')
-        self.printt(format(self.estimated_deposit, ','))
+        print('# 추정예탁자산')
+        print(format(self.estimated_deposit, ','))
         # self.printt('# 총평가금액')
         # self.printt(format(self.total_eval_price, ','))
 
