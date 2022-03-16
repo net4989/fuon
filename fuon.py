@@ -66,6 +66,9 @@ Chart_Ylim = 12
 # 연결선물
 Chain_Future_s_Item_Code = ['10100000']
 
+# 선물 레버리지(10 or 20) 결정(*** 향후 투자금액이 커지면 ~20으로 변경 :: 1 ~ 2 계약 바스켓 정도는 추가증거금 감당가능 판단 :: 20220316)
+Future_s_Leverage_Int = 10
+
 
 
 # Layout_ui_chart Layout 클래스 상속
@@ -5916,10 +5919,11 @@ class MyWindow(Layout):
             self.printt('self.future_s_option_s_new_order_able_cnt')
             self.printt(self.future_s_option_s_new_order_able_cnt)
 
-            if self.future_s_option_s_new_order_able_cnt < 20:
+            # 선물 레버리지(10 or 20) 결정
+            if self.future_s_option_s_new_order_able_cnt < Future_s_Leverage_Int:
                 basket_cnt = 1
             else:
-                basket_cnt = math.floor(self.future_s_option_s_new_order_able_cnt / 20)
+                basket_cnt = math.floor(self.future_s_option_s_new_order_able_cnt / Future_s_Leverage_Int)
             self.printt(basket_cnt)
             # basket_cnt 텍스트 저장
             self.future_s_basket_cnt_text_store(basket_cnt)
