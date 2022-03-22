@@ -86,7 +86,7 @@ class MyWindow(Layout):
         self.setupUi(self)
         # 메인윈도창 레이아웃 셋팅(차트)
         self.layout_chart_draw()
-        self.setWindowTitle('fuon(선물 트레이딩 base 주식 트레이딩 & 옵션 헷지)')
+        self.setWindowTitle('fuon(선물 트레이딩 base 주식 트레이딩 & 옵션 헤지)')
 
         # API_server
         self.kiwoom = Kiwoom()
@@ -1391,6 +1391,23 @@ class MyWindow(Layout):
                     self.printt('매도청산(오류) 진입')
         # 예탁금및증거금조회 - 이벤트 슬롯
         self.mymoney_option_rq()
+
+        # 선옵계좌별주문가능수량요청
+        item_code = self.futrue_s_data['item_code'][0]
+        sell_or_buy_type = '1'  # 매도 매수 타입 # "매매구분"(1:매도, 2:매수)
+        price_type = '1'  # 주문유형 = 1:지정가, 3:시장가
+        item_order_price_five_digit = int(self.futrue_s_data['run_price'][0] * 100)
+        # print(item_order_price_five_digit)
+        item_order_price_five_digit_str = str(item_order_price_five_digit)
+        # print(item_order_price_five_digit_str)
+        self.future_s_option_s_order_able_cnt_rq(item_code, sell_or_buy_type, price_type,
+                                                 item_order_price_five_digit_str)
+        # 신규가능수량
+        print('self.future_s_option_s_new_order_able_cnt')
+        print(self.future_s_option_s_new_order_able_cnt)
+        # 총액부족액
+        print('self.future_s_option_s_total_deposit_lack_money')
+        print(format(self.future_s_option_s_total_deposit_lack_money, ','))
 
     # 예탁금및증거금조회 - 이벤트 슬롯
     def mymoney_option_rq(self):
@@ -5997,14 +6014,12 @@ class MyWindow(Layout):
             # print(item_order_price_five_digit_str)
             self.future_s_option_s_order_able_cnt_rq(item_code, sell_or_buy_type, price_type,
                                                      item_order_price_five_digit_str)
-
-            # # 신규가능수량
-            # self.printt('self.future_s_option_s_new_order_able_cnt')
-            # self.printt(self.future_s_option_s_new_order_able_cnt)
-
+            # 신규가능수량
+            print('self.future_s_option_s_new_order_able_cnt')
+            print(self.future_s_option_s_new_order_able_cnt)
             # 총액부족액
             print('self.future_s_option_s_total_deposit_lack_money')
-            print(self.future_s_option_s_total_deposit_lack_money)
+            print(format(self.future_s_option_s_total_deposit_lack_money, ','))
 
             # stock 추정예탁자산과 합쳐서 총 신규가능수량 다시 구하기
             # 선물 1건 계약시 필요증거금

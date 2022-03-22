@@ -4,16 +4,7 @@
     <list default="true" id="86452889-253a-4c73-a6da-9fd8e646a719" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db_store/2022/K200_k200_s_202204.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/2022/K200_k200_s_202204.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/favorites_stock_shlc_data_day.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/favorites_stock_shlc_data_day.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/favorites_stock_shlc_data_month.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/favorites_stock_shlc_data_month.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/future_s_shlc_data_day.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/future_s_shlc_data_day.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/future_s_shlc_data_month.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/future_s_shlc_data_month.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/k95_max_stock_shlc_data_day.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/k95_max_stock_shlc_data_day.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/k95_max_stock_shlc_data_month.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/k95_max_stock_shlc_data_month.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/stock_trend_line_of_ai_day.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/stock_trend_line_of_ai_day.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/stock_trend_line_of_ai_month.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/stock_trend_line_of_ai_month.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fuon.py" beforeDir="false" afterPath="$PROJECT_DIR$/fuon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt_store/2022/K200_k200_s_20220316(22)_ceo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt_store/2022/K200_k200_s_20220316(22)_ceo.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/txt_store/future_s_basket_cnt_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt_store/future_s_basket_cnt_text.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,10 +17,10 @@
     <session id="1528018091">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
-          <entry key="project.open.time.3" value="2" />
-          <entry key="project.open.time.4" value="3" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.3" value="3" />
+          <entry key="project.open.time.4" value="4" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -45,12 +36,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="Python Console" value="87" />
-          <entry key="py" value="855" />
+          <entry key="py" value="867" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="942" />
+          <entry key="Python" value="954" />
         </counts>
       </usages-collector>
     </session>
@@ -60,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/fuon.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="640">
-              <caret line="6341" column="54" selection-start-line="6341" selection-start-column="54" selection-end-line="6341" selection-end-column="54" />
+            <state relative-caret-position="-3901">
+              <caret line="5855" column="17" selection-start-line="5855" selection-start-column="17" selection-end-line="5855" selection-end-column="17" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -73,36 +64,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>stock_buy_ready_fn 끝 timer1 재시작</find>
-      <find>item_list_cnt_type</find>
-      <find>myhave_option_rq</find>
-      <find>future_s_day_poly_gradient</find>
-      <find>future_s_market_sell_buy</find>
-      <find>주식매수</find>
-      <find>stock_buy_items_search</find>
-      <find>basket_cnt</find>
-      <find>server_set_rq_future_s_option_s_order_able_cnt</find>
-      <find>Future_s_Leverage_Int</find>
-      <find>future_s_option_s_order_able_cnt_rq</find>
-      <find>선옵계좌별주문가능수량요청</find>
-      <find>deposit_money</find>
-      <find>future_s_deposit_money</find>
-      <find>Market_In_Percent</find>
-      <find>self.buy_able_money</find>
-      <find>self.estimated_deposit</find>
-      <find>추정예탁자산</find>
-      <find>self.future_s_option_s_new_order_able_cnt</find>
-      <find>order_able_money</find>
-      <find>future_s_market_ready</find>
-      <find>future_s_option_s_need_deposit_total_money</find>
-      <find>future_s_option_s_new_order_able_cnt</find>
-      <find>future_s_option_s_total_deposit_lack_money</find>
-      <find>total_money_new_able_cnt</find>
       <find>total_estimated_deposit</find>
       <find>estimated_deposit</find>
       <find>test</find>
       <find>total_money</find>
       <find># 추정예탁자산/총평가금액</find>
+      <find>order_ready_stock</find>
+      <find>self.market_in_percent_won</find>
+      <find>market_in_buy_cnt</find>
+      <find>self.buy_able_money</find>
+      <find>self.total_eval_price</find>
+      <find>OPW20009</find>
+      <find>self.option_have_money</find>
+      <find>self.future_s_option_s_new_order_able_cnt</find>
+      <find>self.future_s_option_s_total_deposit_lack_money</find>
+      <find>future_s_option_s_new_order_able_cnt</find>
+      <find>예탁금및증거금조회</find>
+      <find>self.futrue_s_data['item_code']</find>
+      <find>선물전체시세요청</find>
+      <find>self.myhave_option_rq()</find>
+      <find>self.myhave_option_rq</find>
+      <find>future_s_option_s_order_able_cnt_rq</find>
+      <find>server_set_rq_future_s_option_s_order_able_cnt</find>
+      <find>future_s_option_s_total_deposit_lack_money</find>
+      <find>선옵계좌별주문가능수량요청</find>
+      <find>myhave_option_rq</find>
+      <find>reset_myhave_var</find>
+      <find>추정예탁자산</find>
+      <find>stock_buy_ready_fn</find>
+      <find>future_s_market_ready</find>
+      <find>self.buyed_today_items</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,7 +162,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15753424" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -198,8 +188,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/fuon.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="640">
-          <caret line="6341" column="54" selection-start-line="6341" selection-start-column="54" selection-end-line="6341" selection-end-column="54" />
+        <state relative-caret-position="-3901">
+          <caret line="5855" column="17" selection-start-line="5855" selection-start-column="17" selection-end-line="5855" selection-end-column="17" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
