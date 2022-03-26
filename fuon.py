@@ -1396,9 +1396,9 @@ class MyWindow(Layout):
         item_code = self.futrue_s_data['item_code'][0]
         sell_or_buy_type = '1'  # 매도 매수 타입 # "매매구분"(1:매도, 2:매수)
         price_type = '1'  # 주문유형 = 1:지정가, 3:시장가
-        item_order_price_five_digit = int(self.futrue_s_data['run_price'][0] * 100)
-        # print(item_order_price_five_digit)
-        item_order_price_five_digit_str = str(item_order_price_five_digit)
+        item_order_price_six_digit = int(self.futrue_s_data['run_price'][0] * 1000)
+        # print(item_order_price_six_digit)
+        item_order_price_five_digit_str = str(item_order_price_six_digit)
         # print(item_order_price_five_digit_str)
         self.future_s_option_s_order_able_cnt_rq(item_code, sell_or_buy_type, price_type,
                                                  item_order_price_five_digit_str)
@@ -1457,83 +1457,6 @@ class MyWindow(Layout):
     # 테스트
     def test(self):
 
-        # # 바스켓 재설정
-        # # 선옵계좌별주문가능수량요청
-        # item_code = self.futrue_s_data['item_code'][0]
-        # sell_or_buy_type = '1'  # 매도 매수 타입 # "매매구분"(1:매도, 2:매수)
-        # price_type = '1'  # 주문유형 = 1:지정가, 3:시장가
-        # item_order_price_five_digit = int(self.futrue_s_data['run_price'][0] * 100)
-        # # print(item_order_price_five_digit)
-        # item_order_price_five_digit_str = str(item_order_price_five_digit)
-        # # print(item_order_price_five_digit_str)
-        # self.future_s_option_s_order_able_cnt_rq(item_code, sell_or_buy_type, price_type,
-        #                                          item_order_price_five_digit_str)
-        #
-        # # # 신규가능수량
-        # # self.printt('self.future_s_option_s_new_order_able_cnt')
-        # # self.printt(self.future_s_option_s_new_order_able_cnt)
-        #
-        # # 총액부족액
-        # print('self.future_s_option_s_total_deposit_lack_money')
-        # print(format(self.future_s_option_s_total_deposit_lack_money, ','))
-        #
-        # # stock 추정예탁자산과 합쳐서 총 신규가능수량 다시 구하기
-        # # 선물 1건 계약시 필요증거금
-        # need_deposit_money = math.floor(
-        #     self.future_s_option_s_total_deposit_lack_money / self.future_s_option_s_new_order_able_cnt)
-        #
-        # # 선물옵션 순자산금액 + stock 추정예탁자산
-        # option_have_money_plus_estimated_deposit = self.option_have_money + self.estimated_deposit
-        #
-        # # 선물옵션 + stock 총자산 / 선물 1건 계약시 필요증거금
-        # total_money_new_able_cnt = math.floor(option_have_money_plus_estimated_deposit / need_deposit_money)
-        # self.printt('total_money_new_able_cnt')
-        # self.printt(total_money_new_able_cnt)
-        #
-        # # 선물 레버리지(10 or 20) 결정
-        # if total_money_new_able_cnt < Future_s_Leverage_Int:
-        #     basket_cnt = 1
-        # else:
-        #     basket_cnt = math.floor(total_money_new_able_cnt / Future_s_Leverage_Int)
-        # self.printt(basket_cnt)
-        # # basket_cnt 텍스트 저장
-        # self.future_s_basket_cnt_text_store(basket_cnt)
-        # # 바스켓 재설정
-        #
-        #
-        #
-        #
-        #
-        #
-        #
-        # # 추정예탁자산/총평가금액
-        # print('# 추정예탁자산::only stock(40%유지)')
-        # print(format(self.estimated_deposit, ','))
-        # # self.printt('# 총평가금액')
-        # # self.printt(format(self.total_eval_price, ','))
-        #
-        # # '추정예탁자산'을 선물옵션 예탁금과 합하여 50% 금액으로 함(20220321)
-        # future_s_option_s_stock_s_total_money = int(self.option_have_money + self.estimated_deposit)
-        # print('future_s_option_s_stock_s_total_money')
-        # print(format(future_s_option_s_stock_s_total_money, ','))
-        # total_estimated_deposit = int(future_s_option_s_stock_s_total_money / 2)
-        # print('total_estimated_deposit')
-        # print(format(total_estimated_deposit, ','))
-        #
-        # # 총평가금액
-        # # self.total_eval_price
-        # # 주문가능 금액 = 추정예탁자산 - 총평가금액
-        # self.buy_able_money = int(total_estimated_deposit - self.total_eval_price)
-        # print('self.buy_able_money')
-        # print(format(self.buy_able_money, ','))
-        #
-        # # 1회 stock 투입금액
-        # self.market_in_percent_won = int(total_estimated_deposit * (Market_In_Percent / 100))
-        # print('self.market_in_percent_won')
-        # print(format(self.market_in_percent_won, ','))
-        #
-        #
-        # return
 
 
 
@@ -6008,9 +5931,9 @@ class MyWindow(Layout):
             # item_code = self.futrue_s_data['item_code'][0]
             # sell_or_buy_type = '1'  # 매도 매수 타입 # "매매구분"(1:매도, 2:매수)
             # price_type = '1'  # 주문유형 = 1:지정가, 3:시장가
-            # item_order_price_five_digit = int(self.futrue_s_data['run_price'][0] * 100)
-            # # print(item_order_price_five_digit)
-            # item_order_price_five_digit_str = str(item_order_price_five_digit)
+            # item_order_price_six_digit = int(self.futrue_s_data['run_price'][0] * 1000)
+            # # print(item_order_price_six_digit)
+            # item_order_price_five_digit_str = str(item_order_price_six_digit)
             # # print(item_order_price_five_digit_str)
             # self.future_s_option_s_order_able_cnt_rq(item_code, sell_or_buy_type, price_type,
             #                                          item_order_price_five_digit_str)
