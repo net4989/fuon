@@ -787,15 +787,15 @@ class MyWindow(Layout):
     # 선옵계좌별주문가능수량요청
     def _opw20009(self, rqname, trcode):
         new_order_able_cnt = self._comm_get_data(trcode, "", rqname, '0', "신규가능수량")
-        total_deposit_lack_money = self._comm_get_data(trcode, "", rqname, '0', "총액부족액")
+        total_need_deposit_money = self._comm_get_data(trcode, "", rqname, '0', "필요증거금총액")
 
         # 신규가능수량
         self.future_s_option_s_new_order_able_cnt = abs(int(new_order_able_cnt))
         # print(self.future_s_option_s_new_order_able_cnt)
 
-        # print("총액부족액")
-        self.future_s_option_s_total_deposit_lack_money = abs(int(total_deposit_lack_money))
-        # print(self.future_s_option_s_total_deposit_lack_money)
+        # 필요증거금총액
+        self.future_s_option_s_total_need_deposit_money = abs(int(total_need_deposit_money))
+        # print(self.future_s_option_s_total_need_deposit_money)
 
     # 체결강도조회
     def _optkwfid(self, rqname, trcode):
@@ -1405,9 +1405,9 @@ class MyWindow(Layout):
         # 신규가능수량
         print('self.future_s_option_s_new_order_able_cnt')
         print(self.future_s_option_s_new_order_able_cnt)
-        # 총액부족액
-        print('self.future_s_option_s_total_deposit_lack_money')
-        print(format(self.future_s_option_s_total_deposit_lack_money, ','))
+        # 필요증거금총액
+        print('self.future_s_option_s_total_need_deposit_money')
+        print(format(self.future_s_option_s_total_need_deposit_money, ','))
 
     # 예탁금및증거금조회 - 이벤트 슬롯
     def mymoney_option_rq(self):
@@ -1457,8 +1457,9 @@ class MyWindow(Layout):
     # 테스트
     def test(self):
 
-
-
+        # 선물 (진입 / 청산) 준비
+        self.future_s_market_ready()
+        return
 
 
 
@@ -5940,14 +5941,14 @@ class MyWindow(Layout):
             # # 신규가능수량
             # print('self.future_s_option_s_new_order_able_cnt')
             # print(self.future_s_option_s_new_order_able_cnt)
-            # # 총액부족액
-            # print('self.future_s_option_s_total_deposit_lack_money')
-            # print(format(self.future_s_option_s_total_deposit_lack_money, ','))
+            # # 필요증거금총액
+            # print('self.future_s_option_s_total_need_deposit_money')
+            # print(format(self.future_s_option_s_total_need_deposit_money, ','))
 
             # stock 추정예탁자산과 합쳐서 총 신규가능수량 다시 구하기
             # 선물 1건 계약시 필요증거금
             need_deposit_money = math.floor(
-                self.future_s_option_s_total_deposit_lack_money / self.future_s_option_s_new_order_able_cnt)
+                self.future_s_option_s_total_need_deposit_money / self.future_s_option_s_new_order_able_cnt)
 
             # 선물옵션 순자산금액 + stock 추정예탁자산
             option_have_money_plus_estimated_deposit = self.option_have_money + self.estimated_deposit
