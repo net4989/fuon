@@ -1457,13 +1457,6 @@ class MyWindow(Layout):
     # 테스트
     def test(self):
 
-        # 선물 (진입 / 청산) 준비
-        self.future_s_market_ready()
-        return
-
-
-
-
         # 장마감 c 이후
 
         # API에서 지난 월봉(30개월)간 시고저종 수신받아서 db에 저장(딥러닝 훈련용)
