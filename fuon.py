@@ -6248,30 +6248,30 @@ class MyWindow(Layout):
         self.printt(self.stock_have_data)
 
         # 추정예탁자산/총평가금액
-        print('# 추정예탁자산::only stock(40%유지)')
-        print(format(self.estimated_deposit, ','))
+        self.printt('# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)')
+        self.printt(format(self.estimated_deposit, ','))
         # self.printt('# 총평가금액')
         # self.printt(format(self.total_eval_price, ','))
 
-        # '추정예탁자산'을 선물옵션 예탁금과 합하여 50% 금액으로 함(20220321)
+        # '추정예탁자산'을 선물옵션 예탁금과 합하여
         future_s_option_s_stock_s_total_money = int(self.option_have_money + self.estimated_deposit)
-        print('future_s_option_s_stock_s_total_money')
-        print(format(future_s_option_s_stock_s_total_money, ','))
-        total_estimated_deposit = int(future_s_option_s_stock_s_total_money / 2)
-        print('total_estimated_deposit')
-        print(format(total_estimated_deposit, ','))
+        self.printt('future_s_option_s_stock_s_total_money')
+        self.printt(format(future_s_option_s_stock_s_total_money, ','))
+        # total_estimated_deposit = int(future_s_option_s_stock_s_total_money / 2)
+        # print('total_estimated_deposit')
+        # print(format(total_estimated_deposit, ','))
+        #
+        # # 총평가금액
+        # # self.total_eval_price
+        # # 주문가능 금액 = 추정예탁자산 - 총평가금액
+        # self.buy_able_money = int(total_estimated_deposit - self.total_eval_price)
+        # print('self.buy_able_money')
+        # print(format(self.buy_able_money, ','))
 
-        # 총평가금액
-        # self.total_eval_price
-        # 주문가능 금액 = 추정예탁자산 - 총평가금액
-        self.buy_able_money = int(total_estimated_deposit - self.total_eval_price)
-        print('self.buy_able_money')
-        print(format(self.buy_able_money, ','))
-
-        # 1회 stock 투입금액
-        self.market_in_percent_won = int(total_estimated_deposit * (Market_In_Percent / 100))
-        print('self.market_in_percent_won')
-        print(format(self.market_in_percent_won, ','))
+        # 1회 stock 투입금액 ::=> 20220610 :: 추정예탁자산(self.estimated_deposit)의 10%로 결정
+        self.market_in_percent_won = int(self.estimated_deposit * (Market_In_Percent / 100))
+        self.printt('self.market_in_percent_won')
+        self.printt(format(self.market_in_percent_won, ','))
 
         # 선물 변화 건수 체크
         future_s_change_cnt = len(self.future_s_change_listed_var)

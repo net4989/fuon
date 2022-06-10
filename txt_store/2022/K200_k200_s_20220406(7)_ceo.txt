@@ -1,0 +1,5 @@
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220406']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220406']
