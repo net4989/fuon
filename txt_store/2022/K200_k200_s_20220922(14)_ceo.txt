@@ -1,0 +1,899 @@
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+0
+# 총평가금액
+0
+self.buy_able_money
+0
+self.market_in_percent_won
+0
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+total_money_new_able_cnt
+159
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+total_money_new_able_cnt
+159
+-----
+10:22:34.351021
+self.db_overlap_time_list
+['09:38', '10:22']
+future_s_change_ret
+(True, 300.05)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 3], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+[300.05]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+0
+# 총평가금액
+0
+self.buy_able_money
+0
+self.market_in_percent_won
+0
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+-----
+15:15:00.454074
+self.db_overlap_time_list
+['15:14', '15:15']
+future_s_change_ret
+(True, 301.45)
+[300.05, 301.45]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+# roll_over 실행
+당월물 매도 재고 있음
+-52
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+{'code': ['101SC000', '301SA305'], 'myhave_cnt': [3, 1], 'sell_or_buy': [1, 1]}
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220919']
+stock_trend_line_of_ai_month_able
+32
+['005930', '006400', '035720', '005380', '051910', '000270', '068270', '012330', '207940', '028260', '066570', '096770', '033780', '034730', '017670', '009150', '036570', '015760', '051900', '003550', '032830', '251270', '090430', '018260', '009540', '009830', '034220', '086280', '003670', '047810', '069500', '10100000']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+1
+['069500']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220919']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220919']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+0
+{'stock_no': [], 'stock_name': [], 'market_in_price': [], 'myhave_cnt': [], 'run_price': [], 'sell_price': [], 'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [], 'deal_power': []}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+500,000,000
+# 총평가금액
+0
+self.buy_able_money
+500,000,000
+self.market_in_percent_won
+50,000,000
+stock_buy_ready_fn 끝 timer1 재시작

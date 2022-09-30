@@ -625,10 +625,10 @@ class Layout(QMainWindow, form_class):
         plt.axhline(poly_sell_max_price, color='red', linestyle='-', linewidth=1, label=poly_sell_max_price)
         plt.plot(x_index, poly_pred_h, 'r-', label=poly_h_gradient)
         plt.plot(x_index, line_pred_h, 'm-', label=line_h_gradient)
-        plt.axhline(futrue_s_start_price, color='cyan', linestyle=':', linewidth=2)
-        plt.axhline(futrue_s_high_price, color='red', linestyle=':', linewidth=2)
-        plt.axhline(futrue_s_low_price, color='blue', linestyle=':', linewidth=2)
-        plt.axhline(futrue_s_run_price, color='magenta', linestyle=':', linewidth=2, label=futrue_s_run_price)
+        # plt.axhline(futrue_s_start_price, color='cyan', linestyle=':', linewidth=2)
+        # plt.axhline(futrue_s_high_price, color='red', linestyle=':', linewidth=2)
+        # plt.axhline(futrue_s_low_price, color='blue', linestyle=':', linewidth=2)
+        # plt.axhline(futrue_s_run_price, color='magenta', linestyle=':', linewidth=2, label=futrue_s_run_price)
         plt.plot(x_index, line_pred_l, 'c-', label=line_l_gradient)
         plt.plot(x_index, poly_pred_l, 'b-', label=poly_l_gradient)
         plt.axhline(poly_buy_min_price, color='blue', linestyle='-', linewidth=1, label=poly_buy_min_price)
@@ -687,6 +687,7 @@ class Layout(QMainWindow, form_class):
         plt.minorticks_on()
         plt.grid(b=True, which='minor', color='#999999', linestyle='-', alpha=0.2)
 
+        # 범례표시
         plt.legend()
 
         self.canvas.draw()

@@ -1,0 +1,380 @@
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:06:33 2022
+item_list_cnt_type
+{'code_no': ['301SA307'], 'cnt': [3], 'sell_buy_type': [2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:06:44 2022
+item_list_cnt_type
+{'code_no': ['301SA307'], 'cnt': [3], 'sell_buy_type': [2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:07:56 2022
+item_list_cnt_type
+{'code_no': ['301SA307'], 'cnt': [3], 'sell_buy_type': [2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:08:05 2022
+item_list_cnt_type
+{'code_no': ['301SA307'], 'cnt': [3], 'sell_buy_type': [2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:08:07 2022
+item_list_cnt_type
+{'code_no': ['301SA307'], 'cnt': [3], 'sell_buy_type': [2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:08:08 2022
+item_list_cnt_type
+{'code_no': ['301SA307'], 'cnt': [3], 'sell_buy_type': [2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:08:09 2022
+item_list_cnt_type
+{'code_no': ['301SA307'], 'cnt': [3], 'sell_buy_type': [2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:13:29 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3, 2]
+['301SA307', '201SA310']
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:14:11 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3, 2]
+['301SA307', '201SA310']
+-----
+Mon Sep 12 09:14:11 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 콜매수
+2004
+volume_listed_var / item_list
+[3, 2, 3, 2]
+['301SA307', '201SA310', '301SA307', '201SA310']
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:19:02 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+-----
+Mon Sep 12 09:19:02 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 콜매수
+2004
+volume_listed_var / item_list
+[3, 2]
+['301SA307', '201SA310']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:19:08 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+-----
+Mon Sep 12 09:19:08 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 콜매수
+2004
+volume_listed_var / item_list
+[3, 2]
+['301SA307', '201SA310']
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:26:30 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:27:36 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+-----
+Mon Sep 12 09:27:36 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 콜매수
+2004
+volume_listed_var / item_list
+[3, 2]
+['301SA307', '201SA310']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:27:38 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+-----
+Mon Sep 12 09:27:38 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 콜매수
+2004
+volume_listed_var / item_list
+[3, 2]
+['301SA307', '201SA310']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+-----
+Mon Sep 12 09:27:39 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 풋매수
+3004
+volume_listed_var / item_list
+[3]
+['301SA307']
+-----
+Mon Sep 12 09:27:39 2022
+item_list_cnt_type
+{'code_no': ['301SA307', '201SA310'], 'cnt': [3, 2], 'sell_buy_type': [2, 2]}
+Send Option Order
+# 콜매수
+2004
+volume_listed_var / item_list
+[3, 2]
+['301SA307', '201SA310']
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+매수재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+매수재고 있음
+당월물 청산
+{'code': ['101SC000', '301SA307', '201SA310'], 'myhave_cnt': [8, 3, 2], 'sell_or_buy': [1, 2, 2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+매수재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+매수재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+매수재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+매수재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+매도재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA307', '201SA310', '301SA305'], 'cnt': [3, 2, 3], 'sell_buy_type': [2, 2, 2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+당월물 진입
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA305'], 'cnt': [3], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+당월물 진입
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA305'], 'cnt': [3], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+당월물 진입
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA305'], 'cnt': [5], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+당월물 진입
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA305'], 'cnt': [5], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+당월물 진입
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA305'], 'cnt': [5], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+당월물 진입
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA305'], 'cnt': [10], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+차월물 진입
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA305301SA305'], 'cnt': [5], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+차월물 진입
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA305'], 'cnt': [10], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+차월물 진입
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA305'], 'cnt': [15], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+당월물 진입
+(3~2)옵션 종목검색(콜매수)
+{'code_no': ['201SA307'], 'cnt': [3], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+당월물 진입
+(3~2)옵션 종목검색(콜매수)
+{'code_no': ['201SA310'], 'cnt': [3], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+당월물 진입
+(3~2)옵션 종목검색(콜매수)
+{'code_no': ['201SA310'], 'cnt': [6], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+콜/풋 월별시세요청 완료 timer1 시작
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+차월물 진입
+(3~2)옵션 종목검색(콜매수)
+{'code_no': ['201SA310'], 'cnt': [6], 'sell_buy_type': [2]}

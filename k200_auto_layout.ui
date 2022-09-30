@@ -18,11 +18,18 @@
     <item>
      <layout class="QHBoxLayout" name="layout">
       <item>
-       <layout class="QVBoxLayout" name="menuLayout" stretch="0,0,0,0">
+       <layout class="QVBoxLayout" name="menuLayout" stretch="0,0,0,0,0">
         <item>
          <widget class="QPushButton" name="pushButton_3">
           <property name="text">
            <string>test</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButton_c_to_cf">
+          <property name="text">
+           <string>C_to_CF</string>
           </property>
          </widget>
         </item>

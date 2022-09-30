@@ -1,0 +1,177 @@
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+option_s_sell_buy_point
+44.858673654606775
+option_s_delta
+30.6166
+option_s_delta_change
+3.266201994996179
+option_s_sell_buy_point_plus_delta
+146.5174893835592
+buy_ref_price
+[292.6404365657237]
+buy_second_price
+[327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874, 348.36260373089937, 346.9531846064773]
+option_s_sell_buy_point
+35.25714408084673
+option_s_delta
+30.6166
+option_s_delta_change
+3.266201994996179
+option_s_sell_buy_point_plus_delta
+115.1569543347293
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+option_s_sell_buy_point
+44.858673654606775
+option_s_sell_onetime_max_money
+16666666.666666666
+option_s_delta
+30.5036
+option_s_delta_change
+3.2783015775187194
+option_s_sell_buy_point_plus_delta
+147.06026060729482
+option_s_sell_order_deposit_money
+6118676
+option_s_search_max_cnt
+3
+buy_ref_price
+[292.6404365657237]
+buy_second_price
+[327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874, 348.36260373089937, 346.9531846064773]
+option_s_sell_buy_point
+35.25714408084673
+option_s_sell_onetime_max_money
+16666666.666666666
+option_s_delta
+30.5036
+option_s_delta_change
+3.2783015775187194
+option_s_sell_buy_point_plus_delta
+115.58355105904461
+option_s_sell_order_deposit_money
+6118676
+option_s_search_max_cnt
+3
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+option_s_sell_buy_point
+10.1
+option_s_sell_onetime_max_money
+16666666.666666666
+option_s_delta
+17.6906
+option_s_delta_change
+5.6527195233626895
+option_s_sell_buy_point_plus_delta
+57.09246718596316
+option_s_sell_order_deposit_money
+6118676
+option_s_search_max_cnt
+3
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+option_s_sell_buy_point
+10.1
+option_s_sell_onetime_max_money
+16666666.666666666
+option_s_delta
+45.1121
+option_s_delta_change
+2.216700175784324
+option_s_sell_buy_point_plus_delta
+22.38867177542167
+option_s_sell_order_deposit_money
+6214776
+option_s_search_max_cnt
+3
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[292.6404365657237]
+buy_second_price
+[327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874, 348.36260373089937, 346.9531846064773]
+option_s_sell_buy_point
+35.25714408084673
+option_s_sell_onetime_max_money
+16666666.666666666
+option_s_delta
+40.5588
+option_s_delta_change
+2.465556180163121
+option_s_sell_buy_point_plus_delta
+86.92846948343326
+option_s_sell_order_deposit_money
+6214776
+option_s_search_max_cnt
+3
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[292.6404365657237]
+buy_second_price
+[327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874, 348.36260373089937, 346.9531846064773]
+option_s_sell_buy_point
+35.25714408084673
+option_s_sell_onetime_max_money
+16666666.666666666
+option_s_delta
+47.0089
+option_s_delta_change
+2.1272567535083784
+option_s_sell_buy_point_plus_delta
+75.00099785539915
+option_s_sell_order_deposit_money
+6214776
+option_s_search_max_cnt
+3
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']

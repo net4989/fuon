@@ -1,0 +1,1401 @@
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+True
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+3
+장시작 알림 3
+-----
+09:00:01.268012
+self.db_overlap_time_list
+['08:50', '09:00']
+future_s_change_ret
+(True, 311.0)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2], 'up1_c_d': [0], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2], 'up1_c_d': [0, 2], 'dn1_c_d': [0], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2], 'up1_c_d': [0, 2], 'dn1_c_d': [0, 2], 'dn2_c_d': [0], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 2], 'up1_c_d': [0, 2], 'dn1_c_d': [0, 2], 'dn2_c_d': [0, 2], 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
+# 중심가 중심인덱스
+True
+82
+310.00
+# 차월물 중심가 중심인덱스
+True
+72
+310.00
+[311.0]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,945,201
+# 총평가금액
+18,323,000
+self.buy_able_money
+17,622,201
+self.market_in_percent_won
+3,594,520
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+total_money_new_able_cnt
+14
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:01:00.998969
+self.db_overlap_time_list
+['08:50', '09:00', '09:01']
+future_s_change_ret
+(True, 311.65)
+[311.0, 311.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+36,070,393
+# 총평가금액
+18,448,500
+self.buy_able_money
+17,621,893
+self.market_in_percent_won
+3,607,039
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+total_money_new_able_cnt
+14
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:02:47.025555
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02']
+future_s_change_ret
+(True, 312.3)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 2], 'up1_c_d': [0, 0], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 2], 'up1_c_d': [0, 0, 2], 'dn1_c_d': [0, 0], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 2], 'up1_c_d': [0, 0, 2], 'dn1_c_d': [0, 0, 2], 'dn2_c_d': [0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 2], 'up1_c_d': [0, 0, 2], 'dn1_c_d': [0, 0, 2], 'dn2_c_d': [0, 0, 2], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2]}
+# 중심가 중심인덱스
+True
+81
+312.50
+# 차월물 중심가 중심인덱스
+True
+71
+312.50
+[311.0, 311.65, 312.3]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73600], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+36,095,425
+# 총평가금액
+18,473,600
+self.buy_able_money
+17,621,825
+self.market_in_percent_won
+3,609,542
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+total_money_new_able_cnt
+14
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:04:40.863551
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04']
+future_s_change_ret
+(True, 311.65)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 0], 'up1_c_d': [0, 0, 0], 'dn1_c_d': [0, 0, 0], 'dn2_c_d': [0, 0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2], 'dn2_p_d': [2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 0], 'up1_c_d': [0, 0, 0], 'dn1_c_d': [0, 0, 0], 'dn2_c_d': [0, 0, 0], 'up2_p_d': [2], 'up1_p_d': [2], 'dn1_p_d': [2, 3], 'dn2_p_d': [2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 0], 'up1_c_d': [0, 0, 0], 'dn1_c_d': [0, 0, 0], 'dn2_c_d': [0, 0, 0], 'up2_p_d': [2], 'up1_p_d': [2, 3], 'dn1_p_d': [2, 3], 'dn2_p_d': [2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 0], 'up1_c_d': [0, 0, 0], 'dn1_c_d': [0, 0, 0], 'dn2_c_d': [0, 0, 0], 'up2_p_d': [2, 3], 'up1_p_d': [2, 3], 'dn1_p_d': [2, 3], 'dn2_p_d': [2, 3]}
+# 중심가 중심인덱스
+True
+82
+310.00
+# 차월물 중심가 중심인덱스
+True
+72
+310.00
+[311.0, 311.65, 312.3, 311.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73100], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,970,233
+# 총평가금액
+18,348,100
+self.buy_able_money
+17,622,133
+self.market_in_percent_won
+3,597,023
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+total_money_new_able_cnt
+14
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:08:10.767782
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08']
+future_s_change_ret
+(True, 311.0)
+[311.0, 311.65, 312.3, 311.65, 311.0]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73100], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,970,233
+# 총평가금액
+18,348,100
+self.buy_able_money
+17,622,133
+self.market_in_percent_won
+3,597,023
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+total_money_new_able_cnt
+14
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:16:45.527144
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16']
+future_s_change_ret
+(True, 311.65)
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72900], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,920,159
+# 총평가금액
+18,297,900
+self.buy_able_money
+17,622,259
+self.market_in_percent_won
+3,592,015
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+total_money_new_able_cnt
+14
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:26:58.606027
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26']
+future_s_change_ret
+(True, 311.0)
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72600], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,845,042
+# 총평가금액
+18,222,600
+self.buy_able_money
+17,622,442
+self.market_in_percent_won
+3,584,504
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+total_money_new_able_cnt
+14
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:40:16.398211
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40']
+future_s_change_ret
+(True, 311.65)
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72600], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,845,042
+# 총평가금액
+18,222,600
+self.buy_able_money
+17,622,442
+self.market_in_percent_won
+3,584,504
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+total_money_new_able_cnt
+14
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:45:05.152051
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45']
+future_s_change_ret
+(True, 312.3)
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 2], 'up1_c_d': [0, 0, 3], 'dn1_c_d': [0, 0, 3], 'dn2_c_d': [0, 0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 2], 'up1_c_d': [0, 0, 3, 2], 'dn1_c_d': [0, 0, 3], 'dn2_c_d': [0, 0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 2], 'up1_c_d': [0, 0, 3, 2], 'dn1_c_d': [0, 0, 3, 2], 'dn2_c_d': [0, 0, 3], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 2], 'up1_c_d': [0, 0, 3, 2], 'dn1_c_d': [0, 0, 3, 2], 'dn2_c_d': [0, 0, 3, 2], 'up2_p_d': [2, 0], 'up1_p_d': [2, 0], 'dn1_p_d': [2, 0], 'dn2_p_d': [2, 0]}
+# 중심가 중심인덱스
+True
+81
+312.50
+# 차월물 중심가 중심인덱스
+True
+71
+312.50
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72800], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,895,116
+# 총평가금액
+18,272,800
+self.buy_able_money
+17,622,316
+self.market_in_percent_won
+3,589,511
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+total_money_new_able_cnt
+14
+1
+item_list_cnt_type
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+09:49:02.898156
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49']
+future_s_change_ret
+(True, 312.95)
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+[]
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,945,201
+# 총평가금액
+18,323,000
+self.buy_able_money
+17,622,201
+self.market_in_percent_won
+3,594,520
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': [], 'myhave_cnt': [], 'sell_or_buy': []}
+total_money_new_able_cnt
+14
+1
+당월물 재고없음 선물매도(1)(신규진입)
+당월물 진입
+item_list_cnt_type
+{'code_no': ['101S9000'], 'cnt': [1], 'sell_buy_type': [1]}
+-----
+Fri Jul  8 09:49:04 2022
+item_list_cnt_type
+{'code_no': ['101S9000'], 'cnt': [1], 'sell_buy_type': [1]}
+Send futrue_s Order
+# 선물매도
+6004
+volume_listed_var / item_list
+[1]
+['101S9000']
+Fri Jul  8 09:49:04 2022
+['전송', 1, '101S9000', 1, 312.95, '']
+전송
+타이머 중지
+정정 타이머 시작
+Fri Jul  8 09:49:04 2022
+['접수', 1, '101S9000', 1, 312.95, '0002383']
+접수
+['']
+Fri Jul  8 09:50:01 2022
+['체결', 1, '101S9000', 1, 312.95, '0002383']
+체결
+OrderComplete_option
+True
+['전송vs체결수량OK']
+['접수vs체결수량OK']
+True
+{'OrderRunKind': ['전송'], 'SellBuyType': [1], 'OrderRunCode': ['101S9000'], 'OrderRunVolume': [1], 'OrderRunPrice': [312.95], 'OrgOrderNo': [''], 'modify_item': ['전송vs체결수량OK']}
+{'OrderRunKind': ['접수'], 'SellBuyType': [1], 'OrderRunCode': ['101S9000'], 'OrderRunVolume': [1], 'OrderRunPrice': [312.95], 'OrgOrderNo': ['0002383'], 'modify_item': ['접수vs체결수량OK']}
+{'OrderRunKind': ['체결'], 'SellBuyType': [1], 'OrderRunCode': ['101S9000'], 'OrderRunVolume': [1], 'OrderRunPrice': [312.95], 'OrgOrderNo': ['0002383'], 'modify_item': ['']}
+주문 타이머 시작
+정정 타이머 중지
+{'code': ['101S9000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+체결완료 정정 타이머 중지
+주문 타이머 중지
+체결완료 1초 타이머 재시작
+-----
+09:59:57.022191
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59']
+future_s_change_ret
+(True, 313.6)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2], 'dn1': [0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2], 'dn1': [0, 2], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73100], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,970,233
+# 총평가금액
+18,348,100
+self.buy_able_money
+17,622,133
+self.market_in_percent_won
+3,597,023
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+10:26:01.259270
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26']
+future_s_change_ret
+(True, 312.95)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3], 'dn1': [0, 2], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3], 'dn1': [0, 2, 3], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73100], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,970,233
+# 총평가금액
+18,348,100
+self.buy_able_money
+17,622,133
+self.market_in_percent_won
+3,597,023
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+10:44:56.150271
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44']
+future_s_change_ret
+(True, 313.6)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 2, 3], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2], 'dn1': [0, 2, 3, 2], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73500], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+36,070,393
+# 총평가금액
+18,448,500
+self.buy_able_money
+17,621,893
+self.market_in_percent_won
+3,607,039
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+10:48:05.935681
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48']
+future_s_change_ret
+(True, 312.95)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 2, 3, 2], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 2, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [73300], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+36,020,318
+# 총평가금액
+18,398,300
+self.buy_able_money
+17,622,018
+self.market_in_percent_won
+3,602,031
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+11:07:56.774907
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07']
+future_s_change_ret
+(True, 312.3)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 3], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 2, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2]}
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72800], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,895,116
+# 총평가금액
+18,272,800
+self.buy_able_money
+17,622,316
+self.market_in_percent_won
+3,589,511
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+11:26:02.906025
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26']
+future_s_change_ret
+(True, 312.95)
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72800], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,895,116
+# 총평가금액
+18,272,800
+self.buy_able_money
+17,622,316
+self.market_in_percent_won
+3,589,511
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+11:54:37.155622
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26', '11:54']
+future_s_change_ret
+(True, 312.3)
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95, 312.3]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72700], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,870,084
+# 총평가금액
+18,247,700
+self.buy_able_money
+17,622,384
+self.market_in_percent_won
+3,587,008
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+11:58:44.867518
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26', '11:54', '11:58']
+future_s_change_ret
+(True, 311.65)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 3], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 2, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2], 'dn2_p_d': [2, 2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 3], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 2, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2], 'dn1_p_d': [2, 2, 3], 'dn2_p_d': [2, 2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 3], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 2, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2], 'up1_p_d': [2, 2, 3], 'dn1_p_d': [2, 2, 3], 'dn2_p_d': [2, 2, 3]}
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95, 312.3, 311.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72700], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,870,084
+# 총평가금액
+18,247,700
+self.buy_able_money
+17,622,384
+self.market_in_percent_won
+3,587,008
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+12:03:15.651519
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26', '11:54', '11:58', '12:03']
+future_s_change_ret
+(True, 311.0)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 3], 'zero': [0, 2, 3, 2, 3], 'dn1': [0, 2, 3, 2, 3], 'dn2': [0], 'up2_c_d': [0, 0, 3, 0], 'up1_c_d': [0, 0, 3, 0], 'dn1_c_d': [0, 0, 3, 0], 'dn2_c_d': [0, 0, 3, 0], 'up2_p_d': [2, 2, 3], 'up1_p_d': [2, 2, 3], 'dn1_p_d': [2, 2, 3], 'dn2_p_d': [2, 2, 3]}
+# 중심가 중심인덱스
+True
+82
+310.00
+# 차월물 중심가 중심인덱스
+True
+72
+310.00
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95, 312.3, 311.65, 311.0]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72600], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,845,042
+# 총평가금액
+18,222,600
+self.buy_able_money
+17,622,442
+self.market_in_percent_won
+3,584,504
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+12:13:04.436424
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26', '11:54', '11:58', '12:03', '12:13']
+future_s_change_ret
+(True, 311.65)
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95, 312.3, 311.65, 311.0, 311.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72600], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,845,042
+# 총평가금액
+18,222,600
+self.buy_able_money
+17,622,442
+self.market_in_percent_won
+3,584,504
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+13:19:16.932855
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26', '11:54', '11:58', '12:03', '12:13', '13:19']
+future_s_change_ret
+(True, 311.0)
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95, 312.3, 311.65, 311.0, 311.65, 311.0]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72400], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,794,968
+# 총평가금액
+18,172,400
+self.buy_able_money
+17,622,568
+self.market_in_percent_won
+3,579,496
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+13:48:03.958444
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26', '11:54', '11:58', '12:03', '12:13', '13:19', '13:48']
+future_s_change_ret
+(True, 311.65)
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72200], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,744,893
+# 총평가금액
+18,122,200
+self.buy_able_money
+17,622,693
+self.market_in_percent_won
+3,574,489
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+14:01:01.851987
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26', '11:54', '11:58', '12:03', '12:13', '13:19', '13:48', '14:01']
+future_s_change_ret
+(True, 312.3)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0], 'dn1': [0, 2, 3, 2, 0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 3, 2], 'up1_c_d': [0, 0, 3, 3], 'dn1_c_d': [0, 0, 3, 3], 'dn2_c_d': [0, 0, 3, 3], 'up2_p_d': [2, 2, 0], 'up1_p_d': [2, 2, 0], 'dn1_p_d': [2, 2, 0], 'dn2_p_d': [2, 2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0], 'dn1': [0, 2, 3, 2, 0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 3, 2], 'up1_c_d': [0, 0, 3, 3, 2], 'dn1_c_d': [0, 0, 3, 3], 'dn2_c_d': [0, 0, 3, 3], 'up2_p_d': [2, 2, 0], 'up1_p_d': [2, 2, 0], 'dn1_p_d': [2, 2, 0], 'dn2_p_d': [2, 2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0], 'dn1': [0, 2, 3, 2, 0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 3, 2], 'up1_c_d': [0, 0, 3, 3, 2], 'dn1_c_d': [0, 0, 3, 3, 2], 'dn2_c_d': [0, 0, 3, 3], 'up2_p_d': [2, 2, 0], 'up1_p_d': [2, 2, 0], 'dn1_p_d': [2, 2, 0], 'dn2_p_d': [2, 2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0], 'dn1': [0, 2, 3, 2, 0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 3, 2], 'up1_c_d': [0, 0, 3, 3, 2], 'dn1_c_d': [0, 0, 3, 3, 2], 'dn2_c_d': [0, 0, 3, 3, 2], 'up2_p_d': [2, 2, 0], 'up1_p_d': [2, 2, 0], 'dn1_p_d': [2, 2, 0], 'dn2_p_d': [2, 2, 0]}
+# 중심가 중심인덱스
+True
+81
+312.50
+# 차월물 중심가 중심인덱스
+True
+71
+312.50
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72400], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,794,968
+# 총평가금액
+18,172,400
+self.buy_able_money
+17,622,568
+self.market_in_percent_won
+3,579,496
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+14:22:41.774502
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26', '11:54', '11:58', '12:03', '12:13', '13:19', '13:48', '14:01', '14:22']
+future_s_change_ret
+(True, 311.65)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0], 'dn1': [0, 2, 3, 2, 0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 3, 0], 'up1_c_d': [0, 0, 3, 3, 0], 'dn1_c_d': [0, 0, 3, 3, 0], 'dn2_c_d': [0, 0, 3, 3, 0], 'up2_p_d': [2, 2, 2], 'up1_p_d': [2, 2, 2], 'dn1_p_d': [2, 2, 2], 'dn2_p_d': [2, 2, 2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0], 'dn1': [0, 2, 3, 2, 0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 3, 0], 'up1_c_d': [0, 0, 3, 3, 0], 'dn1_c_d': [0, 0, 3, 3, 0], 'dn2_c_d': [0, 0, 3, 3, 0], 'up2_p_d': [2, 2, 2], 'up1_p_d': [2, 2, 2], 'dn1_p_d': [2, 2, 2, 3], 'dn2_p_d': [2, 2, 2, 3]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0], 'dn1': [0, 2, 3, 2, 0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 3, 0], 'up1_c_d': [0, 0, 3, 3, 0], 'dn1_c_d': [0, 0, 3, 3, 0], 'dn2_c_d': [0, 0, 3, 3, 0], 'up2_p_d': [2, 2, 2], 'up1_p_d': [2, 2, 2, 3], 'dn1_p_d': [2, 2, 2, 3], 'dn2_p_d': [2, 2, 2, 3]}
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 311.65]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72400], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,794,968
+# 총평가금액
+18,172,400
+self.buy_able_money
+17,622,568
+self.market_in_percent_won
+3,579,496
+stock_buy_ready_fn 끝 timer1 재시작
+-----
+14:52:06.515684
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26', '11:54', '11:58', '12:03', '12:13', '13:19', '13:48', '14:01', '14:22', '14:52']
+future_s_change_ret
+(True, 311.0)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0], 'dn1': [0, 2, 3, 2, 0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 3, 0], 'up1_c_d': [0, 0, 3, 3, 0], 'dn1_c_d': [0, 0, 3, 3, 0], 'dn2_c_d': [0, 0, 3, 3, 0], 'up2_p_d': [2, 2, 2, 3], 'up1_p_d': [2, 2, 2, 3], 'dn1_p_d': [2, 2, 2, 3], 'dn2_p_d': [2, 2, 2, 3]}
+# 중심가 중심인덱스
+True
+82
+310.00
+# 차월물 중심가 중심인덱스
+True
+72
+310.00
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 311.65, 311.0]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [72000], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,694,808
+# 총평가금액
+18,072,000
+self.buy_able_money
+17,622,808
+self.market_in_percent_won
+3,569,480
+stock_buy_ready_fn 끝 timer1 재시작
+{'code': ['101S9000'], 'myhave_cnt': [1], 'sell_or_buy': [1]}
+# roll_over 실행
+당월물 매도 재고 있음
+-41
+{'code_no': [], 'cnt': [], 'sell_buy_type': []}
+-----
+15:32:42.393541
+self.db_overlap_time_list
+['08:50', '09:00', '09:01', '09:02', '09:04', '09:08', '09:16', '09:26', '09:40', '09:45', '09:49', '09:59', '10:26', '10:44', '10:48', '11:07', '11:26', '11:54', '11:58', '12:03', '12:13', '13:19', '13:48', '14:01', '14:22', '14:52', '15:32']
+future_s_change_ret
+(True, 310.35)
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 3], 'dn1': [0, 2, 3, 2, 0], 'dn2': [0], 'up2_c_d': [0, 0, 3, 3, 3], 'up1_c_d': [0, 0, 3, 3, 3], 'dn1_c_d': [0, 0, 3, 3, 3], 'dn2_c_d': [0, 0, 3, 3, 3], 'up2_p_d': [2, 2, 2, 0], 'up1_p_d': [2, 2, 2, 0], 'dn1_p_d': [2, 2, 2, 0], 'dn2_p_d': [2, 2, 2, 0]}
+slow_cross_check_var
+{'up2': [0], 'up1': [0, 2, 0], 'zero': [0, 2, 3, 2, 0, 3], 'dn1': [0, 2, 3, 2, 0, 3], 'dn2': [0], 'up2_c_d': [0, 0, 3, 3, 3], 'up1_c_d': [0, 0, 3, 3, 3], 'dn1_c_d': [0, 0, 3, 3, 3], 'dn2_c_d': [0, 0, 3, 3, 3], 'up2_p_d': [2, 2, 2, 0], 'up1_p_d': [2, 2, 2, 0], 'dn1_p_d': [2, 2, 2, 0], 'dn2_p_d': [2, 2, 2, 0]}
+[311.0, 311.65, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 312.95, 313.6, 312.95, 313.6, 312.95, 312.3, 312.95, 312.3, 311.65, 311.0, 311.65, 311.0, 311.65, 312.3, 311.65, 311.0, 310.35]
+한홀에서는 +1step 주문 카운터 in/out
+0
+0
+stock_buy_ready_fn 시작 timer1 중지
+# 당일 매도 종목 찾기
+['101S9000']
+# 당일 매수 종목 찾기
+[]
+# self.favorites_item_list
+['261220', '271050', '069500', '114800', '011070', '035720', '068270', '207940', '036570', '047810', '086280', '009830']
+['10', '10', '10', '10', '15', '15', '15', '15', '15', '15', '15', '15']
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220707']
+stock_trend_line_of_ai_month_able
+13
+['035720', '005380', '051910', '068270', '207940', '028260', '036570', '032830', '251270', '018260', '009830', '086280', '047810']
+stock_trend_line_of_ai_month_able_buy_able_item_code
+0
+[]
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220707']
+# deal_power_tarket_item_list
+0
+[]
+계좌평가잔고내역요청 전송
+# 서버에서 수신받은 stock_data
+1
+{'stock_no': ['035720'], 'stock_name': ['카카오'], 'market_in_price': [85140], 'myhave_cnt': [251], 'run_price': [71800], 'sell_price': [0], 'sell_cnt': [0], 'buy_price': [0], 'buy_cnt': [0], 'vol_cnt': [0], 'deal_power': [0.0]}
+# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)
+35,644,734
+# 총평가금액
+18,021,800
+self.buy_able_money
+17,622,934
+self.market_in_percent_won
+3,564,473
+stock_buy_ready_fn 끝 timer1 재시작
+c
+장마감 c
+Fri Jul  8 16:00:00 2022
+self.MarketEndingVar = cf

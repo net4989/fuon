@@ -1,0 +1,454 @@
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220908']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220908']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220908']
+당월물 진입
+self.futrue_s_data[run_price][0]
+309.8
+self.buy_second_price[0]
+327.8975806465704
+option_s_sell_buy_point
+18.097580646570407
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA307'], 'cnt': [20], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+당월물 진입
+self.futrue_s_data[run_price][0]
+310.2
+self.buy_second_price[0]
+346.0846959295469
+option_s_sell_buy_point
+35.88469592954692
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA307'], 'cnt': [15], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+당월물 진입
+(4)선물매수 건수가 바스켓 기준으로 4이상이면 거래없음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+당월물 진입
+(4)선물매수 건수가 바스켓 기준으로 4이상이면 거래없음
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+당월물 진입
+self.futrue_s_data[run_price][0]
+309.55
+self.buy_second_price[0]
+346.0846959295469
+option_s_sell_buy_point
+36.5346959295469
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SA307'], 'cnt': [15], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+당월물 진입
+(1)일반 진입
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+차월물 진입
+(1)일반 진입
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+차월물 진입
+self.futrue_s_data[run_price][0]
+310.55
+self.buy_second_price[0]
+346.0846959295469
+option_s_sell_buy_point
+35.5346959295469
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SB307'], 'cnt': [15], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+차월물 진입
+self.futrue_s_data[run_price][0]
+310.8
+self.buy_second_price[0]
+346.0846959295469
+option_s_sell_buy_point
+35.2846959295469
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SB307'], 'cnt': [15], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+차월물 진입
+self.futrue_s_data[run_price][0]
+311.05
+self.buy_second_price[0]
+346.0846959295469
+option_s_sell_buy_point
+35.0346959295469
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SB307'], 'cnt': [15], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+차월물 진입
+(4)선물매수 건수가 바스켓 기준으로 4이상이면 거래없음
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+당월물 진입
+self.futrue_s_data[run_price][0]
+313.4
+self.sell_second_price[0]
+322.99929666062104
+option_s_sell_buy_point
+9.599296660621064
+(3~2)옵션 종목검색(콜매수)
+{'code_no': ['201SA315'], 'cnt': [12], 'sell_buy_type': [2]}
+-----
+Wed Sep 14 13:23:18 2022
+item_list_cnt_type
+{'code_no': ['201SA315', '101SC000'], 'cnt': [12, 3], 'sell_buy_type': [2, 1]}
+Send Option Order
+# 콜매수
+2004
+-----
+Wed Sep 14 13:23:18 2022
+item_list_cnt_type
+{'code_no': ['201SA315', '101SC000'], 'cnt': [12, 3], 'sell_buy_type': [2, 1]}
+Send futrue_s Order
+# 선물매도
+6004
+volume_listed_var / item_list
+[2004, 6004]
+[12, 3]
+['201SA315', '101SC000']
+['', '']
+Wed Sep 14 13:23:18 2022
+['전송', 1, '101SC000', 3, 313.4, '']
+전송
+타이머 중지
+정정 타이머 시작
+Wed Sep 14 13:23:18 2022
+['전송', 2, '201SA315', 12, 4.89, '']
+전송
+타이머 중지
+정정 타이머 시작
+1분 경과 정정 주문 실행
+['', '']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220913']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220913']
+self.MarketEndingVar = cf
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매도재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매도재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매도재고 있음
+당월물 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매도재고 있음
+당월물 청산
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매도재고 있음
+차월물만 진입
+self.futrue_s_data[run_price][0]
+312.7
+self.sell_second_price[0]
+322.99929666062104
+option_s_sell_buy_point
+10.299296660621053
+(3~2)옵션 종목검색(콜매수)
+{'code_no': ['201SB315'], 'cnt': [9], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 진입
+self.futrue_s_data[run_price][0]
+312.7
+self.buy_second_price[0]
+346.0846959295469
+option_s_sell_buy_point
+33.38469592954692
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SB310'], 'cnt': [15], 'sell_buy_type': [2]}
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 진입
+self.futrue_s_data[run_price][0]
+312.7
+self.buy_second_price[0]
+346.0846959295469
+option_s_sell_buy_point
+33.38469592954692
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SB310'], 'cnt': [15], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 진입
+self.futrue_s_data[run_price][0]
+312.7
+self.buy_second_price[0]
+346.0846959295469
+option_s_sell_buy_point
+33.38469592954692
+(3~2)옵션 종목검색(풋매수)
+{'code_no': ['301SB310'], 'cnt': [15], 'sell_buy_type': [2]}
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매도재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매도재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매도재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매도재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매도재고 있음
+차월물만 청산
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 청산
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 청산
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220914']
+매수재고 있음
+차월물만 청산
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220914']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220914']

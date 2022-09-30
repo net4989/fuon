@@ -67,7 +67,8 @@ Chart_Ylim = 12
 Chain_Future_s_Item_Code = ['10100000']
 
 # 선물 레버리지(10 or 20) 결정(*** 향후 투자금액이 커지면 ~20으로 변경 :: 1 ~ 2 계약 바스켓 정도는 추가증거금 감당가능 판단 :: 20220316)
-Future_s_Leverage_Int = 10
+# 202209~ 옵션 매도 헷지방식으로 변경하면서 자산배정 변경(선물 4건, 매도 헷지 4블럭, 여분 4블럭)
+Future_s_Leverage_Int = 12
 
 
 
@@ -86,7 +87,7 @@ class MyWindow(Layout):
         self.setupUi(self)
         # 메인윈도창 레이아웃 셋팅(차트)
         self.layout_chart_draw()
-        self.setWindowTitle('fuon(선물 트레이딩 base 주식 트레이딩 & 옵션 헤지)')
+        self.setWindowTitle('fuon(선물 트레이딩 & 옵션 매도 헷지 :: 주식 트레이딩(2/12))')
 
         # API_server
         self.kiwoom = Kiwoom()
@@ -173,11 +174,6 @@ class MyWindow(Layout):
         self.pushButton_put_item_list.setEnabled(False)
         self.pushButton_callhave.setEnabled(False)
         self.pushButton_puthave.setEnabled(False)
-        # # 주문 클릭
-        # self.pushButton_call_item_list.clicked.connect(self.call_market_in_ready)
-        # self.pushButton_put_item_list.clicked.connect(self.put_market_in_ready)
-        # self.pushButton_callhave.clicked.connect(self.call_market_out)
-        # self.pushButton_puthave.clicked.connect(self.put_market_out)
 
         # 콤보박스 리스트 차트
         # currentIndexChanged 이벤트 핸들러
@@ -191,6 +187,9 @@ class MyWindow(Layout):
 
         # 주문 테스트
         self.pushButton_3.clicked.connect(self.test)
+
+        # 장마감 C=>CF
+        self.pushButton_c_to_cf.clicked.connect(self.c_to_cf_hand)
 
         # 변수선언
         # 선물 변화
@@ -252,12 +251,11 @@ class MyWindow(Layout):
         # 콜/풋 월별시세요청
         self.call_put_data_rq()
 
+        # 옵션매도주문증거금 요청
+        self.option_s_sell_deposit_money_data_rq()
+
         # 롤오버 변수 False :: 롤오버 함수 입장 가능
         self.future_s_roll_over_run_var = False
-
-        # 선물변화 한번에 한번만 진입(옵션거래) <= 한홀에서는 +1step 주문가능하도록 수정(2021년 12월 22일)
-        self.today_one_change_market_in_order_cnt = 0
-        self.today_one_change_market_out_order_cnt = 0
 
         # 당일날 재부팅이면 self.future_s_change 선물 현재값 넣어주고 가기
         self.data_pickup_today_rebooting()
@@ -292,6 +290,11 @@ class MyWindow(Layout):
     # 입력데이터 서버전송(콜/풋 월별시세요청)
     def server_set_rq_call_put_data(self, sID, sValue, sRQName, sTrCode, nPrevNext, sScreenNo):
         self.set_input_value(sID, sValue)
+        self.comm_rq_data(sRQName, sTrCode, nPrevNext, sScreenNo)
+    # 입력데이터 서버전송(옵션매도주문증거금)
+    def server_set_rq_option_s_sell_deposit_money_data(self, sID1, sValue1, sID2, sValue2, sRQName, sTrCode, nPrevNext, sScreenNo):
+        self.set_input_value(sID1, sValue1)
+        self.set_input_value(sID2, sValue2)
         self.comm_rq_data(sRQName, sTrCode, nPrevNext, sScreenNo)
 
     # 입력데이터 서버전송(opt50072 : 선물월차트요청)
@@ -412,6 +415,9 @@ class MyWindow(Layout):
             self._opt50021_45(rqname, trcode)
         elif rqname == "풋종목결제월별시세요청_45":
             self._opt50022_45(rqname, trcode)
+
+        elif rqname == "옵션매도주문증거금":
+            self._opw20015(rqname, trcode)
 
         elif rqname == "업종별주가요청":
             self._opt20002(rqname, trcode)
@@ -693,6 +699,52 @@ class MyWindow(Layout):
             # (풋종목결제월별시세요청_45)::체결강도조회 강제로 0 바인딩
             self.output_put_option_data_45['deal_power'].append(abs(float(0)))
 
+    # _opw20015(옵션매도주문증거금)
+    def _opw20015(self, rqname, trcode):
+        # 조회건수
+        option_s_sell_deposit_money_rows = self._get_repeat_cnt(trcode, rqname)
+
+        #
+        item_code = self._comm_get_data(trcode, "", rqname, 0, "종목코드")
+        atm_option_price = self._comm_get_data(trcode, "", rqname, 0, "ATM행사가격")
+        position_s = self._comm_get_data(trcode, "", rqname, 0, "위치")
+        list_cnt = self._comm_get_data(trcode, "", rqname, 0, "조회건수")
+
+        # multi data
+        for i in range(option_s_sell_deposit_money_rows):
+            call_adj_price = self._comm_get_data(trcode, "", rqname, i, "콜조정이론가")
+            call_max_price = self._comm_get_data(trcode, "", rqname, i, "콜최대이론가")
+            call_yesday_price = self._comm_get_data(trcode, "", rqname, i, "콜전일종가")
+            call_sell_order_deposit_money = self._comm_get_data(trcode, "", rqname, i, "콜주문증거금")
+            option_price = self._comm_get_data(trcode, "", rqname, i, "행사가격")
+            put_sell_order_deposit_money = self._comm_get_data(trcode, "", rqname, i, "풋주문증거금")
+            put_yesday_price = self._comm_get_data(trcode, "", rqname, i, "풋전일종가")
+            put_max_price = self._comm_get_data(trcode, "", rqname, i, "풋최대이론가")
+            put_adj_price = self._comm_get_data(trcode, "", rqname, i, "풋조정이론가")
+
+            self.option_s_sell_deposit_money_data['call_adj_price'].append(abs(int(call_adj_price)))
+            self.option_s_sell_deposit_money_data['call_max_price'].append(abs(int(call_max_price)))
+
+            call_yesday_price_int = abs(int(call_yesday_price))
+            call_yesday_price_flaat = call_yesday_price_int / 100
+            # print(call_yesday_price_flaat)
+            self.option_s_sell_deposit_money_data['call_yesday_price'].append(abs(float(call_yesday_price_flaat)))
+
+            self.option_s_sell_deposit_money_data['call_sell_order_deposit_money'].append(abs(int(call_sell_order_deposit_money)))
+            option_price_int = abs(int(option_price))
+            option_price_str = str(option_price_int)
+            option_price_ch = option_price_str[-5:-2] + '.' + option_price_str[-2:]
+            self.option_s_sell_deposit_money_data['option_price'].append(option_price_ch)
+            self.option_s_sell_deposit_money_data['put_sell_order_deposit_money'].append(abs(int(put_sell_order_deposit_money)))
+
+            put_yesday_price_int = abs(int(put_yesday_price))
+            put_yesday_price_float = put_yesday_price_int / 100
+            # print(put_yesday_price_float)
+            self.option_s_sell_deposit_money_data['put_yesday_price'].append(abs(float(put_yesday_price_float)))
+
+            self.option_s_sell_deposit_money_data['put_max_price'].append(abs(int(put_max_price)))
+            self.option_s_sell_deposit_money_data['put_adj_price'].append(abs(int(put_adj_price)))
+
     # _opt20002(업종별주가요청)
     def _opt20002(self, rqname, trcode):
         stock_data_rows = self._get_repeat_cnt(trcode, rqname)
@@ -780,6 +832,7 @@ class MyWindow(Layout):
         self.option_mymoney['margin_call'].append(Kiwoom.change_format(MarginTotal))
         self.option_mymoney['order_able'].append(Kiwoom.change_format(OrderAbleTotal))
         self.option_mymoney['total_money'].append(Kiwoom.change_format(RunMyTotalMoney))
+
         # option_have_money(순자산금액)
         option_have_money = abs(float(RunMyTotalMoney))
         self.option_have_money = abs(int(option_have_money))
@@ -787,15 +840,14 @@ class MyWindow(Layout):
     # 선옵계좌별주문가능수량요청
     def _opw20009(self, rqname, trcode):
         new_order_able_cnt = self._comm_get_data(trcode, "", rqname, '0', "신규가능수량")
-        need_deposit_total_money = self._comm_get_data(trcode, "", rqname, '0', "필요증거금총액")
+        order_able_cash = self._comm_get_data(trcode, "", rqname, '0', "주문가능현금")
 
         # 신규가능수량
         self.future_s_option_s_new_order_able_cnt = abs(int(new_order_able_cnt))
         # print(self.future_s_option_s_new_order_able_cnt)
-
-        # 필요증거금총액
-        self.future_s_option_s_need_deposit_total_money = abs(int(need_deposit_total_money))
-        # print(self.future_s_option_s_need_deposit_total_money)
+        # 주문가능현금
+        self.order_able_cash = abs(int(order_able_cash))
+        # print(self.order_able_cash)
 
     # 체결강도조회
     def _optkwfid(self, rqname, trcode):
@@ -958,6 +1010,13 @@ class MyWindow(Layout):
                                        'sell_cnt': [], 'buy_price': [], 'buy_cnt': [], 'vol_cnt': [],
                                        'Delta': [], 'Gamma': [], 'Theta': [], 'Vega': [], 'Rho': [],
                                        'future_s': [], 'k200_s': [], 'day_residue': [], 'deal_power': []}
+    # option_s_sell_deposit_money
+    # TR을 통해 얻어온 데이터를 인스턴스 변수에 저장
+    def option_s_sell_deposit_money_output(self):
+        # 당월물/차월물
+        self.option_s_sell_deposit_money_data = {'call_adj_price': [], 'call_max_price': [], 'call_yesday_price': [], 'call_sell_order_deposit_money': [],
+                                        'option_price': [], 'put_sell_order_deposit_money': [], 'put_yesday_price': [], 'put_max_price': [],
+                                        'put_adj_price': []}
 
     # stock
     # TR을 통해 얻어온 데이터를 인스턴스 변수에 저장
@@ -1167,6 +1226,48 @@ class MyWindow(Layout):
         # 콜/풋 월별시세요청 완료 - 1초 타이머 재시작
         self.timer1.start(1000)
         self.printt('콜/풋 월별시세요청 완료 timer1 시작')
+
+    # 옵션매도주문증거금 요청
+    def option_s_sell_deposit_money_data_rq(self):
+        # 영업일 기준 잔존일
+        day_residue_int = self.output_put_option_data['day_residue'][self.center_index]
+        # [ opw20015 : 옵션매도주문증거금 ]
+        if day_residue_int > 2:
+            # option_s_sell_deposit_money_data
+            # 인스턴스 변수 선언
+            self.option_s_sell_deposit_money_output()
+            # 당월물
+            sID1 = "월물구분"
+            sValue1 = self.kiwoom.get_month_mall(0)
+            sID2 = "클래스구분"
+            sValue2 = "01"
+            sRQName = "옵션매도주문증거금"
+            sTrCode = "opw20015"
+            nPrevNext = "0"
+            sScreenNo = "20015"
+            # 서버요청
+            print('옵션매도주문증거금 전송')
+            self.server_set_rq_option_s_sell_deposit_money_data(sID1, sValue1, sID2, sValue2, sRQName, sTrCode,
+                                                                nPrevNext, sScreenNo)
+        else:
+            # option_s_sell_deposit_money_data
+            # 인스턴스 변수 선언
+            self.option_s_sell_deposit_money_output()
+            # 당월물
+            sID1 = "월물구분"
+            sValue1 = self.kiwoom.get_month_mall(1)
+            sID2 = "클래스구분"
+            sValue2 = "01"
+            sRQName = "옵션매도주문증거금"
+            sTrCode = "opw20015"
+            nPrevNext = "0"
+            sScreenNo = "20015"
+            # 서버요청
+            print('옵션매도주문증거금 전송')
+            self.server_set_rq_option_s_sell_deposit_money_data(sID1, sValue1, sID2, sValue2, sRQName, sTrCode,
+                                                                nPrevNext, sScreenNo)
+        # print('# 서버에서 수신받은 옵션매도주문증거금')
+        # print(self.option_s_sell_deposit_money_data)
 
     # 업종별주가요청 시세요청 - 이벤트 슬롯
     def stock_total_data_rq(self):
@@ -1379,16 +1480,18 @@ class MyWindow(Layout):
                     # 클릭 가능
                     self.pushButton_callhave.setEnabled(True)
                 elif self.option_myhave['sell_or_buy'][i] == 1:
-                    self.pushButton_callhave.setStyleSheet('background-color: rgb(0, 0, 0)')
-                    self.printt('매도청산(오류) 진입')
+                    self.pushButton_callhave.setStyleSheet('background-color: rgb(255, 0, 0)')
+                    # 클릭 가능
+                    self.pushButton_callhave.setEnabled(True)
             elif self.option_myhave['code'][i][:3] == '301':
                 if self.option_myhave['sell_or_buy'][i] == 2:
                     self.pushButton_puthave.setStyleSheet('background-color: rgb(0, 0, 255)')
                     # 클릭 가능
                     self.pushButton_puthave.setEnabled(True)
                 elif self.option_myhave['sell_or_buy'][i] == 1:
-                    self.pushButton_puthave.setStyleSheet('background-color: rgb(0, 0, 0)')
-                    self.printt('매도청산(오류) 진입')
+                    self.pushButton_puthave.setStyleSheet('background-color: rgb(0, 0, 255)')
+                    # 클릭 가능
+                    self.pushButton_puthave.setEnabled(True)
         # 예탁금및증거금조회 - 이벤트 슬롯
         self.mymoney_option_rq()
 
@@ -1405,9 +1508,6 @@ class MyWindow(Layout):
         # 신규가능수량
         print('self.future_s_option_s_new_order_able_cnt')
         print(self.future_s_option_s_new_order_able_cnt)
-        # 필요증거금총액
-        print('self.future_s_option_s_need_deposit_total_money')
-        print(format(self.future_s_option_s_need_deposit_total_money, ','))
 
     # 예탁금및증거금조회 - 이벤트 슬롯
     def mymoney_option_rq(self):
@@ -1457,6 +1557,55 @@ class MyWindow(Layout):
     # 테스트
     def test(self):
 
+        # 시간표시
+        current_time = datetime.datetime.now()
+        # print(current_time)
+        # print(current_time.time())
+        # index_text_time = current_time.toString('hh:mm')
+        store_time_var = current_time.time()
+        # current_time = time.ctime()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # 장마감 c_to_cf_hand
+    def c_to_cf_hand(self):
         # 장마감 c 이후
 
         # API에서 지난 월봉(30개월)간 시고저종 수신받아서 db에 저장(딥러닝 훈련용)
@@ -1547,35 +1696,19 @@ class MyWindow(Layout):
         stock_price_candle_cnt = 20
         stock_trend_line_db_store(current_today, db_file_path, get_db_name, put_db_name, stock_price_candle_cnt)
 
+        # 일봉 시뮬레이션 저장
+        # db명 설정
+        get_db_name = 'future_s_shlc_data_day' + '.db'
+        # db명 설정
+        put_db_name = 'future_s_simul_of_trend_line_day' + '.db'
+        # 봉갯수
+        stock_price_candle_cnt = 20
+        future_s_simul_of_trend_line_day_store(current_today, db_file_path, get_db_name, put_db_name,
+                                               stock_price_candle_cnt)
+
         # 선택종목 crawling 이후 장마감 변수 클리어
         self.MarketEndingVar = 'cf'
         self.printt('self.MarketEndingVar = cf')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     # 자동주문 클릭시 - 이벤트 슬롯
     def auto_order_button(self):
@@ -3590,31 +3723,8 @@ class MyWindow(Layout):
                     self.slow_cmp_var_reset()
 
                 # 중심가 변경시
-                for have in range(len(self.option_myhave['code'])):
-                    # 중심가 보유종목 비교
-                    center_option_price_str = str(self.center_option_price)
-                    center_option_price_dig_3 = center_option_price_str[:3]
-                    option_myhave_code_dig_3 = self.option_myhave['code'][have][-3:]
-                    # 다시 숫자로 변경
-                    center_option_price_dig_3_int = int(center_option_price_dig_3)
-                    option_myhave_code_dig_3_int = int(option_myhave_code_dig_3)
-                    # print(center_option_price_dig_3_int)
-                    # print(option_myhave_code_dig_3_int)
-
-                    # # 풋청산
-                    # if (len(self.option_myhave['code'])) > 0:
-                    #     if self.option_myhave['code'][have][:3] == '301':
-                    #         # 풋 :: 중심가 보다 크거나 같으면
-                    #         if center_option_price_dig_3_int <= option_myhave_code_dig_3_int:
-                    #             # 풋청산
-                    #             self.put_market_out()
-                    # # 콜청산
-                    # if (len(self.option_myhave['code'])) > 0:
-                    #     if self.option_myhave['code'][have][:3] == '201':
-                    #         # 콜 :: 중심가 보다 작거나 같으면
-                    #         if center_option_price_dig_3_int >= option_myhave_code_dig_3_int:
-                    #             # 콜청산
-                    #             self.call_market_out()
+                self.printt('# 중심가 변경시 옵션 튜닝 준비 = > 항상 현재에 맞춰서 <= 롤오버에도 활용')
+                self.option_s_center_index_change_ready()
 
         # 'up2_p_d': [0], 'up1_p_d': [0], 'dn1_p_d': [0], 'dn2_p_d': [0]}
         # 중심가 변경 완결시점(상하 2개씩 만족하면)
@@ -3667,31 +3777,8 @@ class MyWindow(Layout):
                     self.slow_cmp_var_reset()
 
                 # 중심가 변경시
-                for have in range(len(self.option_myhave['code'])):
-                    # 중심가 보유종목 비교
-                    center_option_price_str = str(self.center_option_price)
-                    center_option_price_dig_3 = center_option_price_str[:3]
-                    option_myhave_code_dig_3 = self.option_myhave['code'][have][-3:]
-                    # 다시 숫자로 변경
-                    center_option_price_dig_3_int = int(center_option_price_dig_3)
-                    option_myhave_code_dig_3_int = int(option_myhave_code_dig_3)
-                    # print(center_option_price_dig_3_int)
-                    # print(option_myhave_code_dig_3_int)
-
-                    # # 풋청산
-                    # if (len(self.option_myhave['code'])) > 0:
-                    #     if self.option_myhave['code'][have][:3] == '301':
-                    #         # 풋 :: 중심가 보다 크거나 같으면
-                    #         if center_option_price_dig_3_int <= option_myhave_code_dig_3_int:
-                    #             # 풋청산
-                    #             self.put_market_out()
-                    # # 콜청산
-                    # if (len(self.option_myhave['code'])) > 0:
-                    #     if self.option_myhave['code'][have][:3] == '201':
-                    #         # 콜 :: 중심가 보다 작거나 같으면
-                    #         if center_option_price_dig_3_int >= option_myhave_code_dig_3_int:
-                    #             # 콜청산
-                    #             self.call_market_out()
+                self.printt('# 중심가 변경시 옵션 튜닝 준비 = > 항상 현재에 맞춰서 <= 롤오버에도 활용')
+                self.option_s_center_index_change_ready()
 
     # money_option_point_ch
     def money_option_point_ch(self, money_won):
@@ -3699,556 +3786,378 @@ class MyWindow(Layout):
         return money_point
 
     # 옵션 종목검색
-    def option_items_search(self, future_s_sell_time_final_price, future_s_buy_time_final_price):
+    def option_items_search(self, option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt):
         # 변수선언
-        put_item_index = []
-        call_item_index = []
-        put_item_list_cnt_Yn = False
-        call_item_list_cnt_Yn = False
-
+        item_list_cnt = {'code_no': [], 'cnt': [], 'point': []}
         self.pushButton_call_item_list.setText('')
         self.pushButton_put_item_list.setText('')
+        option_items_search_max_space = 1.25
+        option_items_search_min_space = 0.75
 
-        # 기초자산 간격이 얼마로 나뉘는가? (기초자산의 범위 / 1틱단계)
-        basic_step = Basic_Property_Range / One_Tick_Step
-        # print(basic_step)
-        # 만기날 가격 구해보기(중심가 기준으로 상하 간격의 차와 동일할것으로 예상) - 행사 못되는 놈을 0으로 가정하고
-        endingday_price = basic_step * One_Tick_Step    # endingday_price 2020년 11월 04일 변경 2배로(2.5)
-        # print(endingday_price)
-        # 매수진입가격 얼마 이상 첫번째 놈으로 잡을까 - 엔딩가격의 1/2 (행사가까지 가므로)
-        Buy_MarketIn_Price_First = endingday_price / 2
+        # 옵션 매도 최대금액
+        # 선물옵션 순자산금액 + stock 추정예탁자산
+        option_have_money_plus_estimated_deposit = self.option_have_money + self.estimated_deposit
+        # print(option_have_money_plus_estimated_deposit)
+        # 바스켓으로 먼저 나눠주고
+        option_have_money_plus_estimated_deposit_basket_cnt_remove = option_have_money_plus_estimated_deposit / basket_cnt
+        # print(option_have_money_plus_estimated_deposit_basket_cnt_remove)
+        # (선옵 순자산 + stock 추정예탁자산) /  Future_s_Leverage_Int * 2
+        option_s_sell_onetime_max_money = option_have_money_plus_estimated_deposit_basket_cnt_remove / Future_s_Leverage_Int * 2
+        # print(option_s_sell_onetime_max_money)
+        self.printt('option_s_sell_onetime_max_money')
+        self.printt(option_s_sell_onetime_max_money)
 
-        # 옵션 핸드 전략(2020년 04~)
-        # 연결선물 전략(2021년 12월 ~)
-        # 선물매도(콜옵션 헷징) / 선물매수(풋옵션 헷징) <== 2021년 12월 24일
-        # 선물 조건확인
-        # 선물재고 있을때
-        future_s_my_have_str = ''
-        future_s_my_have_sell_cnt = 0
-        future_s_my_have_buy_cnt = 0
-        for f in range(len(self.option_myhave['code'])):
-            # print(self.option_myhave['code'][f][:3])
-            # 선물재고 있을때
-            if self.option_myhave['code'][f][:3] == '101':
-                future_s_my_have_str = '101'
-                # 매도
-                if self.option_myhave['sell_or_buy'][f] == 1:
-                    # 선물매도 재고
-                    # print('# 선물매도 재고')
-                    future_s_my_have_str = '1011'
-                    future_s_my_have_sell_cnt += self.option_myhave['myhave_cnt'][f]
-                # 매수
-                elif self.option_myhave['sell_or_buy'][f] == 2:
-                    # 선물매수 재고
-                    # print('# 선물매수 재고')
-                    future_s_my_have_str = '1012'
-                    future_s_my_have_buy_cnt += self.option_myhave['myhave_cnt'][f]
-        # print(future_s_my_have_str)
-        # print(future_s_my_have_sell_cnt)
-        # print(future_s_my_have_buy_cnt)
+        # 선물매도(풋매도 헷징)
+        # put
+        if put_or_call == 'put':
+            if month_mall_type == 'center_index':
+                # 당월물
+                # self.center_index
+                # 'Delta'
+                option_s_delta = abs(self.output_put_option_data['Delta'][self.center_index + 1])
+                # print(option_s_delta)
+                option_s_delta_change = 100 / option_s_delta
+                # print(option_s_delta_change)
+                option_s_sell_buy_point_plus_delta = option_s_sell_buy_point * option_s_delta_change
+                # print(option_s_sell_buy_point_plus_delta)
+                self.printt('option_s_delta')
+                self.printt(option_s_delta)
+                self.printt('option_s_delta_change')
+                self.printt(option_s_delta_change)
+                self.printt('option_s_sell_buy_point_plus_delta')
+                self.printt(option_s_sell_buy_point_plus_delta)
 
-        # 옵션 투입금액 계산
-        # 선물 현재가의 (0.2%) 구하기
-        future_s_run_price_plus_per = self.futrue_s_data['run_price'][0] * self.future_s_percent_high
-        future_s_run_price_minus_per = self.futrue_s_data['run_price'][0] * self.future_s_percent_low
-        future_s_run_price_plus_minus_per_diff = future_s_run_price_plus_per - future_s_run_price_minus_per
-        future_s_run_price_plus_minus_per_diff_half = future_s_run_price_plus_minus_per_diff / 2
-        # print(future_s_run_price_plus_minus_per_diff_half)
+                # 옵션 행사가와 비교하여 옵션매도주문증거금 구하기
+                for d in range(len(self.option_s_sell_deposit_money_data['option_price'])):
+                    if self.option_s_sell_deposit_money_data['option_price'][d] == \
+                            self.output_put_option_data['option_price'][self.center_index + 1]:
+                        # 옵션매도주문증거금
+                        option_s_sell_order_deposit_money = \
+                        self.option_s_sell_deposit_money_data['put_sell_order_deposit_money'][d]
+                        # print(option_s_sell_order_deposit_money)
+                        self.printt('option_s_sell_order_deposit_money')
+                        self.printt(option_s_sell_order_deposit_money)
+                # 옵션 최대 건수 구하기(Option_Mul_Money = 250,000 활용)
+                option_s_search_max_cnt = math.ceil(option_s_sell_onetime_max_money / option_s_sell_order_deposit_money)
+                # print(option_s_search_max_cnt)
+                self.printt('option_s_search_max_cnt')
+                self.printt(option_s_search_max_cnt)
 
-        # 1회에 옵션 매수 포인트 :: 현재 선물 재고 더하기
-        option_s_one_time_point_total_call = future_s_run_price_plus_minus_per_diff_half * future_s_my_have_sell_cnt
-        option_s_one_time_point_total_put = future_s_run_price_plus_minus_per_diff_half * future_s_my_have_buy_cnt
-        # print(option_s_one_time_point_total_call)
-        # print(option_s_one_time_point_total_put)
+                # 현재가를 더하고 델타변환값과 비교하여 최대한(0.75~1.25) 옵션검색 완료
+                option_comp_var = self.output_put_option_data['run_price'][self.center_index + 1]
+                center_item_cnt = 1
+                item_list_cnt['code_no'].append(self.output_put_option_data['code'][self.center_index + 1])
+                item_list_cnt['cnt'].append(center_item_cnt)
+                item_list_cnt['point'].append(self.output_put_option_data['run_price'][self.center_index + 1])
+                for i in range(option_s_search_max_cnt):
+                    if i == 0:
+                        if option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_min_space):
+                            break
+                    else:
+                        option_comp_var += self.output_put_option_data['run_price'][self.center_index + 1]
+                        item_list_cnt['cnt'][0] += center_item_cnt
+                        if option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_max_space):
+                            item_list_cnt['cnt'][0] -= center_item_cnt
+                            item_list_cnt['code_no'].append(self.output_put_option_data['code'][self.center_index + 2])
+                            item_list_cnt['cnt'].append(center_item_cnt)
+                            item_list_cnt['point'].append(self.output_put_option_data['run_price'][self.center_index + 2])
+                            break
+                        elif option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_min_space):
+                            break
+            # 차월물
+            elif month_mall_type == 'center_index_45':
+                # 차월물
+                # self.center_index_45
+                # 'Delta'
+                option_s_delta = abs(self.output_put_option_data_45['Delta'][self.center_index_45 + 1])
+                # print(option_s_delta)
+                option_s_delta_change = 100 / option_s_delta
+                # print(option_s_delta_change)
+                option_s_sell_buy_point_plus_delta = option_s_sell_buy_point * option_s_delta_change
+                # print(option_s_sell_buy_point_plus_delta)
+                self.printt('option_s_delta')
+                self.printt(option_s_delta)
+                self.printt('option_s_delta_change')
+                self.printt(option_s_delta_change)
+                self.printt('option_s_sell_buy_point_plus_delta')
+                self.printt(option_s_sell_buy_point_plus_delta)
 
-        # 선물매도(콜옵션 헷징) / 선물매수(풋옵션 헷징)
-        if future_s_my_have_str == '1012':
-            # 선물매수(풋옵션 헷징)
-            # 풋옵션
-            # 중심가 빼고
-            for i in range(self.center_index + Up_CenterOption_Down - 1, self.center_index, -1):
-                if self.output_put_option_data['run_price'][i] > Buy_MarketIn_Price_First:
-                    put_item_index.append(i)
-            # print(put_item_index)
+                # 옵션 행사가와 비교하여 옵션매도주문증거금 구하기
+                for d in range(len(self.option_s_sell_deposit_money_data['option_price'])):
+                    if self.option_s_sell_deposit_money_data['option_price'][d] == \
+                            self.output_put_option_data_45['option_price'][self.center_index_45 + 1]:
+                        # 옵션매도주문증거금
+                        option_s_sell_order_deposit_money = \
+                        self.option_s_sell_deposit_money_data['put_sell_order_deposit_money'][d]
+                        # print(option_s_sell_order_deposit_money)
+                        self.printt('option_s_sell_order_deposit_money')
+                        self.printt(option_s_sell_order_deposit_money)
+                # 옵션 최대 건수 구하기(Option_Mul_Money = 250,000 활용)
+                option_s_search_max_cnt = math.ceil(option_s_sell_onetime_max_money / option_s_sell_order_deposit_money)
+                # print(option_s_search_max_cnt)
+                self.printt('option_s_search_max_cnt')
+                self.printt(option_s_search_max_cnt)
 
-            # haga_pass_items_put
-            if len(put_item_index) >= 1:
-                haga_pass_items_put = []
-                for i in range(self.center_index + 2, put_item_index[0] + 1):
-                    # 호가비교
-                    if self.output_put_option_data['sell_price'][i] >= self.output_put_option_data['run_price'][i]:
-                        if self.output_put_option_data['run_price'][i] >= self.output_put_option_data['buy_price'][i]:
-                            if self.output_put_option_data['sell_price'][i] - self.output_put_option_data['buy_price'][
-                                i] <= (One_Tick_Step * 3):
-                                # haga_pass_items_put
-                                haga_pass_items_put.append(self.output_put_option_data['code'][i])
-                # print(haga_pass_items_put)
+                # 현재가를 더하고 델타변환값과 비교하여 최대한(0.75~1.25) 옵션검색 완료
+                option_comp_var = self.output_put_option_data_45['run_price'][self.center_index_45 + 1]
+                center_item_cnt = 1
+                item_list_cnt['code_no'].append(self.output_put_option_data_45['code'][self.center_index_45 + 1])
+                item_list_cnt['cnt'].append(center_item_cnt)
+                item_list_cnt['point'].append(self.output_put_option_data_45['run_price'][self.center_index_45 + 1])
+                for i in range(option_s_search_max_cnt):
+                    if i == 0:
+                        if option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_min_space):
+                            break
+                    else:
+                        option_comp_var += self.output_put_option_data_45['run_price'][self.center_index_45 + 1]
+                        item_list_cnt['cnt'][0] += center_item_cnt
+                        if option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_max_space):
+                            item_list_cnt['cnt'][0] -= center_item_cnt
+                            item_list_cnt['code_no'].append(self.output_put_option_data_45['code'][self.center_index_45 + 2])
+                            item_list_cnt['cnt'].append(center_item_cnt)
+                            item_list_cnt['point'].append(
+                                self.output_put_option_data_45['run_price'][self.center_index_45 + 2])
+                            break
+                        elif option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_min_space):
+                            break
+            self.pushButton_put_item_list.setText(item_list_cnt['code_no'][-1])
 
-                # put_insu = Insu
-                put_insu = Insu(haga_pass_items_put, self.output_put_option_data, option_s_one_time_point_total_put,
-                                Buy_Item_Max_Cnt)
-                put_item_list_cnt = put_insu.insu_check()
-                # print(put_item_list_cnt)
+        # 선물매수(콜매도 헷징)
+        # call
+        elif put_or_call == 'call':
+            if month_mall_type == 'center_index':
+                # 당월물
+                # self.center_index
+                # 'Delta'
+                option_s_delta = abs(self.output_call_option_data['Delta'][self.center_index - 1])
+                # print(option_s_delta)
+                option_s_delta_change = 100 / option_s_delta
+                # print(option_s_delta_change)
+                option_s_sell_buy_point_plus_delta = option_s_sell_buy_point * option_s_delta_change
+                # print(option_s_sell_buy_point_plus_delta)
+                self.printt('option_s_delta')
+                self.printt(option_s_delta)
+                self.printt('option_s_delta_change')
+                self.printt(option_s_delta_change)
+                self.printt('option_s_sell_buy_point_plus_delta')
+                self.printt(option_s_sell_buy_point_plus_delta)
 
-                # 아이템
-                if len(put_item_list_cnt['code_no']) >= 1:
-                    put_item_list_cnt_Yn = True
+                # 옵션 행사가와 비교하여 옵션매도주문증거금 구하기
+                for d in range(len(self.option_s_sell_deposit_money_data['option_price'])):
+                    if self.option_s_sell_deposit_money_data['option_price'][d] == \
+                            self.output_call_option_data['option_price'][self.center_index - 1]:
+                        # 옵션매도주문증거금
+                        option_s_sell_order_deposit_money = \
+                        self.option_s_sell_deposit_money_data['call_sell_order_deposit_money'][d]
+                        # print(option_s_sell_order_deposit_money)
+                        self.printt('option_s_sell_order_deposit_money')
+                        self.printt(option_s_sell_order_deposit_money)
+                # 옵션 최대 건수 구하기(Option_Mul_Money = 250,000 활용)
+                option_s_search_max_cnt = math.ceil(option_s_sell_onetime_max_money / option_s_sell_order_deposit_money)
+                # print(option_s_search_max_cnt)
+                self.printt('option_s_search_max_cnt')
+                self.printt(option_s_search_max_cnt)
 
-            if put_item_list_cnt_Yn == True:
-                # 클릭 가능
-                self.pushButton_put_item_list.setEnabled(True)
-                self.pushButton_put_item_list.setText(put_item_list_cnt['code_no'][-1] + ' ~~')
-                # item_list text store
-                self.put_item_list_text_store(put_item_list_cnt)
-                # 풋매수 준비완료
-                self.put_market_in_ready(put_item_list_cnt, future_s_sell_time_final_price, future_s_buy_time_final_price)
-            else:
-                # 클릭 불가능
-                self.pushButton_put_item_list.setEnabled(False)
-                option_s_one_time_point_total_put_str = str(format(option_s_one_time_point_total_put, '.2f'))
-                self.pushButton_put_item_list.setText(option_s_one_time_point_total_put_str)
+                # 현재가를 더하고 델타변환값과 비교하여 최대한(0.75~1.25) 옵션검색 완료
+                option_comp_var = self.output_call_option_data['run_price'][self.center_index - 1]
+                center_item_cnt = 1
+                item_list_cnt['code_no'].append(self.output_call_option_data['code'][self.center_index - 1])
+                item_list_cnt['cnt'].append(center_item_cnt)
+                item_list_cnt['point'].append(self.output_call_option_data['run_price'][self.center_index - 1])
+                for i in range(option_s_search_max_cnt):
+                    if i == 0:
+                        if option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_min_space):
+                            break
+                    else:
+                        option_comp_var += self.output_call_option_data['run_price'][self.center_index - 1]
+                        item_list_cnt['cnt'][0] += center_item_cnt
+                        if option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_max_space):
+                            item_list_cnt['cnt'][0] -= center_item_cnt
+                            item_list_cnt['code_no'].append(self.output_call_option_data['code'][self.center_index - 2])
+                            item_list_cnt['cnt'].append(center_item_cnt)
+                            item_list_cnt['point'].append(self.output_call_option_data['run_price'][self.center_index - 2])
+                            break
+                        elif option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_min_space):
+                            break
+            # 차월물
+            elif month_mall_type == 'center_index_45':
+                # 차월물
+                # self.center_index_45
+                # 'Delta'
+                option_s_delta = abs(self.output_call_option_data_45['Delta'][self.center_index_45 - 1])
+                # print(option_s_delta)
+                option_s_delta_change = 100 / option_s_delta
+                # print(option_s_delta_change)
+                option_s_sell_buy_point_plus_delta = option_s_sell_buy_point * option_s_delta_change
+                # print(option_s_sell_buy_point_plus_delta)
+                self.printt('option_s_delta')
+                self.printt(option_s_delta)
+                self.printt('option_s_delta_change')
+                self.printt(option_s_delta_change)
+                self.printt('option_s_sell_buy_point_plus_delta')
+                self.printt(option_s_sell_buy_point_plus_delta)
 
-        # 선물 매도재고와 매수재고는 함께 할수 없으므로 elif로 않하고 if로 처리함
-        if future_s_my_have_str == '1011':
-            # 선물매도(콜옵션 헷징)
-            # 콜옵션
-            # 중심가 빼고
-            for i in range(self.center_index - Up_CenterOption_Down + 1, self.center_index):
-                if self.output_call_option_data['run_price'][i] > Buy_MarketIn_Price_First:
-                    call_item_index.append(i)
-            # print(call_item_index)
+                # 옵션 행사가와 비교하여 옵션매도주문증거금 구하기
+                for d in range(len(self.option_s_sell_deposit_money_data['option_price'])):
+                    if self.option_s_sell_deposit_money_data['option_price'][d] == \
+                            self.output_call_option_data_45['option_price'][self.center_index_45 - 1]:
+                        # 옵션매도주문증거금
+                        option_s_sell_order_deposit_money = \
+                        self.option_s_sell_deposit_money_data['call_sell_order_deposit_money'][d]
+                        # print(option_s_sell_order_deposit_money)
+                        self.printt('option_s_sell_order_deposit_money')
+                        self.printt(option_s_sell_order_deposit_money)
+                # 옵션 최대 건수 구하기(Option_Mul_Money = 250,000 활용)
+                option_s_search_max_cnt = math.ceil(option_s_sell_onetime_max_money / option_s_sell_order_deposit_money)
+                # print(option_s_search_max_cnt)
+                self.printt('option_s_search_max_cnt')
+                self.printt(option_s_search_max_cnt)
 
-            # haga_pass_items_call
-            if len(call_item_index) >= 1:
-                haga_pass_items_call = []
-                for i in range(self.center_index - 2, call_item_index[0], -1):
-                    # 호가비교
-                    if self.output_call_option_data['sell_price'][i] >= self.output_call_option_data['run_price'][i]:
-                        if self.output_call_option_data['run_price'][i] >= self.output_call_option_data['buy_price'][i]:
-                            if self.output_call_option_data['sell_price'][i] - \
-                                    self.output_call_option_data['buy_price'][i] <= (One_Tick_Step * 3):
-                                # haga_pass_items_put
-                                haga_pass_items_call.append(self.output_call_option_data['code'][i])
-                # print(haga_pass_items_call)
+                # 현재가를 더하고 델타변환값과 비교하여 최대한(0.75~1.25) 옵션검색 완료
+                option_comp_var = self.output_call_option_data_45['run_price'][self.center_index_45 - 1]
+                center_item_cnt = 1
+                item_list_cnt['code_no'].append(self.output_call_option_data_45['code'][self.center_index_45 - 1])
+                item_list_cnt['cnt'].append(center_item_cnt)
+                item_list_cnt['point'].append(self.output_call_option_data_45['run_price'][self.center_index_45 - 1])
+                for i in range(option_s_search_max_cnt):
+                    if i == 0:
+                        if option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_min_space):
+                            break
+                    else:
+                        option_comp_var += self.output_call_option_data_45['run_price'][self.center_index_45 - 1]
+                        item_list_cnt['cnt'][0] += center_item_cnt
+                        if option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_max_space):
+                            item_list_cnt['cnt'][0] -= center_item_cnt
+                            item_list_cnt['code_no'].append(self.output_call_option_data_45['code'][self.center_index_45 - 2])
+                            item_list_cnt['cnt'].append(center_item_cnt)
+                            item_list_cnt['point'].append(
+                                self.output_call_option_data_45['run_price'][self.center_index_45 - 2])
+                            break
+                        elif option_comp_var > (option_s_sell_buy_point_plus_delta * option_items_search_min_space):
+                            break
+            self.pushButton_call_item_list.setText(item_list_cnt['code_no'][-1])
 
-                # call_insu = Insu
-                call_insu = Insu(haga_pass_items_call, self.output_call_option_data, option_s_one_time_point_total_call,
-                                 Buy_Item_Max_Cnt)
-                call_item_list_cnt = call_insu.insu_check()
-                # print(call_item_list_cnt)
+        # print(item_list_cnt)
+        return item_list_cnt
 
-                # 아이템
-                if len(call_item_list_cnt['code_no']) >= 1:
-                    call_item_list_cnt_Yn = True
-
-            if call_item_list_cnt_Yn == True:
-                # 클릭 가능
-                self.pushButton_call_item_list.setEnabled(True)
-                self.pushButton_call_item_list.setText(call_item_list_cnt['code_no'][-1] + ' ~~')
-                # item_list text store
-                self.call_item_list_text_store(call_item_list_cnt)
-                # 콜매수 준비완료
-                self.call_market_in_ready(call_item_list_cnt, future_s_sell_time_final_price, future_s_buy_time_final_price)
-            else:
-                # 클릭 불가능
-                self.pushButton_call_item_list.setEnabled(False)
-                option_s_one_time_point_total_call_str = str(format(option_s_one_time_point_total_call, '.2f'))
-                self.pushButton_call_item_list.setText(option_s_one_time_point_total_call_str)
-
-    # 풋매수 준비
-    def put_market_in_ready(self, put_item_list_cnt, future_s_sell_time_final_price, future_s_buy_time_final_price):
-        # 선물변화 한번에 한번만 진입(옵션거래)
-        # if self.today_one_change_one_order == False:
-        if self.today_one_change_market_in_order_cnt <= self.today_one_change_market_out_order_cnt:
-
-            # 풋매수 조건확인
-            # 풋재고 있을때 / 풋재고 없을때
-            # 연결선물 월봉의 3차원 기울기가 하향
-            # 연결선물 일봉의 3차원 기울기가 하향
-            # 연결선물 분봉(0.1%)의 3차원 기울기가 하향
-            # 연결선물의 현재가가 최대값보다 클때
-
-            # 선물매도(콜옵션 헷징) / 선물매수(풋옵션 헷징) <== 2021년 12월 24일
-            # 재고 여부 상관없이 가격비교 매수함
-            # put_my_have_str = ''
-            # for p in range(len(self.option_myhave['code'])):
-            #     # print(self.option_myhave['code'][p][:3])
-            #     # 풋재고 있을때
-            #     if self.option_myhave['code'][p][:3] == '301':
-            #         put_my_have_str = '301'
-            #         # 매수
-            #         if self.option_myhave['sell_or_buy'][p] == 2:
-            #             # 저가매수
-            #             # print('풋매수 재고있음')
-            #             put_my_have_str = '3012'
-            # 풋재고 있을때
-            # if put_my_have_str == '3012':
-            # 선물현재가와 매도타임 최대값과 비교
-            if future_s_sell_time_final_price < self.futrue_s_data['run_price'][0]:
-                self.printt('가격비교 풋매수')
-                # 종목검색 오케 주문
-                self.put_market_in(put_item_list_cnt)
-
-            # # 풋재고 없을때
-            # else:
-            #     # 월봉
-            #     # 3차원 기울기 체크
-            #     if self.stock_trend_line_of_ai_month != None:
-            #         for m in range(len(self.stock_trend_line_of_ai_month['stock_no'])):
-            #             # 연결선물
-            #             if Chain_Future_s_Item_Code[0] == self.stock_trend_line_of_ai_month['stock_no'][m]:
-            #                 # 월봉 3차원 기울기 하향중
-            #                 if ((self.stock_trend_line_of_ai_month['poly_h_gradient'][m] < 0) and (
-            #                         self.stock_trend_line_of_ai_month['poly_l_gradient'][m] < 0)):
-            #                     # 일봉 3차원 기울기 체크
-            #                     if self.stock_trend_line_of_ai_day != None:
-            #                         for d in range(len(self.stock_trend_line_of_ai_day['stock_no'])):
-            #                             # 연결선물
-            #                             if Chain_Future_s_Item_Code[0] == self.stock_trend_line_of_ai_day['stock_no'][d]:
-            #                                 # 일봉 3차원 기울기 하향중
-            #                                 if ((self.stock_trend_line_of_ai_day['poly_h_gradient'][d] < 0) and (
-            #                                         self.stock_trend_line_of_ai_day['poly_l_gradient'][d] < 0)):
-            #                                     # print('월봉하향/일봉하향')
-            #                                     # 연결선물 분봉(0.1%)의 3차원 기울기가 하향
-            #                                     if self.poly_future_s_gradient < 0:
-            #                                         # print('연결선물 분봉(0.1%)의 3차원 기울기가 하향')
-            #                                         # 연결선물의 현재가가 최대값보다 클때
-            #                                         if future_s_sell_time_final_price < self.futrue_s_data['run_price'][0]:
-            #                                             self.printt('풋매수 재고없음 매도타임 풋매수')
-            #                                             # 종목검색 오케 주문
-            #                                             self.put_market_in(put_item_list_cnt)
-
-    # 콜매수 준비
-    def call_market_in_ready(self, call_item_list_cnt, future_s_sell_time_final_price, future_s_buy_time_final_price):
-        # 선물변화 한번에 한번만 진입(옵션거래)
-        # if self.today_one_change_one_order == False:
-        if self.today_one_change_market_in_order_cnt <= self.today_one_change_market_out_order_cnt:
-
-            # 콜매수 조건확인
-            # 콜재고 있을때 / 콜재고 없을때
-            # 연결선물 월봉의 3차원 기울기가 상향
-            # 연결선물 일봉의 3차원 기울기가 상향
-            # 연결선물 분봉(0.1%)의 3차원 기울기가 상향
-            # 연결선물의 현재가가 최소값보다 작을때
-
-            # 선물매도(콜옵션 헷징) / 선물매수(풋옵션 헷징) <== 2021년 12월 24일
-            # 재고 여부 상관없이 가격비교 매수함
-            # call_my_have_str = ''
-            # for c in range(len(self.option_myhave['code'])):
-            #     # print(self.option_myhave['code'][p][:3])
-            #     # 콜재고 있을때
-            #     if self.option_myhave['code'][c][:3] == '201':
-            #         call_my_have_str = '201'
-            #         # 매수
-            #         if self.option_myhave['sell_or_buy'][c] == 2:
-            #             # 저가매수
-            #             # print('콜매수 재고있음')
-            #             call_my_have_str = '2012'
-            # # 콜재고 있을때
-            # if call_my_have_str == '2012':
-                # 선물현재가와 매수타임 최소값과 비교
-            if future_s_buy_time_final_price > self.futrue_s_data['run_price'][0]:
-                self.printt('가격비교 콜매수')
-                # 종목검색 오케 주문
-                self.call_market_in(call_item_list_cnt)
-
-            # # 콜재고 없을때
-            # else:
-            #     # 월봉
-            #     # 3차원 기울기 체크
-            #     if self.stock_trend_line_of_ai_month != None:
-            #         for m in range(len(self.stock_trend_line_of_ai_month['stock_no'])):
-            #             # 연결선물
-            #             if Chain_Future_s_Item_Code[0] == self.stock_trend_line_of_ai_month['stock_no'][m]:
-            #                 # 월봉 3차원 기울기 상향중
-            #                 if ((self.stock_trend_line_of_ai_month['poly_h_gradient'][m] > 0) and (
-            #                         self.stock_trend_line_of_ai_month['poly_l_gradient'][m] > 0)):
-            #                     # 일봉 3차원 기울기 체크
-            #                     if self.stock_trend_line_of_ai_day != None:
-            #                         for d in range(len(self.stock_trend_line_of_ai_day['stock_no'])):
-            #                             # 연결선물
-            #                             if Chain_Future_s_Item_Code[0] == self.stock_trend_line_of_ai_day['stock_no'][d]:
-            #                                 # 일봉 3차원 기울기 상향중
-            #                                 if ((self.stock_trend_line_of_ai_day['poly_h_gradient'][d] > 0) and (
-            #                                         self.stock_trend_line_of_ai_day['poly_l_gradient'][d] > 0)):
-            #                                     # print('월봉상향/일봉상향')
-            #                                     # 연결선물 분봉(0.1%)의 3차원 기울기가 상향
-            #                                     if self.poly_future_s_gradient > 0:
-            #                                         # print('연결선물 분봉(0.1%)의 3차원 기울기가 상향')
-            #                                         # 연결선물의 현재가가 최소값보다 작을때
-            #                                         if future_s_buy_time_final_price > self.futrue_s_data['run_price'][0]:
-            #                                             self.printt('콜매수 재고없음 매수타임 콜매수')
-            #                                             # 종목검색 오케 주문
-            #                                             self.call_market_in(call_item_list_cnt)
-
-    # 풋매수
-    def put_market_in(self, item_list_cnt):
-        # 풋매수
-        cross_winner = []
-        volume_listed_var = []
-        item_list = []
-        sOrgOrdNo = []
-
-        # 시간표시
-        current_time = time.ctime()
-        self.printt('-----')
-        self.printt(current_time)
-        self.printt('item_list_cnt')
-        self.printt(item_list_cnt)
-        self.printt('Send Option Order')
-        self.printt('# 풋매수')
-        cross_winner_cell = 3004
-        self.printt(cross_winner_cell)
-        sOrgOrdNo_cell = ''
-        for i in range(len(item_list_cnt['code_no'])):
-            cross_winner.append(cross_winner_cell)
-            volume_listed_var.append(item_list_cnt['cnt'][i])
-            item_list.append(item_list_cnt['code_no'][i])
-            sOrgOrdNo.append(sOrgOrdNo_cell)
-        self.printt('volume_listed_var / item_list')
-        self.printt(volume_listed_var)
-        self.printt(item_list)
-
-        # 주문실행은 종목이 있을경우에만
-        if len(item_list) > 0:
-            # 자동주문 버튼 True 주문실행
-            if self.auto_order_button_var == True:
-                # 종목코드와 수량 (텍스트에 저장하기)
-                self.today_put_order_list_text_store(item_list_cnt)
-                # 선물변화 한번에 한번만 진입(옵션거래)
-                # self.today_one_change_one_order = True
-                self.today_one_change_market_in_order_cnt += 1
-                self.order_ready(cross_winner, volume_listed_var, item_list, sOrgOrdNo)
-
-    # 콜매수
-    def call_market_in(self, item_list_cnt):
-        # 콜매수
-        cross_winner = []
-        volume_listed_var = []
-        item_list = []
-        sOrgOrdNo = []
-
-        # 시간표시
-        current_time = time.ctime()
-        self.printt('-----')
-        self.printt(current_time)
-        self.printt('item_list_cnt')
-        self.printt(item_list_cnt)
-        self.printt('Send Option Order')
-        self.printt('# 콜매수')
-        cross_winner_cell = 2004
-        self.printt(cross_winner_cell)
-        sOrgOrdNo_cell = ''
-        for i in range(len(item_list_cnt['code_no'])):
-            cross_winner.append(cross_winner_cell)
-            volume_listed_var.append(item_list_cnt['cnt'][i])
-            item_list.append(item_list_cnt['code_no'][i])
-            sOrgOrdNo.append(sOrgOrdNo_cell)
-        self.printt('volume_listed_var / item_list')
-        self.printt(volume_listed_var)
-        self.printt(item_list)
-
-        # 주문실행은 종목이 있을경우에만
-        if len(item_list) > 0:
-            # 자동주문 버튼 True 주문실행
-            if self.auto_order_button_var == True:
-                # 종목코드와 수량 (텍스트에 저장하기)
-                self.today_call_order_list_text_store(item_list_cnt)
-                # 선물변화 한번에 한번만 진입(옵션거래)
-                # self.today_one_change_one_order = True
-                self.today_one_change_market_in_order_cnt += 1
-                self.order_ready(cross_winner, volume_listed_var, item_list, sOrgOrdNo)
-
-    # 풋청산 준비
-    def put_market_out_ready(self, future_s_sell_time_final_price, future_s_buy_time_final_price):
-        # 선물변화 한번에 한번만 진입(옵션거래)
-        # if self.today_one_change_one_order == False:
-        if self.today_one_change_market_in_order_cnt >= self.today_one_change_market_out_order_cnt:
-
-            # 풋청산 조건확인
-            # 풋재고 있을때
-            # 연결선물의 현재가가 최소값보다 작을때
-            put_my_have_str = ''
-            for p in range(len(self.option_myhave['code'])):
-                # print(self.option_myhave['code'][p][:3])
-                # 풋재고 있을때
-                if self.option_myhave['code'][p][:3] == '301':
-                    put_my_have_str = '301'
-                    # 매수
-                    if self.option_myhave['sell_or_buy'][p] == 2:
-                        # 고가청산
-                        # print('풋매수 재고있음')
-                        put_my_have_str = '3012'
-            # 풋재고 있을때
-            if put_my_have_str == '3012':
-                # 선물현재가와 매수타임 최소값과 비교
-                if future_s_buy_time_final_price > self.futrue_s_data['run_price'][0]:
-                    self.printt('풋청산 재고있음 가격비교 풋청산')
-                    # 풋청산
-                    self.put_market_out()
-
-    # 콜청산 준비
-    def call_market_out_ready(self, future_s_sell_time_final_price, future_s_buy_time_final_price):
-        # 선물변화 한번에 한번만 진입(옵션거래)
-        # if self.today_one_change_one_order == False:
-        if self.today_one_change_market_in_order_cnt >= self.today_one_change_market_out_order_cnt:
-
-            # 콜청산 조건확인
-            # 콜재고 있을때
-            # 연결선물의 현재가가 최대값보다 클때
-            call_my_have_str = ''
-            for c in range(len(self.option_myhave['code'])):
-                # print(self.option_myhave['code'][c][:3])
-                # 콜재고 있을때
-                if self.option_myhave['code'][c][:3] == '201':
-                    call_my_have_str = '201'
-                    # 매수
-                    if self.option_myhave['sell_or_buy'][c] == 2:
-                        # 고가청산
-                        # print('콜매수 재고있음')
-                        call_my_have_str = '2012'
-            # 콜재고 있을때
-            if call_my_have_str == '2012':
-                # 선물현재가와 매수타임 최소값과 비교
-                if future_s_sell_time_final_price < self.futrue_s_data['run_price'][0]:
-                    self.printt('콜청산 재고있음 가격비교 콜청산')
-                    # 콜청산
-                    self.call_market_out()
-
-    # 풋청산
-    def put_market_out(self):
-        # 자동주문 버튼 True 주문실행
-        if self.auto_order_button_var == True:
-
-            # 종목코드와 수량 (텍스트에서 읽어오기)
-            item_list_cnt = self.today_put_order_list_text_pickup()
-            # {'code_no': ['301S2410', '301S2400', '301S2380'], 'cnt': [1, 2, 2]}
-
-            # 청산은 종목이 있을경우에만
-            if len(item_list_cnt['code_no']) > 0:
-
-                # 풋청산
-                total_cross_winner = []
-                total_volume_listed_var = []
-                total_item_list = []
-                total_sOrgOrdNo = []
-                self.printt('Send Option Order')
-                self.printt('# 풋청산')
-                cross_winner_cell = 9004
-                self.printt(cross_winner_cell)
-                sOrgOrdNo_cell = ''
-                for have in range(len(self.option_myhave['code'])):
-                    if self.option_myhave['code'][have][:3] == '301':
-                        if self.option_myhave['sell_or_buy'][have] == 2:
-                            for i in range(len(item_list_cnt['code_no'])):
-                                if self.option_myhave['code'][have] == item_list_cnt['code_no'][i]:
-                                    if self.option_myhave['myhave_cnt'][have] >= item_list_cnt['cnt'][i]:
-                                        total_cross_winner.append(cross_winner_cell)
-                                        total_volume_listed_var.append(item_list_cnt['cnt'][i])
-                                        total_item_list.append(item_list_cnt['code_no'][i])
-                                        total_sOrgOrdNo.append(sOrgOrdNo_cell)
-                self.printt('total_volume_listed_var / total_item_list')
-                self.printt(total_volume_listed_var)
-                self.printt(total_item_list)
-
-                # 주문실행은 종목이 있을경우에만
-                if len(total_item_list) > 0:
-                    # 선물변화 한번에 한번만 진입(옵션거래)
-                    # self.today_one_change_one_order = True
-                    self.today_one_change_market_out_order_cnt += 1
-                    self.order_ready(total_cross_winner, total_volume_listed_var, total_item_list, total_sOrgOrdNo)
-
-    # 콜청산
-    def call_market_out(self):
-        # 자동주문 버튼 True 주문실행
-        if self.auto_order_button_var == True:
-
-            # 종목코드와 수량 (텍스트에서 읽어오기)
-            item_list_cnt = self.today_call_order_list_text_pickup()
-            # {'code_no': ['201S2410', '201S2400', '201S2380'], 'cnt': [1, 2, 2]}
-
-            # 청산은 종목이 있을경우에만
-            if len(item_list_cnt['code_no']) > 0:
-
-                # 콜청산
-                total_cross_winner = []
-                total_volume_listed_var = []
-                total_item_list = []
-                total_sOrgOrdNo = []
-                self.printt('Send Option Order')
-                self.printt('# 콜청산')
-                cross_winner_cell = 8004
-                self.printt(cross_winner_cell)
-                sOrgOrdNo_cell = ''
-                for have in range(len(self.option_myhave['code'])):
-                    if self.option_myhave['code'][have][:3] == '201':
-                        if self.option_myhave['sell_or_buy'][have] == 2:
-                            for i in range(len(item_list_cnt['code_no'])):
-                                if self.option_myhave['code'][have] == item_list_cnt['code_no'][i]:
-                                    if self.option_myhave['myhave_cnt'][have] >= item_list_cnt['cnt'][i]:
-                                        total_cross_winner.append(cross_winner_cell)
-                                        total_volume_listed_var.append(item_list_cnt['cnt'][i])
-                                        total_item_list.append(item_list_cnt['code_no'][i])
-                                        total_sOrgOrdNo.append(sOrgOrdNo_cell)
-                self.printt('total_volume_listed_var / total_item_list')
-                self.printt(total_volume_listed_var)
-                self.printt(total_item_list)
-
-                # 주문실행은 종목이 있을경우에만
-                if len(total_item_list) > 0:
-                    # 선물변화 한번에 한번만 진입(옵션거래)
-                    # self.today_one_change_one_order = True
-                    self.today_one_change_market_out_order_cnt += 1
-                    self.order_ready(total_cross_winner, total_volume_listed_var, total_item_list, total_sOrgOrdNo)
-
-    # 선물매도/매수
+    # 선물매도/매수 :: 풋진입/콜진입 :: 풋청산/콜청산
     def future_s_market_sell_buy(self, item_list_cnt_type):
-        # 선물매수
         cross_winner = []
         volume_listed_var = []
         item_list = []
         sOrgOrdNo = []
-
         for i in range(len(item_list_cnt_type['code_no'])):
-            if item_list_cnt_type['sell_buy_type'][i] == 1:   # 매도
-                # 시간표시
-                current_time = time.ctime()
-                self.printt('-----')
-                self.printt(current_time)
-                self.printt('item_list_cnt_type')
-                self.printt(item_list_cnt_type)
-                self.printt('Send futrue_s Order')
-                self.printt('# 선물매도')
-                cross_winner_cell = 6004
-                self.printt(cross_winner_cell)
-                sOrgOrdNo_cell = ''
-                cross_winner.append(cross_winner_cell)
-                volume_listed_var.append(item_list_cnt_type['cnt'][i])
-                item_list.append(item_list_cnt_type['code_no'][i])
-                sOrgOrdNo.append(sOrgOrdNo_cell)
-            elif item_list_cnt_type['sell_buy_type'][i] == 2:   # 매수
-                # 시간표시
-                current_time = time.ctime()
-                self.printt('-----')
-                self.printt(current_time)
-                self.printt('item_list_cnt_type')
-                self.printt(item_list_cnt_type)
-                self.printt('Send futrue_s Order')
-                self.printt('# 선물매수')
-                cross_winner_cell = 4004
-                self.printt(cross_winner_cell)
-                sOrgOrdNo_cell = ''
-                cross_winner.append(cross_winner_cell)
-                volume_listed_var.append(item_list_cnt_type['cnt'][i])
-                item_list.append(item_list_cnt_type['code_no'][i])
-                sOrgOrdNo.append(sOrgOrdNo_cell)
+            # 풋옵션
+            if item_list_cnt_type['code_no'][i][:3] == '301':
+                if item_list_cnt_type['sell_buy_type'][i] == 1:  # 매도
+                    # 시간표시
+                    current_time = time.ctime()
+                    self.printt('-----')
+                    self.printt(current_time)
+                    self.printt('item_list_cnt_type')
+                    self.printt(item_list_cnt_type)
+                    self.printt('Send Option Order')
+                    self.printt('# 풋청산')
+                    cross_winner_cell = 9004
+                    self.printt(cross_winner_cell)
+                    sOrgOrdNo_cell = ''
+                    cross_winner.append(cross_winner_cell)
+                    volume_listed_var.append(item_list_cnt_type['cnt'][i])
+                    item_list.append(item_list_cnt_type['code_no'][i])
+                    sOrgOrdNo.append(sOrgOrdNo_cell)
+                elif item_list_cnt_type['sell_buy_type'][i] == 2:  # 매수
+                    # 시간표시
+                    current_time = time.ctime()
+                    self.printt('-----')
+                    self.printt(current_time)
+                    self.printt('item_list_cnt_type')
+                    self.printt(item_list_cnt_type)
+                    self.printt('Send Option Order')
+                    self.printt('# 풋매수')
+                    cross_winner_cell = 3004
+                    self.printt(cross_winner_cell)
+                    sOrgOrdNo_cell = ''
+                    cross_winner.append(cross_winner_cell)
+                    volume_listed_var.append(item_list_cnt_type['cnt'][i])
+                    item_list.append(item_list_cnt_type['code_no'][i])
+                    sOrgOrdNo.append(sOrgOrdNo_cell)
+            # 콜옵션
+            elif item_list_cnt_type['code_no'][i][:3] == '201':
+                if item_list_cnt_type['sell_buy_type'][i] == 1:  # 매도
+                    # 시간표시
+                    current_time = time.ctime()
+                    self.printt('-----')
+                    self.printt(current_time)
+                    self.printt('item_list_cnt_type')
+                    self.printt(item_list_cnt_type)
+                    self.printt('Send Option Order')
+                    self.printt('# 콜청산')
+                    cross_winner_cell = 8004
+                    self.printt(cross_winner_cell)
+                    sOrgOrdNo_cell = ''
+                    cross_winner.append(cross_winner_cell)
+                    volume_listed_var.append(item_list_cnt_type['cnt'][i])
+                    item_list.append(item_list_cnt_type['code_no'][i])
+                    sOrgOrdNo.append(sOrgOrdNo_cell)
+                elif item_list_cnt_type['sell_buy_type'][i] == 2:  # 매수
+                    # 시간표시
+                    current_time = time.ctime()
+                    self.printt('-----')
+                    self.printt(current_time)
+                    self.printt('item_list_cnt_type')
+                    self.printt(item_list_cnt_type)
+                    self.printt('Send Option Order')
+                    self.printt('# 콜매수')
+                    cross_winner_cell = 2004
+                    self.printt(cross_winner_cell)
+                    sOrgOrdNo_cell = ''
+                    cross_winner.append(cross_winner_cell)
+                    volume_listed_var.append(item_list_cnt_type['cnt'][i])
+                    item_list.append(item_list_cnt_type['code_no'][i])
+                    sOrgOrdNo.append(sOrgOrdNo_cell)
+            # 선물
+            elif item_list_cnt_type['code_no'][i][:3] == '101':
+                if item_list_cnt_type['sell_buy_type'][i] == 1:  # 매도
+                    # 시간표시
+                    current_time = time.ctime()
+                    self.printt('-----')
+                    self.printt(current_time)
+                    self.printt('item_list_cnt_type')
+                    self.printt(item_list_cnt_type)
+                    self.printt('Send futrue_s Order')
+                    self.printt('# 선물매도')
+                    cross_winner_cell = 6004
+                    self.printt(cross_winner_cell)
+                    sOrgOrdNo_cell = ''
+                    cross_winner.append(cross_winner_cell)
+                    volume_listed_var.append(item_list_cnt_type['cnt'][i])
+                    item_list.append(item_list_cnt_type['code_no'][i])
+                    sOrgOrdNo.append(sOrgOrdNo_cell)
+                elif item_list_cnt_type['sell_buy_type'][i] == 2:  # 매수
+                    # 시간표시
+                    current_time = time.ctime()
+                    self.printt('-----')
+                    self.printt(current_time)
+                    self.printt('item_list_cnt_type')
+                    self.printt(item_list_cnt_type)
+                    self.printt('Send futrue_s Order')
+                    self.printt('# 선물매수')
+                    cross_winner_cell = 4004
+                    self.printt(cross_winner_cell)
+                    sOrgOrdNo_cell = ''
+                    cross_winner.append(cross_winner_cell)
+                    volume_listed_var.append(item_list_cnt_type['cnt'][i])
+                    item_list.append(item_list_cnt_type['code_no'][i])
+                    sOrgOrdNo.append(sOrgOrdNo_cell)
         self.printt('volume_listed_var / item_list')
+        self.printt(cross_winner)
         self.printt(volume_listed_var)
         self.printt(item_list)
+        self.printt(sOrgOrdNo)
 
-        # 자동주문 버튼 True 주문실행
-        if self.auto_order_button_var == True:
-            self.order_ready(cross_winner, volume_listed_var, item_list, sOrgOrdNo)
+        # 자동주문 주문실행
+        self.order_ready(cross_winner, volume_listed_var, item_list, sOrgOrdNo)
+
 
     # put_item_list_text_store
     def put_item_list_text_store(self, put_item_list_cnt):
@@ -4296,6 +4205,33 @@ class MyWindow(Layout):
         f.close()
         basket_cnt = int(basket_cnt_readlines[0])
         return basket_cnt
+
+    # option_s_sell_buy_point 텍스트 저장
+    def option_s_sell_buy_point_store_fn(self, option_s_sell_buy_point):
+        # option_s_sell_buy_point.txt 저장경로
+        item_list_files_path = os.getcwd() + '/' + Folder_Name_TXT_Store + '/'
+        # option_s_sell_buy_point  # int
+        f = open(item_list_files_path + "option_s_sell_buy_point_text.txt", 'at', encoding='UTF8')
+        store_data = str(option_s_sell_buy_point)
+        f.write(store_data + '\n')
+        f.close()
+    def option_s_sell_buy_point_text_pickup(self):
+        # 변수선언
+        item_list = []
+        # option_s_sell_buy_point.txt 저장경로
+        item_list_files_path = os.getcwd() + '/' + Folder_Name_TXT_Store + '/'
+        # option_s_sell_buy_point  # int
+        f = open(item_list_files_path + "option_s_sell_buy_point_text.txt", 'rt', encoding='UTF8')
+        option_s_sell_buy_point_readlines = f.readlines()
+        # print(option_s_sell_buy_point_readlines)
+        f.close()
+
+        # 리스트 저장
+        for i in range(len(option_s_sell_buy_point_readlines)):
+            last_order_item_new = option_s_sell_buy_point_readlines[i].strip()   # 엔터제거
+            item_list.append(float(last_order_item_new))
+        # print(item_list)
+        return item_list
 
     # today_put_order_list_text_store
     def today_put_order_list_text_store(self, put_item_list_cnt):
@@ -5188,7 +5124,7 @@ class MyWindow(Layout):
             # print(future_s_today_store_data_last)
             # print(type(future_s_today_store_data_last))
 
-            # 선물변화 (0.1%이상)
+            # 선물변화 (~%이상)
             self.future_s_change(self.future_s_percent_high, self.future_s_percent_low, future_s_today_store_data_last)
             # 선물 변화 건수 체크
             self.future_s_change_listed_var.append(future_s_today_store_data_last)
@@ -5452,7 +5388,7 @@ class MyWindow(Layout):
         if db_overlap_time_except != self.db_overlap_time_list[-1]:
             # 선물변화 프로세스 실행중 여부
             self.future_s_change_running = True
-            # 선물변화 (0.1%이상)
+            # 선물변화 (~%이상)
             future_s_change_ret = self.future_s_change(self.future_s_percent_high, self.future_s_percent_low, self.futrue_s_data['run_price'][0])
             if future_s_change_ret[0] == True:
                 # True 인식과 동시에 저장함수 데이터 바인딩
@@ -5502,14 +5438,6 @@ class MyWindow(Layout):
                 self.future_s_change_listed_var.append(future_s_change_ret[1])
                 self.printt(self.future_s_change_listed_var)
 
-                # 선물변화 한번에 한번만 진입(옵션거래) <= 한홀에서는 +1step 주문가능하도록 수정(2021년 12월 22일)
-                # self.today_one_change_one_order = False
-                self.printt('한홀에서는 +1step 주문 카운터 in/out')
-                self.printt(self.today_one_change_market_in_order_cnt)
-                self.printt(self.today_one_change_market_out_order_cnt)
-                self.today_one_change_market_in_order_cnt = 0
-                self.today_one_change_market_out_order_cnt = 0
-
                 # # 선옵잔고요청 - 이벤트 슬롯
                 # self.myhave_option_rq()
                 # 선옵잔고요청 이후 틈새에 주식매도가 실행되어 리마킹      # 2019년 10월 29일 전략수정
@@ -5527,8 +5455,12 @@ class MyWindow(Layout):
                 self.timer1.start(1000)
                 self.printt('stock_buy_ready_fn 끝 timer1 재시작')
 
-                # 선물 (진입 / 청산) 준비
-                self.future_s_market_ready()
+                # 옵션매도주문증거금 요청
+                self.option_s_sell_deposit_money_data_rq()
+                # 자동주문 버튼 True
+                if self.auto_order_button_var == True:
+                    # 선물 (진입/청산) 준비 및 옵션헤지
+                    self.future_s_market_ready()
 
                 # 옵션거래 [실시간 조회] 체크박스가 켜져있을때만
                 if self.checkbox_realtime.isChecked():
@@ -5547,20 +5479,7 @@ class MyWindow(Layout):
                     if self.checkbox_realtime.isChecked():
                         # 선물 변화 건수 체크
                         future_s_change_cnt = len(self.future_s_change_listed_var)
-                        # 중심 인텍스가 제로 아닐때
-                        if future_s_change_cnt >= 1:
-                            if (self.center_index != 0) and (self.center_index_45 != 0):
-                                # 선물매도(콜옵션 헷징) / 선물매수(풋옵션 헷징) :: 기준 선물가 구하기(0.1% ~ 0.2%의 중간:: 0.15%))
-                                future_s_sell_time_final_price = self.future_s_change_listed_var[-1] * 1.0015
-                                future_s_buy_time_final_price = self.future_s_change_listed_var[-1] * 0.9985
 
-                                # 옵션 종목검색
-                                self.option_items_search(future_s_sell_time_final_price, future_s_buy_time_final_price)
-
-                                # 풋청산 준비
-                                self.put_market_out_ready(future_s_sell_time_final_price, future_s_buy_time_final_price)
-                                # 콜청산 준비
-                                self.call_market_out_ready(future_s_sell_time_final_price, future_s_buy_time_final_price)
             # 선물변화 프로세스 실행중 여부
             self.future_s_change_running = False
 
@@ -5633,14 +5552,6 @@ class MyWindow(Layout):
             # 장마감 2 이후
             # 선물 롤오버 1번실행
             self.future_s_roll_over_fn()
-
-            # 선물매도(콜옵션 헷징) / 선물매수(풋옵션 헷징) <== 2021년 12월 24일
-            # # 당일날 선물 롤오버 있었으면 그 다음으로 옵션 청산
-            # if self.future_s_roll_over_run_var == True:
-            #     # 풋청산
-            #     self.put_market_out()
-            #     # 콜청산
-            #     self.call_market_out()
 
         # 장마감 self.MarketEndingVar == 'c' 각종 시세조회
         if self.MarketEndingVar == 'c':
@@ -5734,29 +5645,24 @@ class MyWindow(Layout):
             stock_price_candle_cnt = 20
             stock_trend_line_db_store(current_today, db_file_path, get_db_name, put_db_name, stock_price_candle_cnt)
 
+            # 일봉 시뮬레이션 저장
+            # db명 설정
+            get_db_name = 'future_s_shlc_data_day' + '.db'
+            # db명 설정
+            put_db_name = 'future_s_simul_of_trend_line_day' + '.db'
+            # 봉갯수
+            stock_price_candle_cnt = 20
+            future_s_simul_of_trend_line_day_store(current_today, db_file_path, get_db_name, put_db_name,
+                                                   stock_price_candle_cnt)
+
             # 선택종목 crawling 이후 장마감 변수 클리어
             self.MarketEndingVar = 'cf'
             self.printt('self.MarketEndingVar = cf')
 
-    # 선물 (진입/청산) 준비
-    def future_s_market_ready(self):
-        # 당일날 선물 주문 있었으면 return
-        # 당일 매도 종목
-        # 당월물
-        if self.futrue_s_data['item_code'][0] in self.selled_today_items:
-            return
-        # 차월물
-        if self.futrue_s_data_45['item_code'][0] in self.selled_today_items:
-            return
-        # 당일 매수 종목
-        # 당월물
-        if self.futrue_s_data['item_code'][0] in self.buyed_today_items:
-            return
-        # 차월물
-        if self.futrue_s_data_45['item_code'][0] in self.buyed_today_items:
-            return
-
-        # 주문변수 초기화
+    # 중심가 변경시 옵션 튜닝 준비 = > 항상 현재에 맞춰서
+    def option_s_center_index_change_ready(self):
+        # 초기화
+        item_list_cnt_items_search = {'code_no': [], 'cnt': [], 'sell_buy_type': [], 'point': []}
         item_list_cnt_type = {'code_no': [], 'cnt': [], 'sell_buy_type': []}
         # 선물 바스켓 가져오기
         basket_cnt = self.future_s_basket_cnt_text_read()   #int
@@ -5768,6 +5674,9 @@ class MyWindow(Layout):
         # 선물 영업일 기준 잔존일
         future_s_day_residue_int = self.futrue_s_data['day_residue'][0]  # int
         # print(future_s_day_residue_int)
+        # 옵션 영업일 기준 잔존일
+        day_residue_int = self.output_put_option_data['day_residue'][self.center_index]     # int
+        # print(day_residue_int)
 
         # 계좌내 선물 재고 확인
         myhave_sell_current_mall_cnt = 0
@@ -5793,26 +5702,1483 @@ class MyWindow(Layout):
         # print(myhave_buy_current_mall_cnt)
         # print(myhave_sell_total_mall_cnt)
         # print(myhave_buy_total_mall_cnt)
+        # 매도재고 / 매수재고
+        myhave_sell_total_mall_basket_cnt_remove = int(myhave_sell_total_mall_cnt / basket_cnt)
+        myhave_buy_total_mall_basket_cnt_remove = int(myhave_buy_total_mall_cnt / basket_cnt)
+        option_s_point_sum = 0
+
+        # 선물 매도재고 => 풋청산(매수) 후 풋매도
+        if myhave_sell_total_mall_basket_cnt_remove > 0:
+            self.printt('선물 매도재고 있음')
+            if myhave_sell_total_mall_basket_cnt_remove >= 4:
+                # 당일 선물 진입여부 판단
+                # 당일 거래 있었으면 텍스트 파일 호출 / 없었으면 시뮬레이터 계산
+                if (self.futrue_s_data['item_code'][0] in self.selled_today_items) or (self.futrue_s_data_45['item_code'][0] in self.selled_today_items) or (Chain_Future_s_Item_Code[0] in self.selled_today_items):
+                    # item_list.txt 저장경로
+                    item_list_files_path = os.getcwd() + '/' + Folder_Name_TXT_Store + '/' + 'today_put_order_lists.txt'
+                    if os.path.exists(item_list_files_path):
+                        os.remove(item_list_files_path)
+                    # self.option_myhave = {'code': ['301SA307', '301SA310', '301SA315', '301SA317'],
+                    #                       'myhave_cnt': [18, 15, 15, 3], 'sell_or_buy': [1, 1, 1, 1]}
+                    # 301SA307::9::301SA310::15::301SA317::3::301SA315::5::
+                    # 301SA307::9::301SA315::10::
+                    # {'code_no': ['301SA307', '301SA315', '301SA310', '301SA317'], 'cnt': [18, 15, 15, 3], 'sell_buy_type': []}
+
+                    # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+                    future_s_simul_of_trend_line_day = self.future_s_simul_of_trend_line_day_data_fn()
+                    # self.printt('# future_s_simul_of_trend_line_day')
+                    # self.printt(future_s_simul_of_trend_line_day)
+                    for d in range(myhave_sell_total_mall_basket_cnt_remove - 2 - 1):
+                        # 과거 시뮬레이션 값 가져와서 종목 찾기 & 주문할 종목코드 카운터 텍스트 저장
+                        sell_mode_first = 0
+                        sell_mode_cnt = 0
+                        sell_ref_price = []
+                        sell_second_price = []
+                        # 시뮬레이터 구한 값 있을때만 실행
+                        if future_s_simul_of_trend_line_day != None:
+                            # sell_mode_cnt = 2
+                            for i in range(len(future_s_simul_of_trend_line_day['deal_day'])):
+                                # mode 더해보기(+-)
+                                sell_mode_first += future_s_simul_of_trend_line_day['sell_mode'][i] - future_s_simul_of_trend_line_day['buy_mode'][i]
+                                if sell_mode_first == (myhave_sell_total_mall_basket_cnt_remove - 2) - d:               # 역으로 today재고 저장
+                                    sell_ref_price.append(future_s_simul_of_trend_line_day['poly_sell_max_price'][i])
+                                    for j in range(i + 1, len(future_s_simul_of_trend_line_day['deal_day']) - 1):
+                                        # mode 더해보기(+-)
+                                        sell_mode_cnt += future_s_simul_of_trend_line_day['sell_mode'][
+                                            j] - future_s_simul_of_trend_line_day['buy_mode'][j]
+                                        if sell_mode_cnt == 2:
+                                            sell_second_price.append(
+                                                future_s_simul_of_trend_line_day['poly_sell_max_price'][j])
+                                    break
+                        # [315.06694648735436]
+                        # print(sell_ref_price)
+                        # [313.97624597998293, 319.3358123569823, 328.04294093755414, 327.4622603066631, 330.33129653359316]
+                        # [327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874]
+                        # print(sell_second_price)
+                        # 지난진입 금액확인 :: 옵션매도 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(sell_ref_price[0] - sell_second_price[0])
+                        option_s_point_sum += option_s_sell_buy_point
+                        self.printt('sell_ref_price')
+                        self.printt(sell_ref_price)
+                        self.printt('sell_second_price')
+                        self.printt(sell_second_price)
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+
+                        # 옵션 종목검색()
+                        put_or_call = 'put'
+                        if day_residue_int > 2:
+                            month_mall_type = 'center_index'
+                            # center_index / center_index_45
+                        else:
+                            month_mall_type = 'center_index_45'
+                            # center_index / center_index_45
+                        item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                        # print(item_list_cnt)
+
+                        # if d == 0:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                        # else:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                        # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                        if d == 0:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        else:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:                    # 첫번째 라인에서 저장한 코드와 동일할때
+                                    for j in range(len(item_list_cnt_items_search['code_no'])):                             # 그 종목은 건수만 카운터 해주고
+                                        if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:         # 그 종목이랑 동일할때
+                                            item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                                else:
+                                    item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                    item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        # print(item_list_cnt_items_search)
+
+                        # 텍스트 저장은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                            for s in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                                item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                            # 종목코드와 수량(텍스트에 저장하기)
+                            self.today_put_order_list_text_store(item_list_cnt_for_store)
+
+                    # option_s_sell_buy_point_text 가져오기
+                    option_s_sell_buy_point_text_list = self.option_s_sell_buy_point_text_pickup()
+                    # print(option_s_sell_buy_point_text_list)
+                    option_s_sell_buy_point = option_s_sell_buy_point_text_list[-1]
+                    # print(option_s_sell_buy_point)
+                    option_s_point_sum += option_s_sell_buy_point
+                    self.printt('option_s_sell_buy_point')
+                    self.printt(option_s_sell_buy_point)
+
+                    # 옵션 종목검색()
+                    put_or_call = 'put'
+                    if day_residue_int > 2:
+                        month_mall_type = 'center_index'
+                        # center_index / center_index_45
+                    else:
+                        month_mall_type = 'center_index_45'
+                        # center_index / center_index_45
+                    item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                    # print(item_list_cnt)
+
+                    # if d == 0:
+                    #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                    # else:
+                    #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                    # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                    for i in range(len(item_list_cnt['code_no'])):
+                        if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:  # 첫번째 라인에서 저장한 코드와 동일할때
+                            for j in range(len(item_list_cnt_items_search['code_no'])):  # 그 종목은 건수만 카운터 해주고
+                                if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:  # 그 종목이랑 동일할때
+                                    item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                        else:
+                            item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                            item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                            item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                    # print(item_list_cnt_items_search)
+
+                    # 텍스트 저장은 종목이 있을경우에만
+                    if len(item_list_cnt['code_no']) > 0:
+                        item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                        for s in range(len(item_list_cnt['code_no'])):
+                            item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                            item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                        # 종목코드와 수량(텍스트에 저장하기)
+                        self.today_put_order_list_text_store(item_list_cnt_for_store)
+
+                    # 검색결과 종목 vs option_myhave 비교하여 실제 거래항목 정하기
+                    for s in range(len(item_list_cnt_items_search['code_no'])):
+                        if item_list_cnt_items_search['code_no'][s] in self.option_myhave['code']:
+                            for p in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][p] == item_list_cnt_items_search['code_no'][s]:
+                                    # 재고가 혹시 매도
+                                    if self.option_myhave['sell_or_buy'][p] == 1:
+                                        if item_list_cnt_items_search['cnt'][s] > self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] - self.option_myhave['myhave_cnt'][p])
+                                            item_list_cnt_type['sell_buy_type'].append(1)
+                                        elif item_list_cnt_items_search['cnt'][s] < self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p] - item_list_cnt_items_search['cnt'][s])
+                                            item_list_cnt_type['sell_buy_type'].append(2)
+                                        elif item_list_cnt_items_search['cnt'][s] == self.option_myhave['myhave_cnt'][p]:
+                                            pass
+                                    # 재고가 행여나 매수
+                                    elif self.option_myhave['sell_or_buy'][p] == 2:
+                                        item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                        item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] + self.option_myhave['myhave_cnt'][p])
+                                        item_list_cnt_type['sell_buy_type'].append(1)
+
+                        else:
+                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s])
+                            item_list_cnt_type['sell_buy_type'].append(1)
+
+                    # 만일 재고 항목이 검색항목에 없을때
+                    for p in range(len(self.option_myhave['code'])):
+                        if self.option_myhave['code'][p] in item_list_cnt_items_search['code_no']:
+                            pass
+                        else:
+                            # 선물재고는 pass
+                            if self.option_myhave['code'][p][:3] == '101':
+                                pass
+                            # 재고가 혹시 매도
+                            elif self.option_myhave['sell_or_buy'][p] == 1:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(2)
+                            # 재고가 행여나 매수
+                            elif self.option_myhave['sell_or_buy'][p] == 2:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(1)
+                else:
+                    # 당일 선물 진입여부 판단(없었을 경우)
+                    # item_list.txt 저장경로
+                    item_list_files_path = os.getcwd() + '/' + Folder_Name_TXT_Store + '/' + 'today_put_order_lists.txt'
+                    if os.path.exists(item_list_files_path):
+                        os.remove(item_list_files_path)
+                    # self.option_myhave = {'code': ['301SA307', '301SA310', '301SA315', '301SA317'],
+                    #                       'myhave_cnt': [18, 15, 15, 3], 'sell_or_buy': [1, 1, 1, 1]}
+                    # 301SA307::9::301SA310::15::301SA317::3::301SA315::5::
+                    # 301SA307::9::301SA315::10::
+                    # {'code_no': ['301SA307', '301SA315', '301SA310', '301SA317'], 'cnt': [18, 15, 15, 3], 'sell_buy_type': []}
+
+                    # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+                    future_s_simul_of_trend_line_day = self.future_s_simul_of_trend_line_day_data_fn()
+                    # self.printt('# future_s_simul_of_trend_line_day')
+                    # self.printt(future_s_simul_of_trend_line_day)
+                    for d in range(myhave_sell_total_mall_basket_cnt_remove - 2):
+                        # 과거 시뮬레이션 값 가져와서 종목 찾기 & 주문할 종목코드 카운터 텍스트 저장
+                        sell_mode_first = 0
+                        sell_mode_cnt = 0
+                        sell_ref_price = []
+                        sell_second_price = []
+                        # 시뮬레이터 구한 값 있을때만 실행
+                        if future_s_simul_of_trend_line_day != None:
+                            # sell_mode_cnt = 2
+                            for i in range(len(future_s_simul_of_trend_line_day['deal_day'])):
+                                # mode 더해보기(+-)
+                                sell_mode_first += future_s_simul_of_trend_line_day['sell_mode'][i] - future_s_simul_of_trend_line_day['buy_mode'][i]
+                                if sell_mode_first == (myhave_sell_total_mall_basket_cnt_remove - 2) - d:               # 역으로 today재고 저장
+                                    sell_ref_price.append(future_s_simul_of_trend_line_day['poly_sell_max_price'][i])
+                                    for j in range(i + 1, len(future_s_simul_of_trend_line_day['deal_day']) - 1):
+                                        # mode 더해보기(+-)
+                                        sell_mode_cnt += future_s_simul_of_trend_line_day['sell_mode'][
+                                            j] - future_s_simul_of_trend_line_day['buy_mode'][j]
+                                        if sell_mode_cnt == 2:
+                                            sell_second_price.append(
+                                                future_s_simul_of_trend_line_day['poly_sell_max_price'][j])
+                                    break
+                        # [315.06694648735436]
+                        # print(sell_ref_price)
+                        # [313.97624597998293, 319.3358123569823, 328.04294093755414, 327.4622603066631, 330.33129653359316]
+                        # [327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874]
+                        # print(sell_second_price)
+                        # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(sell_ref_price[0] - sell_second_price[0])
+                        option_s_point_sum += option_s_sell_buy_point
+                        self.printt('sell_ref_price')
+                        self.printt(sell_ref_price)
+                        self.printt('sell_second_price')
+                        self.printt(sell_second_price)
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+
+                        # 옵션 종목검색()
+                        put_or_call = 'put'
+                        if day_residue_int > 2:
+                            month_mall_type = 'center_index'
+                            # center_index / center_index_45
+                        else:
+                            month_mall_type = 'center_index_45'
+                            # center_index / center_index_45
+                        item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                        # print(item_list_cnt)
+
+                        # if d == 0:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                        # else:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                        # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                        if d == 0:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        else:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:                    # 첫번째 라인에서 저장한 코드와 동일할때
+                                    for j in range(len(item_list_cnt_items_search['code_no'])):                             # 그 종목은 건수만 카운터 해주고
+                                        if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:         # 그 종목이랑 동일할때
+                                            item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                                else:
+                                    item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                    item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        # print(item_list_cnt_items_search)
+
+                        # 텍스트 저장은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                            for s in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                                item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                            # 종목코드와 수량(텍스트에 저장하기)
+                            self.today_put_order_list_text_store(item_list_cnt_for_store)
+
+                    # 검색결과 종목 vs option_myhave 비교하여 실제 거래항목 정하기
+                    for s in range(len(item_list_cnt_items_search['code_no'])):
+                        if item_list_cnt_items_search['code_no'][s] in self.option_myhave['code']:
+                            for p in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][p] == item_list_cnt_items_search['code_no'][s]:
+                                    # 재고가 혹시 매도
+                                    if self.option_myhave['sell_or_buy'][p] == 1:
+                                        if item_list_cnt_items_search['cnt'][s] > self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] - self.option_myhave['myhave_cnt'][p])
+                                            item_list_cnt_type['sell_buy_type'].append(1)
+                                        elif item_list_cnt_items_search['cnt'][s] < self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p] - item_list_cnt_items_search['cnt'][s])
+                                            item_list_cnt_type['sell_buy_type'].append(2)
+                                        elif item_list_cnt_items_search['cnt'][s] == self.option_myhave['myhave_cnt'][p]:
+                                            pass
+                                    # 재고가 행여나 매수
+                                    elif self.option_myhave['sell_or_buy'][p] == 2:
+                                        item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                        item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] + self.option_myhave['myhave_cnt'][p])
+                                        item_list_cnt_type['sell_buy_type'].append(1)
+
+                        else:
+                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s])
+                            item_list_cnt_type['sell_buy_type'].append(1)
+
+                    # 만일 재고 항목이 검색항목에 없을때
+                    for p in range(len(self.option_myhave['code'])):
+                        if self.option_myhave['code'][p] in item_list_cnt_items_search['code_no']:
+                            pass
+                        else:
+                            # 선물재고는 pass
+                            if self.option_myhave['code'][p][:3] == '101':
+                                pass
+                            # 재고가 혹시 매도
+                            elif self.option_myhave['sell_or_buy'][p] == 1:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(2)
+                            # 재고가 행여나 매수
+                            elif self.option_myhave['sell_or_buy'][p] == 2:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(1)
+            # 선물 매도재고(3)
+            elif myhave_sell_total_mall_basket_cnt_remove == 3:
+                # 당일 선물 진입여부 판단
+                # 당일 거래 있었으면 텍스트 파일 호출 / 없었으면 시뮬레이터 계산
+                if (self.futrue_s_data['item_code'][0] in self.selled_today_items) or (self.futrue_s_data_45['item_code'][0] in self.selled_today_items) or (Chain_Future_s_Item_Code[0] in self.selled_today_items):
+                    # item_list.txt 저장경로
+                    item_list_files_path = os.getcwd() + '/' + Folder_Name_TXT_Store + '/' + 'today_put_order_lists.txt'
+                    if os.path.exists(item_list_files_path):
+                        os.remove(item_list_files_path)
+                    # self.option_myhave = {'code': ['301SA307', '301SA310', '301SA315', '301SA317'],
+                    #                       'myhave_cnt': [18, 15, 15, 3], 'sell_or_buy': [1, 1, 1, 1]}
+                    # 301SA307::9::301SA310::15::301SA317::3::301SA315::5::
+                    # 301SA307::9::301SA315::10::
+                    # {'code_no': ['301SA307', '301SA315', '301SA310', '301SA317'], 'cnt': [18, 15, 15, 3], 'sell_buy_type': []}
+
+                    # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+                    future_s_simul_of_trend_line_day = self.future_s_simul_of_trend_line_day_data_fn()
+                    # self.printt('# future_s_simul_of_trend_line_day')
+                    # self.printt(future_s_simul_of_trend_line_day)
+                    for d in range(myhave_sell_total_mall_basket_cnt_remove - 2 - 1):
+                        # 과거 시뮬레이션 값 가져와서 종목 찾기 & 주문할 종목코드 카운터 텍스트 저장
+                        sell_mode_first = 0
+                        sell_mode_cnt = 0
+                        sell_ref_price = []
+                        sell_second_price = []
+                        # 시뮬레이터 구한 값 있을때만 실행
+                        if future_s_simul_of_trend_line_day != None:
+                            # sell_mode_cnt = 2
+                            for i in range(len(future_s_simul_of_trend_line_day['deal_day'])):
+                                # mode 더해보기(+-)
+                                sell_mode_first += future_s_simul_of_trend_line_day['sell_mode'][i] - future_s_simul_of_trend_line_day['buy_mode'][i]
+                                if sell_mode_first == (myhave_sell_total_mall_basket_cnt_remove - 2) - d:               # 역으로 today재고 저장
+                                    sell_ref_price.append(future_s_simul_of_trend_line_day['poly_sell_max_price'][i])
+                                    for j in range(i + 1, len(future_s_simul_of_trend_line_day['deal_day']) - 1):
+                                        # mode 더해보기(+-)
+                                        sell_mode_cnt += future_s_simul_of_trend_line_day['sell_mode'][
+                                            j] - future_s_simul_of_trend_line_day['buy_mode'][j]
+                                        if sell_mode_cnt == 2:
+                                            sell_second_price.append(
+                                                future_s_simul_of_trend_line_day['poly_sell_max_price'][j])
+                                    break
+                        # [315.06694648735436]
+                        # print(sell_ref_price)
+                        # [313.97624597998293, 319.3358123569823, 328.04294093755414, 327.4622603066631, 330.33129653359316]
+                        # [327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874]
+                        # print(sell_second_price)
+                        # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(sell_ref_price[0] - sell_second_price[0])
+                        option_s_point_sum += option_s_sell_buy_point
+                        self.printt('sell_ref_price')
+                        self.printt(sell_ref_price)
+                        self.printt('sell_second_price')
+                        self.printt(sell_second_price)
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+
+                        # 옵션 종목검색()
+                        put_or_call = 'put'
+                        if day_residue_int > 2:
+                            month_mall_type = 'center_index'
+                            # center_index / center_index_45
+                        else:
+                            month_mall_type = 'center_index_45'
+                            # center_index / center_index_45
+                        item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                        # print(item_list_cnt)
+
+                        # if d == 0:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                        # else:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                        # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                        if d == 0:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        else:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:                    # 첫번째 라인에서 저장한 코드와 동일할때
+                                    for j in range(len(item_list_cnt_items_search['code_no'])):                             # 그 종목은 건수만 카운터 해주고
+                                        if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:         # 그 종목이랑 동일할때
+                                            item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                                else:
+                                    item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                    item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        # print(item_list_cnt_items_search)
+
+                        # 텍스트 저장은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                            for s in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                                item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                            # 종목코드와 수량(텍스트에 저장하기)
+                            self.today_put_order_list_text_store(item_list_cnt_for_store)
+
+                    # option_s_sell_buy_point_text 가져오기
+                    option_s_sell_buy_point_text_list = self.option_s_sell_buy_point_text_pickup()
+                    # print(option_s_sell_buy_point_text_list)
+                    option_s_sell_buy_point = option_s_sell_buy_point_text_list[-1]
+                    # print(option_s_sell_buy_point)
+                    option_s_point_sum += option_s_sell_buy_point
+                    self.printt('option_s_sell_buy_point')
+                    self.printt(option_s_sell_buy_point)
+
+                    # 옵션 종목검색()
+                    put_or_call = 'put'
+                    if day_residue_int > 2:
+                        month_mall_type = 'center_index'
+                        # center_index / center_index_45
+                    else:
+                        month_mall_type = 'center_index_45'
+                        # center_index / center_index_45
+                    item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                    # print(item_list_cnt)
+
+                    # if d == 0:
+                    #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                    # else:
+                    #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                    # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                    for i in range(len(item_list_cnt['code_no'])):
+                        if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:  # 첫번째 라인에서 저장한 코드와 동일할때
+                            for j in range(len(item_list_cnt_items_search['code_no'])):  # 그 종목은 건수만 카운터 해주고
+                                if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:  # 그 종목이랑 동일할때
+                                    item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                        else:
+                            item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                            item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                            item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                    # print(item_list_cnt_items_search)
+
+                    # 텍스트 저장은 종목이 있을경우에만
+                    if len(item_list_cnt['code_no']) > 0:
+                        item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                        for s in range(len(item_list_cnt['code_no'])):
+                            item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                            item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                        # 종목코드와 수량(텍스트에 저장하기)
+                        self.today_put_order_list_text_store(item_list_cnt_for_store)
+
+                    # 검색결과 종목 vs option_myhave 비교하여 실제 거래항목 정하기
+                    for s in range(len(item_list_cnt_items_search['code_no'])):
+                        if item_list_cnt_items_search['code_no'][s] in self.option_myhave['code']:
+                            for p in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][p] == item_list_cnt_items_search['code_no'][s]:
+                                    # 재고가 혹시 매도
+                                    if self.option_myhave['sell_or_buy'][p] == 1:
+                                        if item_list_cnt_items_search['cnt'][s] > self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] - self.option_myhave['myhave_cnt'][p])
+                                            item_list_cnt_type['sell_buy_type'].append(1)
+                                        elif item_list_cnt_items_search['cnt'][s] < self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p] - item_list_cnt_items_search['cnt'][s])
+                                            item_list_cnt_type['sell_buy_type'].append(2)
+                                        elif item_list_cnt_items_search['cnt'][s] == self.option_myhave['myhave_cnt'][p]:
+                                            pass
+                                    # 재고가 행여나 매수
+                                    elif self.option_myhave['sell_or_buy'][p] == 2:
+                                        item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                        item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] + self.option_myhave['myhave_cnt'][p])
+                                        item_list_cnt_type['sell_buy_type'].append(1)
+                        else:
+                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s])
+                            item_list_cnt_type['sell_buy_type'].append(1)
+
+                    # 만일 재고 항목이 검색항목에 없을때
+                    for p in range(len(self.option_myhave['code'])):
+                        if self.option_myhave['code'][p] in item_list_cnt_items_search['code_no']:
+                            pass
+                        else:
+                            # 선물재고는 pass
+                            if self.option_myhave['code'][p][:3] == '101':
+                                pass
+                            # 재고가 혹시 매도
+                            elif self.option_myhave['sell_or_buy'][p] == 1:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(2)
+                            # 재고가 행여나 매수
+                            elif self.option_myhave['sell_or_buy'][p] == 2:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(1)
+
+                else:
+                    # 당일 선물 진입여부 판단(없었을 경우) :: 텍스트 파일 삭제
+                    # item_list.txt 저장경로
+                    item_list_files_path = os.getcwd() + '/' + Folder_Name_TXT_Store + '/' + 'today_put_order_lists.txt'
+                    if os.path.exists(item_list_files_path):
+                        os.remove(item_list_files_path)
+                    # self.option_myhave = {'code': ['301SA307', '301SA310', '301SA315', '301SA317'],
+                    #                       'myhave_cnt': [18, 15, 15, 3], 'sell_or_buy': [1, 1, 1, 1]}
+                    # 301SA307::9::301SA310::15::301SA317::3::301SA315::5::
+                    # 301SA307::9::301SA315::10::
+                    # {'code_no': ['301SA307', '301SA315', '301SA310', '301SA317'], 'cnt': [18, 15, 15, 3], 'sell_buy_type': []}
+
+                    # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+                    future_s_simul_of_trend_line_day = self.future_s_simul_of_trend_line_day_data_fn()
+                    # self.printt('# future_s_simul_of_trend_line_day')
+                    # self.printt(future_s_simul_of_trend_line_day)
+                    for d in range(myhave_sell_total_mall_basket_cnt_remove - 2):
+                        # 과거 시뮬레이션 값 가져와서 종목 찾기 & 주문할 종목코드 카운터 텍스트 저장
+                        sell_mode_first = 0
+                        sell_mode_cnt = 0
+                        sell_ref_price = []
+                        sell_second_price = []
+                        # 시뮬레이터 구한 값 있을때만 실행
+                        if future_s_simul_of_trend_line_day != None:
+                            # sell_mode_cnt = 2
+                            for i in range(len(future_s_simul_of_trend_line_day['deal_day'])):
+                                # mode 더해보기(+-)
+                                sell_mode_first += future_s_simul_of_trend_line_day['sell_mode'][i] - future_s_simul_of_trend_line_day['buy_mode'][i]
+                                if sell_mode_first == (myhave_sell_total_mall_basket_cnt_remove - 2) - d:               # 역으로 today재고 저장
+                                    sell_ref_price.append(future_s_simul_of_trend_line_day['poly_sell_max_price'][i])
+                                    for j in range(i + 1, len(future_s_simul_of_trend_line_day['deal_day']) - 1):
+                                        # mode 더해보기(+-)
+                                        sell_mode_cnt += future_s_simul_of_trend_line_day['sell_mode'][
+                                            j] - future_s_simul_of_trend_line_day['buy_mode'][j]
+                                        if sell_mode_cnt == 2:
+                                            sell_second_price.append(
+                                                future_s_simul_of_trend_line_day['poly_sell_max_price'][j])
+                                    break
+                        # [315.06694648735436]
+                        # print(sell_ref_price)
+                        # [313.97624597998293, 319.3358123569823, 328.04294093755414, 327.4622603066631, 330.33129653359316]
+                        # [327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874]
+                        # print(sell_second_price)
+                        # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(sell_ref_price[0] - sell_second_price[0])
+                        option_s_point_sum += option_s_sell_buy_point
+                        self.printt('sell_ref_price')
+                        self.printt(sell_ref_price)
+                        self.printt('sell_second_price')
+                        self.printt(sell_second_price)
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+
+                        # 옵션 종목검색()
+                        put_or_call = 'put'
+                        if day_residue_int > 2:
+                            month_mall_type = 'center_index'
+                            # center_index / center_index_45
+                        else:
+                            month_mall_type = 'center_index_45'
+                            # center_index / center_index_45
+                        item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                        # print(item_list_cnt)
+
+                        # if d == 0:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                        # else:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                        # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                        if d == 0:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        else:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:                    # 첫번째 라인에서 저장한 코드와 동일할때
+                                    for j in range(len(item_list_cnt_items_search['code_no'])):                             # 그 종목은 건수만 카운터 해주고
+                                        if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:         # 그 종목이랑 동일할때
+                                            item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                                else:
+                                    item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                    item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        # print(item_list_cnt_items_search)
+
+                        # 텍스트 저장은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                            for s in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                                item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                            # 종목코드와 수량(텍스트에 저장하기)
+                            self.today_put_order_list_text_store(item_list_cnt_for_store)
+
+                    # 검색결과 종목 vs option_myhave 비교하여 실제 거래항목 정하기
+                    for s in range(len(item_list_cnt_items_search['code_no'])):
+                        if item_list_cnt_items_search['code_no'][s] in self.option_myhave['code']:
+                            for p in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][p] == item_list_cnt_items_search['code_no'][s]:
+                                    # 재고가 혹시 매도
+                                    if self.option_myhave['sell_or_buy'][p] == 1:
+                                        if item_list_cnt_items_search['cnt'][s] > self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] - self.option_myhave['myhave_cnt'][p])
+                                            item_list_cnt_type['sell_buy_type'].append(1)
+                                        elif item_list_cnt_items_search['cnt'][s] < self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p] - item_list_cnt_items_search['cnt'][s])
+                                            item_list_cnt_type['sell_buy_type'].append(2)
+                                        elif item_list_cnt_items_search['cnt'][s] == self.option_myhave['myhave_cnt'][p]:
+                                            pass
+                                    # 재고가 행여나 매수
+                                    elif self.option_myhave['sell_or_buy'][p] == 2:
+                                        item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                        item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] + self.option_myhave['myhave_cnt'][p])
+                                        item_list_cnt_type['sell_buy_type'].append(1)
+                        else:
+                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s])
+                            item_list_cnt_type['sell_buy_type'].append(1)
+                    # 만일 재고 항목이 검색항목에 없을때
+                    for p in range(len(self.option_myhave['code'])):
+                        if self.option_myhave['code'][p] in item_list_cnt_items_search['code_no']:
+                            pass
+                        else:
+                            # 선물재고는 pass
+                            if self.option_myhave['code'][p][:3] == '101':
+                                pass
+                            # 재고가 혹시 매도
+                            elif self.option_myhave['sell_or_buy'][p] == 1:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(2)
+                            # 재고가 행여나 매수
+                            elif self.option_myhave['sell_or_buy'][p] == 2:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(1)
+        # 선물 매수재고 => 콜청산(매수) 후 콜매도
+        elif myhave_buy_total_mall_basket_cnt_remove > 0:
+            self.printt('선물 매수재고 있음')
+            if myhave_buy_total_mall_basket_cnt_remove >= 4:
+                # 당일 선물 진입여부 판단
+                # 당일 거래 있었으면 텍스트 파일 호출 / 없었으면 시뮬레이터 계산
+                if (self.futrue_s_data['item_code'][0] in self.buyed_today_items) or (
+                        self.futrue_s_data_45['item_code'][0] in self.buyed_today_items) or (
+                        Chain_Future_s_Item_Code[0] in self.buyed_today_items):
+                    # item_list.txt 저장경로
+                    item_list_files_path = os.getcwd() + '/' + Folder_Name_TXT_Store + '/' + 'today_call_order_lists.txt'
+                    if os.path.exists(item_list_files_path):
+                        os.remove(item_list_files_path)
+                    # self.option_myhave = {'code': ['201SA307', '201SA310', '201SA315', '201SA317'],
+                    #                       'myhave_cnt': [18, 15, 15, 3], 'sell_or_buy': [1, 1, 1, 1]}
+                    # 201SA307::9::201SA310::15::201SA317::3::201SA315::5::
+                    # 201SA307::9::201SA315::10::
+                    # {'code_no': ['201SA307', '201SA315', '201SA310', '201SA317'], 'cnt': [18, 15, 15, 3], 'sell_buy_type': []}
+
+                    # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+                    future_s_simul_of_trend_line_day = self.future_s_simul_of_trend_line_day_data_fn()
+                    # self.printt('# future_s_simul_of_trend_line_day')
+                    # self.printt(future_s_simul_of_trend_line_day)
+                    for d in range(myhave_buy_total_mall_basket_cnt_remove - 2 - 1):
+                        # 과거 시뮬레이션 값 가져와서 종목 찾기 & 주문할 종목코드 카운터 텍스트 저장
+                        buy_mode_first = 0
+                        buy_mode_cnt = 0
+                        buy_ref_price = []
+                        buy_second_price = []
+                        # 시뮬레이터 구한 값 있을때만 실행
+                        if future_s_simul_of_trend_line_day != None:
+                            # sell_mode_cnt = 2
+                            for i in range(len(future_s_simul_of_trend_line_day['deal_day'])):
+                                # mode 더해보기(+-)
+                                buy_mode_first += future_s_simul_of_trend_line_day['buy_mode'][i] - future_s_simul_of_trend_line_day['sell_mode'][i]
+                                if buy_mode_first == (myhave_buy_total_mall_basket_cnt_remove - 2) - d:               # 역으로 today재고 저장
+                                    buy_ref_price.append(future_s_simul_of_trend_line_day['poly_buy_min_price'][i])
+                                    for j in range(i + 1, len(future_s_simul_of_trend_line_day['deal_day']) - 1):
+                                        # mode 더해보기(+-)
+                                        buy_mode_cnt += future_s_simul_of_trend_line_day['buy_mode'][j] - future_s_simul_of_trend_line_day['sell_mode'][j]
+                                        if buy_mode_cnt == 2:
+                                            buy_second_price.append(
+                                                future_s_simul_of_trend_line_day['poly_buy_min_price'][j])
+                                    break
+                        # [315.06694648735436]
+                        # print(buy_ref_price)
+                        # [313.97624597998293, 319.3358123569823, 328.04294093755414, 327.4622603066631, 330.33129653359316]
+                        # [327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874]
+                        # print(buy_second_price)
+                        # 지난진입 금액확인 :: 옵션매도 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(buy_ref_price[0] - buy_second_price[0])
+                        option_s_point_sum += option_s_sell_buy_point
+                        self.printt('buy_ref_price')
+                        self.printt(buy_ref_price)
+                        self.printt('buy_second_price')
+                        self.printt(buy_second_price)
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+
+                        # 옵션 종목검색()
+                        put_or_call = 'call'
+                        if day_residue_int > 2:
+                            month_mall_type = 'center_index'
+                            # center_index / center_index_45
+                        else:
+                            month_mall_type = 'center_index_45'
+                            # center_index / center_index_45
+                        item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                        # print(item_list_cnt)
+
+                        # if d == 0:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                        # else:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                        # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                        if d == 0:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        else:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:                    # 첫번째 라인에서 저장한 코드와 동일할때
+                                    for j in range(len(item_list_cnt_items_search['code_no'])):                             # 그 종목은 건수만 카운터 해주고
+                                        if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:         # 그 종목이랑 동일할때
+                                            item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                                else:
+                                    item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                    item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        # print(item_list_cnt_items_search)
+
+                        # 텍스트 저장은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                            for s in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                                item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                            # 종목코드와 수량(텍스트에 저장하기)
+                            self.today_call_order_list_text_store(item_list_cnt_for_store)
+
+                    # option_s_sell_buy_point_text 가져오기
+                    option_s_sell_buy_point_text_list = self.option_s_sell_buy_point_text_pickup()
+                    # print(option_s_sell_buy_point_text_list)
+                    option_s_sell_buy_point = option_s_sell_buy_point_text_list[-1]
+                    # print(option_s_sell_buy_point)
+                    option_s_point_sum += option_s_sell_buy_point
+                    self.printt('option_s_sell_buy_point')
+                    self.printt(option_s_sell_buy_point)
+
+                    # 옵션 종목검색()
+                    put_or_call = 'call'
+                    if day_residue_int > 2:
+                        month_mall_type = 'center_index'
+                        # center_index / center_index_45
+                    else:
+                        month_mall_type = 'center_index_45'
+                        # center_index / center_index_45
+                    item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                    # print(item_list_cnt)
+
+                    # if d == 0:
+                    #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                    # else:
+                    #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                    # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                    for i in range(len(item_list_cnt['code_no'])):
+                        if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:  # 첫번째 라인에서 저장한 코드와 동일할때
+                            for j in range(len(item_list_cnt_items_search['code_no'])):  # 그 종목은 건수만 카운터 해주고
+                                if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:  # 그 종목이랑 동일할때
+                                    item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                        else:
+                            item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                            item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                            item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                    # print(item_list_cnt_items_search)
+
+                    # 텍스트 저장은 종목이 있을경우에만
+                    if len(item_list_cnt['code_no']) > 0:
+                        item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                        for s in range(len(item_list_cnt['code_no'])):
+                            item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                            item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                        # 종목코드와 수량(텍스트에 저장하기)
+                        self.today_call_order_list_text_store(item_list_cnt_for_store)
+
+                    # 검색결과 종목 vs option_myhave 비교하여 실제 거래항목 정하기
+                    for s in range(len(item_list_cnt_items_search['code_no'])):
+                        if item_list_cnt_items_search['code_no'][s] in self.option_myhave['code']:
+                            for p in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][p] == item_list_cnt_items_search['code_no'][s]:
+                                    # 재고가 혹시 매도
+                                    if self.option_myhave['sell_or_buy'][p] == 1:
+                                        if item_list_cnt_items_search['cnt'][s] > self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] - self.option_myhave['myhave_cnt'][p])
+                                            item_list_cnt_type['sell_buy_type'].append(1)
+                                        elif item_list_cnt_items_search['cnt'][s] < self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p] - item_list_cnt_items_search['cnt'][s])
+                                            item_list_cnt_type['sell_buy_type'].append(2)
+                                        elif item_list_cnt_items_search['cnt'][s] == self.option_myhave['myhave_cnt'][p]:
+                                            pass
+                                    # 재고가 행여나 매수
+                                    elif self.option_myhave['sell_or_buy'][p] == 2:
+                                        item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                        item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] + self.option_myhave['myhave_cnt'][p])
+                                        item_list_cnt_type['sell_buy_type'].append(1)
+
+                        else:
+                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s])
+                            item_list_cnt_type['sell_buy_type'].append(1)
+
+                    # 만일 재고 항목이 검색항목에 없을때
+                    for p in range(len(self.option_myhave['code'])):
+                        if self.option_myhave['code'][p] in item_list_cnt_items_search['code_no']:
+                            pass
+                        else:
+                            # 선물재고는 pass
+                            if self.option_myhave['code'][p][:3] == '101':
+                                pass
+                            # 재고가 혹시 매도
+                            elif self.option_myhave['sell_or_buy'][p] == 1:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(2)
+                            # 재고가 행여나 매수
+                            elif self.option_myhave['sell_or_buy'][p] == 2:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(1)
+                else:
+                    # 당일 선물 진입여부 판단(없었을 경우)
+                    # item_list.txt 저장경로
+                    item_list_files_path = os.getcwd() + '/' + Folder_Name_TXT_Store + '/' + 'today_call_order_lists.txt'
+                    if os.path.exists(item_list_files_path):
+                        os.remove(item_list_files_path)
+                    # self.option_myhave = {'code': ['201SA307', '201SA310', '201SA315', '201SA317'],
+                    #                       'myhave_cnt': [18, 15, 15, 3], 'sell_or_buy': [1, 1, 1, 1]}
+                    # 201SA307::9::201SA310::15::201SA317::3::201SA315::5::
+                    # 201SA307::9::201SA315::10::
+                    # {'code_no': ['201SA307', '201SA315', '201SA310', '201SA317'], 'cnt': [18, 15, 15, 3], 'sell_buy_type': []}
+
+                    # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+                    future_s_simul_of_trend_line_day = self.future_s_simul_of_trend_line_day_data_fn()
+                    # self.printt('# future_s_simul_of_trend_line_day')
+                    # self.printt(future_s_simul_of_trend_line_day)
+                    for d in range(myhave_buy_total_mall_basket_cnt_remove - 2):
+                        # 과거 시뮬레이션 값 가져와서 종목 찾기 & 주문할 종목코드 카운터 텍스트 저장
+                        buy_mode_first = 0
+                        buy_mode_cnt = 0
+                        buy_ref_price = []
+                        buy_second_price = []
+                        # 시뮬레이터 구한 값 있을때만 실행
+                        if future_s_simul_of_trend_line_day != None:
+                            # sell_mode_cnt = 2
+                            for i in range(len(future_s_simul_of_trend_line_day['deal_day'])):
+                                # mode 더해보기(+-)
+                                buy_mode_first += future_s_simul_of_trend_line_day['buy_mode'][i] - future_s_simul_of_trend_line_day['sell_mode'][i]
+                                if buy_mode_first == (myhave_buy_total_mall_basket_cnt_remove - 2) - d:               # 역으로 today재고 저장
+                                    buy_ref_price.append(future_s_simul_of_trend_line_day['poly_buy_min_price'][i])
+                                    for j in range(i + 1, len(future_s_simul_of_trend_line_day['deal_day']) - 1):
+                                        # mode 더해보기(+-)
+                                        buy_mode_cnt += future_s_simul_of_trend_line_day['buy_mode'][j] - future_s_simul_of_trend_line_day['sell_mode'][j]
+                                        if buy_mode_cnt == 2:
+                                            buy_second_price.append(
+                                                future_s_simul_of_trend_line_day['poly_buy_min_price'][j])
+                                    break
+                        # [315.06694648735436]
+                        # print(buy_ref_price)
+                        # [313.97624597998293, 319.3358123569823, 328.04294093755414, 327.4622603066631, 330.33129653359316]
+                        # [327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874]
+                        # print(buy_second_price)
+                        # 지난진입 금액확인 :: 옵션매도 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(buy_ref_price[0] - buy_second_price[0])
+                        option_s_point_sum += option_s_sell_buy_point
+                        self.printt('buy_ref_price')
+                        self.printt(buy_ref_price)
+                        self.printt('buy_second_price')
+                        self.printt(buy_second_price)
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+
+                        # 옵션 종목검색()
+                        put_or_call = 'call'
+                        if day_residue_int > 2:
+                            month_mall_type = 'center_index'
+                            # center_index / center_index_45
+                        else:
+                            month_mall_type = 'center_index_45'
+                            # center_index / center_index_45
+                        item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                        # print(item_list_cnt)
+
+                        # if d == 0:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                        # else:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                        # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                        if d == 0:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        else:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:                    # 첫번째 라인에서 저장한 코드와 동일할때
+                                    for j in range(len(item_list_cnt_items_search['code_no'])):                             # 그 종목은 건수만 카운터 해주고
+                                        if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:         # 그 종목이랑 동일할때
+                                            item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                                else:
+                                    item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                    item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        # print(item_list_cnt_items_search)
+
+                        # 텍스트 저장은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                            for s in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                                item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                            # 종목코드와 수량(텍스트에 저장하기)
+                            self.today_call_order_list_text_store(item_list_cnt_for_store)
+
+                    # 검색결과 종목 vs option_myhave 비교하여 실제 거래항목 정하기
+                    for s in range(len(item_list_cnt_items_search['code_no'])):
+                        if item_list_cnt_items_search['code_no'][s] in self.option_myhave['code']:
+                            for p in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][p] == item_list_cnt_items_search['code_no'][s]:
+                                    # 재고가 혹시 매도
+                                    if self.option_myhave['sell_or_buy'][p] == 1:
+                                        if item_list_cnt_items_search['cnt'][s] > self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] - self.option_myhave['myhave_cnt'][p])
+                                            item_list_cnt_type['sell_buy_type'].append(1)
+                                        elif item_list_cnt_items_search['cnt'][s] < self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p] - item_list_cnt_items_search['cnt'][s])
+                                            item_list_cnt_type['sell_buy_type'].append(2)
+                                        elif item_list_cnt_items_search['cnt'][s] == self.option_myhave['myhave_cnt'][p]:
+                                            pass
+                                    # 재고가 행여나 매수
+                                    elif self.option_myhave['sell_or_buy'][p] == 2:
+                                        item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                        item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] + self.option_myhave['myhave_cnt'][p])
+                                        item_list_cnt_type['sell_buy_type'].append(1)
+
+                        else:
+                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s])
+                            item_list_cnt_type['sell_buy_type'].append(1)
+
+                    # 만일 재고 항목이 검색항목에 없을때
+                    for p in range(len(self.option_myhave['code'])):
+                        if self.option_myhave['code'][p] in item_list_cnt_items_search['code_no']:
+                            pass
+                        else:
+                            # 선물재고는 pass
+                            if self.option_myhave['code'][p][:3] == '101':
+                                pass
+                            # 재고가 혹시 매도
+                            elif self.option_myhave['sell_or_buy'][p] == 1:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(2)
+                            # 재고가 행여나 매수
+                            elif self.option_myhave['sell_or_buy'][p] == 2:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(1)
+            # 선물 매수재고(3)
+            elif myhave_buy_total_mall_basket_cnt_remove == 3:
+                # 당일 선물 진입여부 판단
+                # 당일 거래 있었으면 텍스트 파일 호출 / 없었으면 시뮬레이터 계산
+                if (self.futrue_s_data['item_code'][0] in self.buyed_today_items) or (
+                        self.futrue_s_data_45['item_code'][0] in self.buyed_today_items) or (
+                        Chain_Future_s_Item_Code[0] in self.buyed_today_items):
+                    # item_list.txt 저장경로
+                    item_list_files_path = os.getcwd() + '/' + Folder_Name_TXT_Store + '/' + 'today_call_order_lists.txt'
+                    if os.path.exists(item_list_files_path):
+                        os.remove(item_list_files_path)
+                    # self.option_myhave = {'code': ['201SA307', '201SA310', '201SA315', '201SA317'],
+                    #                       'myhave_cnt': [18, 15, 15, 3], 'sell_or_buy': [1, 1, 1, 1]}
+                    # 201SA307::9::201SA310::15::201SA317::3::201SA315::5::
+                    # 201SA307::9::201SA315::10::
+                    # {'code_no': ['201SA307', '201SA315', '201SA310', '201SA317'], 'cnt': [18, 15, 15, 3], 'sell_buy_type': []}
+
+                    # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+                    future_s_simul_of_trend_line_day = self.future_s_simul_of_trend_line_day_data_fn()
+                    # self.printt('# future_s_simul_of_trend_line_day')
+                    # self.printt(future_s_simul_of_trend_line_day)
+                    for d in range(myhave_buy_total_mall_basket_cnt_remove - 2 - 1):
+                        # 과거 시뮬레이션 값 가져와서 종목 찾기 & 주문할 종목코드 카운터 텍스트 저장
+                        buy_mode_first = 0
+                        buy_mode_cnt = 0
+                        buy_ref_price = []
+                        buy_second_price = []
+                        # 시뮬레이터 구한 값 있을때만 실행
+                        if future_s_simul_of_trend_line_day != None:
+                            # sell_mode_cnt = 2
+                            for i in range(len(future_s_simul_of_trend_line_day['deal_day'])):
+                                # mode 더해보기(+-)
+                                buy_mode_first += future_s_simul_of_trend_line_day['buy_mode'][i] - future_s_simul_of_trend_line_day['sell_mode'][i]
+                                if buy_mode_first == (myhave_buy_total_mall_basket_cnt_remove - 2) - d:               # 역으로 today재고 저장
+                                    buy_ref_price.append(future_s_simul_of_trend_line_day['poly_buy_min_price'][i])
+                                    for j in range(i + 1, len(future_s_simul_of_trend_line_day['deal_day']) - 1):
+                                        # mode 더해보기(+-)
+                                        buy_mode_cnt += future_s_simul_of_trend_line_day['buy_mode'][j] - future_s_simul_of_trend_line_day['sell_mode'][j]
+                                        if buy_mode_cnt == 2:
+                                            buy_second_price.append(
+                                                future_s_simul_of_trend_line_day['poly_buy_min_price'][j])
+                                    break
+                        # [315.06694648735436]
+                        # print(buy_ref_price)
+                        # [313.97624597998293, 319.3358123569823, 328.04294093755414, 327.4622603066631, 330.33129653359316]
+                        # [327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874]
+                        # print(buy_second_price)
+                        # 지난진입 금액확인 :: 옵션매도 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(buy_ref_price[0] - buy_second_price[0])
+                        option_s_point_sum += option_s_sell_buy_point
+                        self.printt('buy_ref_price')
+                        self.printt(buy_ref_price)
+                        self.printt('buy_second_price')
+                        self.printt(buy_second_price)
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+
+                        # 옵션 종목검색()
+                        put_or_call = 'call'
+                        if day_residue_int > 2:
+                            month_mall_type = 'center_index'
+                            # center_index / center_index_45
+                        else:
+                            month_mall_type = 'center_index_45'
+                            # center_index / center_index_45
+                        item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                        # print(item_list_cnt)
+
+                        # if d == 0:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                        # else:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                        # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                        if d == 0:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        else:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:                    # 첫번째 라인에서 저장한 코드와 동일할때
+                                    for j in range(len(item_list_cnt_items_search['code_no'])):                             # 그 종목은 건수만 카운터 해주고
+                                        if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:         # 그 종목이랑 동일할때
+                                            item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                                else:
+                                    item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                    item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        # print(item_list_cnt_items_search)
+
+                        # 텍스트 저장은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                            for s in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                                item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                            # 종목코드와 수량(텍스트에 저장하기)
+                            self.today_call_order_list_text_store(item_list_cnt_for_store)
+
+                    # option_s_sell_buy_point_text 가져오기
+                    option_s_sell_buy_point_text_list = self.option_s_sell_buy_point_text_pickup()
+                    # print(option_s_sell_buy_point_text_list)
+                    option_s_sell_buy_point = option_s_sell_buy_point_text_list[-1]
+                    # print(option_s_sell_buy_point)
+                    option_s_point_sum += option_s_sell_buy_point
+                    self.printt('option_s_sell_buy_point')
+                    self.printt(option_s_sell_buy_point)
+
+                    # 옵션 종목검색()
+                    put_or_call = 'call'
+                    if day_residue_int > 2:
+                        month_mall_type = 'center_index'
+                        # center_index / center_index_45
+                    else:
+                        month_mall_type = 'center_index_45'
+                        # center_index / center_index_45
+                    item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                    # print(item_list_cnt)
+
+                    # if d == 0:
+                    #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                    # else:
+                    #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                    # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                    for i in range(len(item_list_cnt['code_no'])):
+                        if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:  # 첫번째 라인에서 저장한 코드와 동일할때
+                            for j in range(len(item_list_cnt_items_search['code_no'])):  # 그 종목은 건수만 카운터 해주고
+                                if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:  # 그 종목이랑 동일할때
+                                    item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                        else:
+                            item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                            item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                            item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                    # print(item_list_cnt_items_search)
+
+                    # 텍스트 저장은 종목이 있을경우에만
+                    if len(item_list_cnt['code_no']) > 0:
+                        item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                        for s in range(len(item_list_cnt['code_no'])):
+                            item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                            item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                        # 종목코드와 수량(텍스트에 저장하기)
+                        self.today_call_order_list_text_store(item_list_cnt_for_store)
+
+                    # 검색결과 종목 vs option_myhave 비교하여 실제 거래항목 정하기
+                    for s in range(len(item_list_cnt_items_search['code_no'])):
+                        if item_list_cnt_items_search['code_no'][s] in self.option_myhave['code']:
+                            for p in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][p] == item_list_cnt_items_search['code_no'][s]:
+                                    # 재고가 혹시 매도
+                                    if self.option_myhave['sell_or_buy'][p] == 1:
+                                        if item_list_cnt_items_search['cnt'][s] > self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] - self.option_myhave['myhave_cnt'][p])
+                                            item_list_cnt_type['sell_buy_type'].append(1)
+                                        elif item_list_cnt_items_search['cnt'][s] < self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p] - item_list_cnt_items_search['cnt'][s])
+                                            item_list_cnt_type['sell_buy_type'].append(2)
+                                        elif item_list_cnt_items_search['cnt'][s] == self.option_myhave['myhave_cnt'][p]:
+                                            pass
+                                    # 재고가 행여나 매수
+                                    elif self.option_myhave['sell_or_buy'][p] == 2:
+                                        item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                        item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] + self.option_myhave['myhave_cnt'][p])
+                                        item_list_cnt_type['sell_buy_type'].append(1)
+
+                        else:
+                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s])
+                            item_list_cnt_type['sell_buy_type'].append(1)
+
+                    # 만일 재고 항목이 검색항목에 없을때
+                    for p in range(len(self.option_myhave['code'])):
+                        if self.option_myhave['code'][p] in item_list_cnt_items_search['code_no']:
+                            pass
+                        else:
+                            # 선물재고는 pass
+                            if self.option_myhave['code'][p][:3] == '101':
+                                pass
+                            # 재고가 혹시 매도
+                            elif self.option_myhave['sell_or_buy'][p] == 1:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(2)
+                            # 재고가 행여나 매수
+                            elif self.option_myhave['sell_or_buy'][p] == 2:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(1)
+                else:
+                    # 당일 선물 진입여부 판단(없었을 경우)
+                    # item_list.txt 저장경로
+                    item_list_files_path = os.getcwd() + '/' + Folder_Name_TXT_Store + '/' + 'today_call_order_lists.txt'
+                    if os.path.exists(item_list_files_path):
+                        os.remove(item_list_files_path)
+                    # self.option_myhave = {'code': ['201SA307', '201SA310', '201SA315', '201SA317'],
+                    #                       'myhave_cnt': [18, 15, 15, 3], 'sell_or_buy': [1, 1, 1, 1]}
+                    # 201SA307::9::201SA310::15::201SA317::3::201SA315::5::
+                    # 201SA307::9::201SA315::10::
+                    # {'code_no': ['201SA307', '201SA315', '201SA310', '201SA317'], 'cnt': [18, 15, 15, 3], 'sell_buy_type': []}
+
+                    # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+                    future_s_simul_of_trend_line_day = self.future_s_simul_of_trend_line_day_data_fn()
+                    # self.printt('# future_s_simul_of_trend_line_day')
+                    # self.printt(future_s_simul_of_trend_line_day)
+                    for d in range(myhave_buy_total_mall_basket_cnt_remove - 2):
+                        # 과거 시뮬레이션 값 가져와서 종목 찾기 & 주문할 종목코드 카운터 텍스트 저장
+                        buy_mode_first = 0
+                        buy_mode_cnt = 0
+                        buy_ref_price = []
+                        buy_second_price = []
+                        # 시뮬레이터 구한 값 있을때만 실행
+                        if future_s_simul_of_trend_line_day != None:
+                            # sell_mode_cnt = 2
+                            for i in range(len(future_s_simul_of_trend_line_day['deal_day'])):
+                                # mode 더해보기(+-)
+                                buy_mode_first += future_s_simul_of_trend_line_day['buy_mode'][i] - future_s_simul_of_trend_line_day['sell_mode'][i]
+                                if buy_mode_first == (myhave_buy_total_mall_basket_cnt_remove - 2) - d:               # 역으로 today재고 저장
+                                    buy_ref_price.append(future_s_simul_of_trend_line_day['poly_buy_min_price'][i])
+                                    for j in range(i + 1, len(future_s_simul_of_trend_line_day['deal_day']) - 1):
+                                        # mode 더해보기(+-)
+                                        buy_mode_cnt += future_s_simul_of_trend_line_day['buy_mode'][j] - future_s_simul_of_trend_line_day['sell_mode'][j]
+                                        if buy_mode_cnt == 2:
+                                            buy_second_price.append(
+                                                future_s_simul_of_trend_line_day['poly_buy_min_price'][j])
+                                    break
+                        # [315.06694648735436]
+                        # print(buy_ref_price)
+                        # [313.97624597998293, 319.3358123569823, 328.04294093755414, 327.4622603066631, 330.33129653359316]
+                        # [327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874]
+                        # print(buy_second_price)
+                        # 지난진입 금액확인 :: 옵션매도 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(buy_ref_price[0] - buy_second_price[0])
+                        option_s_point_sum += option_s_sell_buy_point
+                        self.printt('buy_ref_price')
+                        self.printt(buy_ref_price)
+                        self.printt('buy_second_price')
+                        self.printt(buy_second_price)
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+
+                        # 옵션 종목검색()
+                        put_or_call = 'call'
+                        if day_residue_int > 2:
+                            month_mall_type = 'center_index'
+                            # center_index / center_index_45
+                        else:
+                            month_mall_type = 'center_index_45'
+                            # center_index / center_index_45
+                        item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                        # print(item_list_cnt)
+
+                        # if d == 0:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA310'], 'cnt': [3, 5]}   # option_items_search 결과값
+                        # else:
+                        #     item_list_cnt = {'code_no': ['201SA307', '201SA315', '201SA317'], 'cnt': [3, 5, 1]}
+
+                        # 종목코드 중복시 건수만 늘려주고(중복된것 모두 정리하기)
+                        if d == 0:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        else:
+                            for i in range(len(item_list_cnt['code_no'])):
+                                if item_list_cnt['code_no'][i] in item_list_cnt_items_search['code_no']:                    # 첫번째 라인에서 저장한 코드와 동일할때
+                                    for j in range(len(item_list_cnt_items_search['code_no'])):                             # 그 종목은 건수만 카운터 해주고
+                                        if item_list_cnt_items_search['code_no'][j] == item_list_cnt['code_no'][i]:         # 그 종목이랑 동일할때
+                                            item_list_cnt_items_search['cnt'][j] += (item_list_cnt['cnt'][i] * basket_cnt)
+                                else:
+                                    item_list_cnt_items_search['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_items_search['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                    item_list_cnt_items_search['point'].append(item_list_cnt['point'][i])
+                        # print(item_list_cnt_items_search)
+
+                        # 텍스트 저장은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                            for s in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][s])
+                                item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][s] * basket_cnt)
+                            # 종목코드와 수량(텍스트에 저장하기)
+                            self.today_call_order_list_text_store(item_list_cnt_for_store)
+
+                    # 검색결과 종목 vs option_myhave 비교하여 실제 거래항목 정하기
+                    for s in range(len(item_list_cnt_items_search['code_no'])):
+                        if item_list_cnt_items_search['code_no'][s] in self.option_myhave['code']:
+                            for p in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][p] == item_list_cnt_items_search['code_no'][s]:
+                                    # 재고가 혹시 매도
+                                    if self.option_myhave['sell_or_buy'][p] == 1:
+                                        if item_list_cnt_items_search['cnt'][s] > self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] - self.option_myhave['myhave_cnt'][p])
+                                            item_list_cnt_type['sell_buy_type'].append(1)
+                                        elif item_list_cnt_items_search['cnt'][s] < self.option_myhave['myhave_cnt'][p]:
+                                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                            item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p] - item_list_cnt_items_search['cnt'][s])
+                                            item_list_cnt_type['sell_buy_type'].append(2)
+                                        elif item_list_cnt_items_search['cnt'][s] == self.option_myhave['myhave_cnt'][p]:
+                                            pass
+                                    # 재고가 행여나 매수
+                                    elif self.option_myhave['sell_or_buy'][p] == 2:
+                                        item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                                        item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s] + self.option_myhave['myhave_cnt'][p])
+                                        item_list_cnt_type['sell_buy_type'].append(1)
+
+                        else:
+                            item_list_cnt_type['code_no'].append(item_list_cnt_items_search['code_no'][s])
+                            item_list_cnt_type['cnt'].append(item_list_cnt_items_search['cnt'][s])
+                            item_list_cnt_type['sell_buy_type'].append(1)
+
+                    # 만일 재고 항목이 검색항목에 없을때
+                    for p in range(len(self.option_myhave['code'])):
+                        if self.option_myhave['code'][p] in item_list_cnt_items_search['code_no']:
+                            pass
+                        else:
+                            # 선물재고는 pass
+                            if self.option_myhave['code'][p][:3] == '101':
+                                pass
+                            # 재고가 혹시 매도
+                            elif self.option_myhave['sell_or_buy'][p] == 1:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(2)
+                            # 재고가 행여나 매수
+                            elif self.option_myhave['sell_or_buy'][p] == 2:
+                                item_list_cnt_type['code_no'].append(self.option_myhave['code'][p])
+                                item_list_cnt_type['cnt'].append(self.option_myhave['myhave_cnt'][p])
+                                item_list_cnt_type['sell_buy_type'].append(1)
+
+        # 현재의 선물 매도/매수 옵션 매도/매수 상황에 따른 자산가치 정리해서 db저장
+        # db명
+        db_name_center_option_s_change_data = 'center_option_s_change_state'
+        # 딕셔너리 선언 / 저장준비
+        center_option_s_change_data = {'center_option_price': [], 'fu_run_price': [], 'sell_or_buy': [], 'myhave_fu_cnt': [], 'basket_cnt': [], 'option_s_point_sum': [], 'option_s_point_in': [], 'option_s_point_myhave': [], 'day_residue_int': [], 'my_total_money': []}
+        center_option_s_change_data['center_option_price'].append(self.center_option_price)
+        center_option_s_change_data['fu_run_price'].append(self.futrue_s_data['run_price'][0])
+        if myhave_sell_total_mall_basket_cnt_remove > 0:
+            sell_or_buy = 1
+            myhave_total_mall_basket_cnt_remove = myhave_sell_total_mall_basket_cnt_remove
+        elif myhave_buy_total_mall_basket_cnt_remove > 0:
+            sell_or_buy = 2
+            myhave_total_mall_basket_cnt_remove = myhave_buy_total_mall_basket_cnt_remove
+        else:
+            sell_or_buy = 0
+            myhave_total_mall_basket_cnt_remove = 0
+        center_option_s_change_data['sell_or_buy'].append(sell_or_buy)
+        center_option_s_change_data['myhave_fu_cnt'].append(myhave_total_mall_basket_cnt_remove)
+        center_option_s_change_data['basket_cnt'].append(basket_cnt)
+        center_option_s_change_data['option_s_point_sum'].append(option_s_point_sum)
+        # 현재 옵션 투입(검색결과) point 합계
+        option_s_point_in = 0
+        for i in range(len(item_list_cnt_items_search['code_no'])):
+            option_s_point_in += item_list_cnt_items_search['cnt'][i] * item_list_cnt_items_search['point'][i]
+        center_option_s_change_data['option_s_point_in'].append(option_s_point_in)
+        # 현재 옵션 재고 point 합계
+        option_s_point_myhave = 0
+        # 풋옵션
+        for i in range(len(self.output_put_option_data['code'])):
+            for h in range(len(self.option_myhave['code'])):
+                # 재고가 매도
+                if self.option_myhave['sell_or_buy'][h] == 1:
+                    if self.output_put_option_data['code'][i] == self.option_myhave['code'][h]:
+                        option_s_point_myhave += self.output_put_option_data['run_price'][i] * self.option_myhave['myhave_cnt'][h]
+        # 차월물
+        for i in range(len(self.output_put_option_data_45['code'])):
+            for h in range(len(self.option_myhave['code'])):
+                # 재고가 매도
+                if self.option_myhave['sell_or_buy'][h] == 1:
+                    if self.output_put_option_data_45['code'][i] == self.option_myhave['code'][h]:
+                        option_s_point_myhave += self.output_put_option_data_45['run_price'][i] * self.option_myhave['myhave_cnt'][h]
+        # 콜옵션
+        for i in range(len(self.output_call_option_data['code'])):
+            for h in range(len(self.option_myhave['code'])):
+                # 재고가 매도
+                if self.option_myhave['sell_or_buy'][h] == 1:
+                    if self.output_call_option_data['code'][i] == self.option_myhave['code'][h]:
+                        option_s_point_myhave += self.output_call_option_data['run_price'][i] * self.option_myhave['myhave_cnt'][h]
+        # 차월물
+        for i in range(len(self.output_call_option_data_45['code'])):
+            for h in range(len(self.option_myhave['code'])):
+                # 재고가 매도
+                if self.option_myhave['sell_or_buy'][h] == 1:
+                    if self.output_call_option_data_45['code'][i] == self.option_myhave['code'][h]:
+                        option_s_point_myhave += self.output_call_option_data_45['run_price'][i] * self.option_myhave['myhave_cnt'][h]
+        center_option_s_change_data['option_s_point_myhave'].append(option_s_point_myhave)
+        center_option_s_change_data['day_residue_int'].append(day_residue_int)
+        # 선물옵션 순자산금액 + stock 추정예탁자산
+        option_have_money_plus_estimated_deposit = self.option_have_money + self.estimated_deposit
+        center_option_s_change_data['my_total_money'].append(option_have_money_plus_estimated_deposit)
+        # 저장 함수 호출
+        center_option_s_change_data_store(Folder_Name_DB_Store, db_name_center_option_s_change_data, center_option_s_change_data)
+
+        # print(item_list_cnt_type)
+        # 검색된 종목코드 여부
+        item_list_cnt = len(item_list_cnt_type['code_no'])
+        if item_list_cnt > 0:
+            self.future_s_market_sell_buy(item_list_cnt_type)
+
+    # 선물(진입/청산) 옵션(진입/청산) 준비
+    def future_s_market_ready(self):
+        # 당일날 선물 주문 있었으면 return
+        # 당일 매도 종목
+        # 당월물
+        if self.futrue_s_data['item_code'][0] in self.selled_today_items:
+            return
+        # 차월물
+        if self.futrue_s_data_45['item_code'][0] in self.selled_today_items:
+            return
+        # 당일 매수 종목
+        # 당월물
+        if self.futrue_s_data['item_code'][0] in self.buyed_today_items:
+            return
+        # 차월물
+        if self.futrue_s_data_45['item_code'][0] in self.buyed_today_items:
+            return
+        # 연결선물가상매매
+        if Chain_Future_s_Item_Code[0] in self.selled_today_items:
+            return
+        if Chain_Future_s_Item_Code[0] in self.buyed_today_items:
+            return
+
+        # 주문변수 초기화
+        item_list_cnt_type = {'code_no': [], 'cnt': [], 'sell_buy_type': []}
+        # 선물 바스켓 가져오기
+        basket_cnt = self.future_s_basket_cnt_text_read()   #int
+        # print(basket_cnt)
+        # 선옵잔고요청 - 이벤트 슬롯
+        self.myhave_option_rq()
+        # # 예탁금및증거금조회 - 이벤트 슬롯
+        # self.mymoney_option_rq()
+        # 선물 영업일 기준 잔존일
+        future_s_day_residue_int = self.futrue_s_data['day_residue'][0]  # int
+        # print(future_s_day_residue_int)
+        # 옵션 영업일 기준 잔존일
+        day_residue_int = self.output_put_option_data['day_residue'][self.center_index]     # int
+        # print(day_residue_int)
+
+        # 계좌내 선물 재고 확인
+        myhave_sell_current_mall_cnt = 0
+        myhave_buy_current_mall_cnt = 0
+        myhave_sell_total_mall_cnt = 0
+        myhave_buy_total_mall_cnt = 0
+        for f in range(len(self.option_myhave['code'])):
+            # 당월물
+            if self.option_myhave['code'][f] == self.futrue_s_data['item_code'][0]:
+                if self.option_myhave['sell_or_buy'][f] == 1:
+                    myhave_sell_current_mall_cnt = myhave_sell_current_mall_cnt + self.option_myhave['myhave_cnt'][f]
+                    myhave_sell_total_mall_cnt = myhave_sell_total_mall_cnt + self.option_myhave['myhave_cnt'][f]
+                elif self.option_myhave['sell_or_buy'][f] == 2:
+                    myhave_buy_current_mall_cnt = myhave_buy_current_mall_cnt + self.option_myhave['myhave_cnt'][f]
+                    myhave_buy_total_mall_cnt = myhave_buy_total_mall_cnt + self.option_myhave['myhave_cnt'][f]
+            # 차월물
+            elif self.option_myhave['code'][f] == self.futrue_s_data_45['item_code'][0]:
+                if self.option_myhave['sell_or_buy'][f] == 1:
+                    myhave_sell_total_mall_cnt = myhave_sell_total_mall_cnt + self.option_myhave['myhave_cnt'][f]
+                elif self.option_myhave['sell_or_buy'][f] == 2:
+                    myhave_buy_total_mall_cnt = myhave_buy_total_mall_cnt + self.option_myhave['myhave_cnt'][f]
+        # print(myhave_sell_current_mall_cnt)
+        # print(myhave_buy_current_mall_cnt)
+        # print(myhave_sell_total_mall_cnt)
+        # print(myhave_buy_total_mall_cnt)
+        # 매도재고 / 매수재고
+        myhave_sell_total_mall_basket_cnt_remove = int(myhave_sell_total_mall_cnt / basket_cnt)
+        myhave_buy_total_mall_basket_cnt_remove = int(myhave_buy_total_mall_cnt / basket_cnt)
         # ai
-        # 월봉
-        # 3차원 기울기 체크
-        future_s_month_poly_gradient = 'sell_or_buy_time'
-        if self.stock_trend_line_of_ai_month != None:
-            for i in range(len(self.stock_trend_line_of_ai_month['stock_no'])):
-                # 연결선물
-                if Chain_Future_s_Item_Code[0] == self.stock_trend_line_of_ai_month['stock_no'][i]:
-                    # 월봉 3차원 기울기 하향중
-                    if ((self.stock_trend_line_of_ai_month['poly_h_gradient'][i] < 0) and (
-                            self.stock_trend_line_of_ai_month['poly_l_gradient'][i] < 0)):
-                        future_s_month_poly_gradient = 'sell_time'
-                    # 월봉 3차원 기울기 상향중
-                    elif ((self.stock_trend_line_of_ai_month['poly_h_gradient'][i] > 0) and (
-                            self.stock_trend_line_of_ai_month['poly_l_gradient'][i] > 0)):
-                        future_s_month_poly_gradient = 'buy_time'
-        # print(future_s_month_poly_gradient)
         # 일봉
-        # 3차원 기울기 체크
-        future_s_day_poly_gradient = 'sell_or_buy_time'
         day_poly_max_price = 9999999
         day_poly_min_price = 0
         if self.stock_trend_line_of_ai_day != None:
@@ -5821,15 +7187,6 @@ class MyWindow(Layout):
                 if Chain_Future_s_Item_Code[0] == self.stock_trend_line_of_ai_day['stock_no'][i]:
                     day_poly_max_price = self.stock_trend_line_of_ai_day['poly_sell_max_price'][i]
                     day_poly_min_price = self.stock_trend_line_of_ai_day['poly_buy_min_price'][i]
-                    # 일봉 3차원 기울기 하향중
-                    if ((self.stock_trend_line_of_ai_day['poly_h_gradient'][i] < 0) and (
-                            self.stock_trend_line_of_ai_day['poly_l_gradient'][i] < 0)):
-                        future_s_day_poly_gradient = 'sell_time'
-                    # 일봉 3차원 기울기 상향중
-                    elif ((self.stock_trend_line_of_ai_day['poly_h_gradient'][i] > 0) and (
-                            self.stock_trend_line_of_ai_day['poly_l_gradient'][i] > 0)):
-                        future_s_day_poly_gradient = 'buy_time'
-        # print(future_s_day_poly_gradient)
         # print(day_poly_max_price)
         # print(day_poly_min_price)
 
@@ -5846,20 +7203,198 @@ class MyWindow(Layout):
                     sell_roll_over_check_cnt = int(myhave_sell_current_mall_cnt / basket_cnt)
                     if future_s_day_residue_int > (sell_roll_over_check_cnt + 2):
                         self.printt('당월물 진입')
+
+                        # 선물재고 건수 및 옵션재고 확인
+                        if myhave_sell_total_mall_basket_cnt_remove >= 4:
+                            # 매도재고 : 매도신호 => 선물매도 건수가 바스켓 기준으로 4이상이면 거래없음(이론적인 거래는 실행되는 것으로 간주)
+                            self.printt('(4)선물매도 건수가 바스켓 기준으로 4이상이면 거래없음')
+                            # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                            option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                          self.sell_second_price[0])
+                            self.printt('self.futrue_s_data[run_price][0]')
+                            self.printt(self.futrue_s_data['run_price'][0])
+                            self.printt('self.sell_second_price[0]')
+                            self.printt(self.sell_second_price[0])
+                            self.printt('option_s_sell_buy_point')
+                            self.printt(option_s_sell_buy_point)
+                            # option_s_sell_buy_point 텍스트 저장
+                            self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                            # 연결선물가상매매
+                            SellBuyType = '매도'
+                            # 시분초
+                            current_time = QTime.currentTime()
+                            text_time = current_time.toString('hh:mm:ss')
+                            time_msg = ' 연결선물가상매매 : ' + text_time
+                            # 텍스트 저장 호출
+                            self.printt_selled(Chain_Future_s_Item_Code[0] + '::(' + SellBuyType + time_msg + ')')
+                            return
+                        elif (myhave_sell_total_mall_basket_cnt_remove == 3) or (
+                                myhave_sell_total_mall_basket_cnt_remove == 2):
+                            # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                            option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                          self.sell_second_price[0])
+                            self.printt('self.futrue_s_data[run_price][0]')
+                            self.printt(self.futrue_s_data['run_price'][0])
+                            self.printt('self.sell_second_price[0]')
+                            self.printt(self.sell_second_price[0])
+                            self.printt('option_s_sell_buy_point')
+                            self.printt(option_s_sell_buy_point)
+                            # option_s_sell_buy_point 텍스트 저장
+                            self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                            # 옵션 종목검색(풋매도)
+                            put_or_call = 'put'
+                            if day_residue_int > 2:
+                                month_mall_type = 'center_index'
+                                # center_index / center_index_45
+                            else:
+                                month_mall_type = 'center_index_45'
+                                # center_index / center_index_45
+                            item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                            # print(item_list_cnt)
+                            # item_list_cnt = {'code_no': ['301SA307'], 'cnt': [3]}   # 텍스트 읽은 결과값
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_type['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_type['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_type['sell_buy_type'].append(1)
+                            self.printt('(3~2)옵션 종목검색(풋매도)')
+                            self.printt(item_list_cnt_type)
+                            # 텍스트 저장은 종목이 있을경우에만
+                            if len(item_list_cnt['code_no']) > 0:
+                                item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                                for i in range(len(item_list_cnt['code_no'])):
+                                    item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                # 종목코드와 수량(텍스트에 저장하기)
+                                self.today_put_order_list_text_store(item_list_cnt_for_store)
+                        elif myhave_sell_total_mall_basket_cnt_remove == 1:
+                            # 일반 진입
+                            self.printt('(1)일반 진입')
+                            pass
+
+                        # 선물매도
                         item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
                         item_list_cnt_type['cnt'].append(basket_cnt)
                         item_list_cnt_type['sell_buy_type'].append(1)
+                        # print(item_list_cnt_type)
+
                     elif future_s_day_residue_int <= (sell_roll_over_check_cnt + 2):
                         self.printt('차월물 진입')
+
+                        # 선물재고 건수 및 옵션재고 확인
+                        if myhave_sell_total_mall_basket_cnt_remove >= 4:
+                            # 매도재고 : 매도신호 => 선물매도 건수가 바스켓 기준으로 4이상이면 거래없음(이론적인 거래는 실행되는 것으로 간주)
+                            self.printt('(4)선물매도 건수가 바스켓 기준으로 4이상이면 거래없음')
+                            # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                            option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                          self.sell_second_price[0])
+                            self.printt('self.futrue_s_data[run_price][0]')
+                            self.printt(self.futrue_s_data['run_price'][0])
+                            self.printt('self.sell_second_price[0]')
+                            self.printt(self.sell_second_price[0])
+                            self.printt('option_s_sell_buy_point')
+                            self.printt(option_s_sell_buy_point)
+                            # option_s_sell_buy_point 텍스트 저장
+                            self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                            # 연결선물가상매매
+                            SellBuyType = '매도'
+                            # 시분초
+                            current_time = QTime.currentTime()
+                            text_time = current_time.toString('hh:mm:ss')
+                            time_msg = ' 연결선물가상매매 : ' + text_time
+                            # 텍스트 저장 호출
+                            self.printt_selled(Chain_Future_s_Item_Code[0] + '::(' + SellBuyType + time_msg + ')')
+                            return
+                        elif (myhave_sell_total_mall_basket_cnt_remove == 3) or (
+                                myhave_sell_total_mall_basket_cnt_remove == 2):
+                            # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                            option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                          self.sell_second_price[0])
+                            self.printt('self.futrue_s_data[run_price][0]')
+                            self.printt(self.futrue_s_data['run_price'][0])
+                            self.printt('self.sell_second_price[0]')
+                            self.printt(self.sell_second_price[0])
+                            self.printt('option_s_sell_buy_point')
+                            self.printt(option_s_sell_buy_point)
+                            # option_s_sell_buy_point 텍스트 저장
+                            self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                            # 옵션 종목검색(풋매도)
+                            put_or_call = 'put'
+                            if day_residue_int > 2:
+                                month_mall_type = 'center_index'
+                                # center_index / center_index_45
+                            else:
+                                month_mall_type = 'center_index_45'
+                                # center_index / center_index_45
+                            item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                            # print(item_list_cnt)
+                            # item_list_cnt = {'code_no': ['301SA307'], 'cnt': [3]}   # 텍스트 읽은 결과값
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_type['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_type['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_type['sell_buy_type'].append(1)
+                            self.printt('(3~2)옵션 종목검색(풋매도)')
+                            self.printt(item_list_cnt_type)
+                            # 텍스트 저장은 종목이 있을경우에만
+                            if len(item_list_cnt['code_no']) > 0:
+                                item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                                for i in range(len(item_list_cnt['code_no'])):
+                                    item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                # 종목코드와 수량(텍스트에 저장하기)
+                                self.today_put_order_list_text_store(item_list_cnt_for_store)
+                        elif myhave_sell_total_mall_basket_cnt_remove == 1:
+                            # 일반 진입
+                            self.printt('(1)일반 진입')
+                            pass
+
+                        # 선물매도
                         item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
                         item_list_cnt_type['cnt'].append(basket_cnt)
                         item_list_cnt_type['sell_buy_type'].append(1)
+                        # print(item_list_cnt_type)
+
                 elif myhave_buy_current_mall_cnt > 0:
                     self.printt('매수재고 있음')
                     self.printt('당월물 청산')
+
+                    # 조건확인
+                    # 콜재고 있을때
+                    call_my_have_str = ''
+                    for p in range(len(self.option_myhave['code'])):
+                        # print(self.option_myhave['code'][p][:3])
+                        if self.option_myhave['code'][p][:3] == '201':
+                            call_my_have_str = '201'
+                            # 매도
+                            if self.option_myhave['sell_or_buy'][p] == 1:
+                                # print('콜매도 재고있음')
+                                call_my_have_str = '2011'
+                    if call_my_have_str == '2011':
+                        # 매수재고 : 매도신호 => 선물매도(콜매수 청산)
+                        # 종목코드와 수량 (텍스트에서 읽어오기)
+                        item_list_cnt = self.today_call_order_list_text_pickup()
+                        # {'code_no': ['201S2410', '201S2400', '201S2380'], 'cnt': [1, 2, 2]}
+                        # 청산은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            # 선물매도/풋청산
+                            for have in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][have][:3] == '201':
+                                    if self.option_myhave['sell_or_buy'][have] == 1:
+                                        for i in range(len(item_list_cnt['code_no'])):
+                                            if self.option_myhave['code'][have] == item_list_cnt['code_no'][i]:
+                                                if self.option_myhave['myhave_cnt'][have] >= item_list_cnt['cnt'][i]:
+                                                    item_list_cnt_type['code_no'].append(item_list_cnt['code_no'][i])
+                                                    item_list_cnt_type['cnt'].append(item_list_cnt['cnt'][i])
+                                                    item_list_cnt_type['sell_buy_type'].append(2)
+
+                    # 선물매도
                     item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
                     item_list_cnt_type['cnt'].append(basket_cnt)
                     item_list_cnt_type['sell_buy_type'].append(1)
+                    # print(item_list_cnt_type)
             elif self.futrue_s_data['run_price'][0] < day_poly_min_price:
                 self.printt('당월물 재고있음 선물매수(2) 신호발생')
                 # 롤오버 감안 미리 차월물 진입 여부
@@ -5867,22 +7402,200 @@ class MyWindow(Layout):
                 if myhave_sell_current_mall_cnt > 0:
                     self.printt('매도재고 있음')
                     self.printt('당월물 청산')
+
+                    # 조건확인
+                    # 풋재고 있을때
+                    put_my_have_str = ''
+                    for c in range(len(self.option_myhave['code'])):
+                        # print(self.option_myhave['code'][c][:3])
+                        if self.option_myhave['code'][c][:3] == '301':
+                            put_my_have_str = '301'
+                            # 매도
+                            if self.option_myhave['sell_or_buy'][c] == 1:
+                                # print('풋매도 재고있음')
+                                put_my_have_str = '3011'
+                    if put_my_have_str == '3011':
+                        # 매도재고 : 매수신호 => 선물매수(풋매수 청산)
+                        # 종목코드와 수량 (텍스트에서 읽어오기)
+                        item_list_cnt = self.today_put_order_list_text_pickup()
+                        # {'code_no': ['301S2410', '301S2400', '301S2380'], 'cnt': [1, 2, 2]}
+                        # print(item_list_cnt)
+                        # 청산은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            # 선물매수/풋청산
+                            for have in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][have][:3] == '301':
+                                    if self.option_myhave['sell_or_buy'][have] == 1:
+                                        for i in range(len(item_list_cnt['code_no'])):
+                                            if self.option_myhave['code'][have] == item_list_cnt['code_no'][i]:
+                                                if self.option_myhave['myhave_cnt'][have] >= item_list_cnt['cnt'][i]:
+                                                    item_list_cnt_type['code_no'].append(item_list_cnt['code_no'][i])
+                                                    item_list_cnt_type['cnt'].append(item_list_cnt['cnt'][i])
+                                                    item_list_cnt_type['sell_buy_type'].append(2)
+                    # 선물매수
                     item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
                     item_list_cnt_type['cnt'].append(basket_cnt)
                     item_list_cnt_type['sell_buy_type'].append(2)
+                    # print(item_list_cnt_type)
+
                 elif myhave_buy_current_mall_cnt > 0:
                     self.printt('매수재고 있음')
                     buy_roll_over_check_cnt = int(myhave_buy_current_mall_cnt / basket_cnt)
                     if future_s_day_residue_int > (buy_roll_over_check_cnt + 2):
                         self.printt('당월물 진입')
+
+                        # 선물재고 건수 및 옵션재고 확인
+                        if myhave_buy_total_mall_basket_cnt_remove >= 4:
+                            # 매수재고 : 매수신호 => 선물매수 건수가 바스켓 기준으로 4이상이면 거래없음(이론적인 거래는 실행되는 것으로 간주)
+                            self.printt('(4)선물매수 건수가 바스켓 기준으로 4이상이면 거래없음')
+                            # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                            option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                          self.buy_second_price[0])
+                            self.printt('self.futrue_s_data[run_price][0]')
+                            self.printt(self.futrue_s_data['run_price'][0])
+                            self.printt('self.buy_second_price[0]')
+                            self.printt(self.buy_second_price[0])
+                            self.printt('option_s_sell_buy_point')
+                            self.printt(option_s_sell_buy_point)
+                            # option_s_sell_buy_point 텍스트 저장
+                            self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                            # 연결선물가상매매
+                            SellBuyType = '매수'
+                            # 시분초
+                            current_time = QTime.currentTime()
+                            text_time = current_time.toString('hh:mm:ss')
+                            time_msg = ' 연결선물가상매매 : ' + text_time
+                            # 텍스트 저장 호출
+                            self.printt_buyed(Chain_Future_s_Item_Code[0] + '::(' + SellBuyType + time_msg + ')')
+                            return
+                        elif (myhave_buy_total_mall_basket_cnt_remove == 3) or (
+                                myhave_buy_total_mall_basket_cnt_remove == 2):
+                            # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                            option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                          self.buy_second_price[0])
+                            self.printt('self.futrue_s_data[run_price][0]')
+                            self.printt(self.futrue_s_data['run_price'][0])
+                            self.printt('self.buy_second_price[0]')
+                            self.printt(self.buy_second_price[0])
+                            self.printt('option_s_sell_buy_point')
+                            self.printt(option_s_sell_buy_point)
+                            # option_s_sell_buy_point 텍스트 저장
+                            self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                            # 옵션 종목검색(콜매도)
+                            put_or_call = 'call'
+                            if day_residue_int > 2:
+                                month_mall_type = 'center_index'
+                                # center_index / center_index_45
+                            else:
+                                month_mall_type = 'center_index_45'
+                                # center_index / center_index_45
+                            item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                            # print(item_list_cnt)
+                            # item_list_cnt = {'code_no': ['201SA307'], 'cnt': [3]}   # 텍스트 읽은 결과값
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_type['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_type['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_type['sell_buy_type'].append(1)
+                            self.printt('(3~2)옵션 종목검색(콜매도)')
+                            self.printt(item_list_cnt_type)
+                            # 텍스트 저장은 종목이 있을경우에만
+                            if len(item_list_cnt['code_no']) > 0:
+                                item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                                for i in range(len(item_list_cnt['code_no'])):
+                                    item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                # 종목코드와 수량(텍스트에 저장하기)
+                                self.today_call_order_list_text_store(item_list_cnt_for_store)
+                        elif myhave_buy_total_mall_basket_cnt_remove == 1:
+                            # 일반 진입
+                            self.printt('(1)일반 진입')
+                            pass
+
+                        # 선물매수
                         item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
                         item_list_cnt_type['cnt'].append(basket_cnt)
                         item_list_cnt_type['sell_buy_type'].append(2)
+                        # print(item_list_cnt_type)
                     elif future_s_day_residue_int <= (buy_roll_over_check_cnt + 2):
                         self.printt('차월물 진입')
+
+                        # 선물재고 건수 및 옵션재고 확인
+                        if myhave_buy_total_mall_basket_cnt_remove >= 4:
+                            # 매수재고 : 매수신호 => 선물매수 건수가 바스켓 기준으로 4이상이면 거래없음(이론적인 거래는 실행되는 것으로 간주)
+                            self.printt('(4)선물매수 건수가 바스켓 기준으로 4이상이면 거래없음')
+                            # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                            option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                          self.buy_second_price[0])
+                            self.printt('self.futrue_s_data[run_price][0]')
+                            self.printt(self.futrue_s_data['run_price'][0])
+                            self.printt('self.buy_second_price[0]')
+                            self.printt(self.buy_second_price[0])
+                            self.printt('option_s_sell_buy_point')
+                            self.printt(option_s_sell_buy_point)
+                            # option_s_sell_buy_point 텍스트 저장
+                            self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                            # 연결선물가상매매
+                            SellBuyType = '매수'
+                            # 시분초
+                            current_time = QTime.currentTime()
+                            text_time = current_time.toString('hh:mm:ss')
+                            time_msg = ' 연결선물가상매매 : ' + text_time
+                            # 텍스트 저장 호출
+                            self.printt_buyed(Chain_Future_s_Item_Code[0] + '::(' + SellBuyType + time_msg + ')')
+                            return
+                        elif (myhave_buy_total_mall_basket_cnt_remove == 3) or (
+                                myhave_buy_total_mall_basket_cnt_remove == 2):
+                            # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                            option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                          self.buy_second_price[0])
+                            self.printt('self.futrue_s_data[run_price][0]')
+                            self.printt(self.futrue_s_data['run_price'][0])
+                            self.printt('self.buy_second_price[0]')
+                            self.printt(self.buy_second_price[0])
+                            self.printt('option_s_sell_buy_point')
+                            self.printt(option_s_sell_buy_point)
+                            # option_s_sell_buy_point 텍스트 저장
+                            self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                            # 옵션 종목검색(콜매도)
+                            put_or_call = 'call'
+                            if day_residue_int > 2:
+                                month_mall_type = 'center_index'
+                                # center_index / center_index_45
+                            else:
+                                month_mall_type = 'center_index_45'
+                                # center_index / center_index_45
+                            item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                            # print(item_list_cnt)
+                            # item_list_cnt = {'code_no': ['201SA307'], 'cnt': [3]}   # 텍스트 읽은 결과값
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_type['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_type['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                item_list_cnt_type['sell_buy_type'].append(1)
+                            self.printt('(3~2)옵션 종목검색(콜매도)')
+                            self.printt(item_list_cnt_type)
+                            # 텍스트 저장은 종목이 있을경우에만
+                            if len(item_list_cnt['code_no']) > 0:
+                                item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                                for i in range(len(item_list_cnt['code_no'])):
+                                    item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][i])
+                                    item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                                # 종목코드와 수량(텍스트에 저장하기)
+                                self.today_call_order_list_text_store(item_list_cnt_for_store)
+                        elif myhave_buy_total_mall_basket_cnt_remove == 1:
+                            # 일반 진입
+                            self.printt('(1)일반 진입')
+                            pass
+
+                        # 선물매수
                         item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
                         item_list_cnt_type['cnt'].append(basket_cnt)
                         item_list_cnt_type['sell_buy_type'].append(2)
+                        # print(item_list_cnt_type)
+
         # 계좌내 차월물만 재고있음
         elif self.futrue_s_data_45['item_code'][0] in self.option_myhave['code']:
             # 계좌내 차월물만 재고있음 day_poly_max_price / day_poly_min_price 신호발생
@@ -5893,15 +7606,118 @@ class MyWindow(Layout):
                 if myhave_sell_total_mall_cnt > 0:
                     self.printt('매도재고 있음')
                     self.printt('차월물만 진입')
+
+                    # 선물재고 건수 및 옵션재고 확인
+                    if myhave_sell_total_mall_basket_cnt_remove >= 4:
+                        # 매도재고 : 매도신호 => 선물매도 건수가 바스켓 기준으로 4이상이면 거래없음(이론적인 거래는 실행되는 것으로 간주)
+                        self.printt('(4)선물매도 건수가 바스켓 기준으로 4이상이면 거래없음')
+                        # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                      self.sell_second_price[0])
+                        self.printt('self.futrue_s_data[run_price][0]')
+                        self.printt(self.futrue_s_data['run_price'][0])
+                        self.printt('self.sell_second_price[0]')
+                        self.printt(self.sell_second_price[0])
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+                        # option_s_sell_buy_point 텍스트 저장
+                        self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                        # 연결선물가상매매
+                        SellBuyType = '매도'
+                        # 시분초
+                        current_time = QTime.currentTime()
+                        text_time = current_time.toString('hh:mm:ss')
+                        time_msg = ' 연결선물가상매매 : ' + text_time
+                        # 텍스트 저장 호출
+                        self.printt_selled(Chain_Future_s_Item_Code[0] + '::(' + SellBuyType + time_msg + ')')
+                        return
+                    elif (myhave_sell_total_mall_basket_cnt_remove == 3) or (
+                            myhave_sell_total_mall_basket_cnt_remove == 2):
+                        # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                      self.sell_second_price[0])
+                        self.printt('self.futrue_s_data[run_price][0]')
+                        self.printt(self.futrue_s_data['run_price'][0])
+                        self.printt('self.sell_second_price[0]')
+                        self.printt(self.sell_second_price[0])
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+                        # option_s_sell_buy_point 텍스트 저장
+                        self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                        # 옵션 종목검색(풋매도)
+                        put_or_call = 'put'
+                        if day_residue_int > 2:
+                            month_mall_type = 'center_index'
+                            # center_index / center_index_45
+                        else:
+                            month_mall_type = 'center_index_45'
+                            # center_index / center_index_45
+                        item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                        # print(item_list_cnt)
+                        # item_list_cnt = {'code_no': ['301SA307'], 'cnt': [3]}   # 텍스트 읽은 결과값
+                        for i in range(len(item_list_cnt['code_no'])):
+                            item_list_cnt_type['code_no'].append(item_list_cnt['code_no'][i])
+                            item_list_cnt_type['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                            item_list_cnt_type['sell_buy_type'].append(1)
+                        self.printt('(3~2)옵션 종목검색(풋매도)')
+                        self.printt(item_list_cnt_type)
+                        # 텍스트 저장은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                            # 종목코드와 수량(텍스트에 저장하기)
+                            self.today_put_order_list_text_store(item_list_cnt_for_store)
+                    elif myhave_sell_total_mall_basket_cnt_remove == 1:
+                        # 일반 진입
+                        self.printt('(1)일반 진입')
+                        pass
+
                     item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
                     item_list_cnt_type['cnt'].append(basket_cnt)
                     item_list_cnt_type['sell_buy_type'].append(1)
+                    # print(item_list_cnt_type)
+
                 elif myhave_buy_total_mall_cnt > 0:
                     self.printt('매수재고 있음')
                     self.printt('차월물만 청산')
+
+                    # 조건확인
+                    # 콜재고 있을때
+                    call_my_have_str = ''
+                    for p in range(len(self.option_myhave['code'])):
+                        # print(self.option_myhave['code'][p][:3])
+                        if self.option_myhave['code'][p][:3] == '201':
+                            call_my_have_str = '201'
+                            # 매도
+                            if self.option_myhave['sell_or_buy'][p] == 1:
+                                # print('콜매도 재고있음')
+                                call_my_have_str = '2011'
+                    if call_my_have_str == '2011':
+                        # 매수재고 : 매도신호 => 선물매도(콜매수 청산)
+                        # 종목코드와 수량 (텍스트에서 읽어오기)
+                        item_list_cnt = self.today_call_order_list_text_pickup()
+                        # {'code_no': ['201S2410', '201S2400', '201S2380'], 'cnt': [1, 2, 2]}
+                        # 청산은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            # 선물매도/풋청산
+                            for have in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][have][:3] == '201':
+                                    if self.option_myhave['sell_or_buy'][have] == 1:
+                                        for i in range(len(item_list_cnt['code_no'])):
+                                            if self.option_myhave['code'][have] == item_list_cnt['code_no'][i]:
+                                                if self.option_myhave['myhave_cnt'][have] >= item_list_cnt['cnt'][i]:
+                                                    item_list_cnt_type['code_no'].append(item_list_cnt['code_no'][i])
+                                                    item_list_cnt_type['cnt'].append(item_list_cnt['cnt'][i])
+                                                    item_list_cnt_type['sell_buy_type'].append(2)
+                    # 선물매도
                     item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
                     item_list_cnt_type['cnt'].append(basket_cnt)
                     item_list_cnt_type['sell_buy_type'].append(1)
+                    # print(item_list_cnt_type)
             # 신호확인은 당월물로
             elif self.futrue_s_data['run_price'][0] < day_poly_min_price:
                 self.printt('차월물만 재고있음 선물매수(2) 신호발생')
@@ -5909,15 +7725,121 @@ class MyWindow(Layout):
                 if myhave_sell_total_mall_cnt > 0:
                     self.printt('매도재고 있음')
                     self.printt('차월물만 청산')
+
+                    # 조건확인
+                    # 풋재고 있을때
+                    put_my_have_str = ''
+                    for c in range(len(self.option_myhave['code'])):
+                        # print(self.option_myhave['code'][c][:3])
+                        if self.option_myhave['code'][c][:3] == '301':
+                            put_my_have_str = '301'
+                            # 매도
+                            if self.option_myhave['sell_or_buy'][c] == 1:
+                                # print('풋매도 재고있음')
+                                put_my_have_str = '3011'
+                    if put_my_have_str == '3011':
+                        # 매도재고 : 매수신호 => 선물매수(풋매수 청산)
+                        # 종목코드와 수량 (텍스트에서 읽어오기)
+                        item_list_cnt = self.today_put_order_list_text_pickup()
+                        # {'code_no': ['301S2410', '301S2400', '301S2380'], 'cnt': [1, 2, 2]}
+                        # print(item_list_cnt)
+                        # 청산은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            # 선물매수/풋청산
+                            for have in range(len(self.option_myhave['code'])):
+                                if self.option_myhave['code'][have][:3] == '301':
+                                    if self.option_myhave['sell_or_buy'][have] == 1:
+                                        for i in range(len(item_list_cnt['code_no'])):
+                                            if self.option_myhave['code'][have] == item_list_cnt['code_no'][i]:
+                                                if self.option_myhave['myhave_cnt'][have] >= item_list_cnt['cnt'][i]:
+                                                    item_list_cnt_type['code_no'].append(item_list_cnt['code_no'][i])
+                                                    item_list_cnt_type['cnt'].append(item_list_cnt['cnt'][i])
+                                                    item_list_cnt_type['sell_buy_type'].append(2)
+                    # 선물매수
                     item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
                     item_list_cnt_type['cnt'].append(basket_cnt)
                     item_list_cnt_type['sell_buy_type'].append(2)
+                    # print(item_list_cnt_type)
+
                 elif myhave_buy_total_mall_cnt > 0:
                     self.printt('매수재고 있음')
                     self.printt('차월물만 진입')
+
+                    # 선물재고 건수 및 옵션재고 확인
+                    if myhave_buy_total_mall_basket_cnt_remove >= 4:
+                        # 매수재고 : 매수신호 => 선물매수 건수가 바스켓 기준으로 4이상이면 거래없음(이론적인 거래는 실행되는 것으로 간주)
+                        self.printt('(4)선물매수 건수가 바스켓 기준으로 4이상이면 거래없음')
+                        # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                      self.buy_second_price[0])
+                        self.printt('self.futrue_s_data[run_price][0]')
+                        self.printt(self.futrue_s_data['run_price'][0])
+                        self.printt('self.buy_second_price[0]')
+                        self.printt(self.buy_second_price[0])
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+                        # option_s_sell_buy_point 텍스트 저장
+                        self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                        # 연결선물가상매매
+                        SellBuyType = '매수'
+                        # 시분초
+                        current_time = QTime.currentTime()
+                        text_time = current_time.toString('hh:mm:ss')
+                        time_msg = ' 연결선물가상매매 : ' + text_time
+                        # 텍스트 저장 호출
+                        self.printt_buyed(Chain_Future_s_Item_Code[0] + '::(' + SellBuyType + time_msg + ')')
+                        return
+                    elif (myhave_buy_total_mall_basket_cnt_remove == 3) or (
+                            myhave_buy_total_mall_basket_cnt_remove == 2):
+                        # 지난진입 금액확인 :: 옵션매수 포인트 구하기(시뮬레이터 연속되는 +- 2 max금액)
+                        option_s_sell_buy_point = abs(self.futrue_s_data['run_price'][0] -
+                                                      self.buy_second_price[0])
+                        self.printt('self.futrue_s_data[run_price][0]')
+                        self.printt(self.futrue_s_data['run_price'][0])
+                        self.printt('self.buy_second_price[0]')
+                        self.printt(self.buy_second_price[0])
+                        self.printt('option_s_sell_buy_point')
+                        self.printt(option_s_sell_buy_point)
+                        # option_s_sell_buy_point 텍스트 저장
+                        self.option_s_sell_buy_point_store_fn(option_s_sell_buy_point)
+
+                        # 옵션 종목검색(콜매도)
+                        put_or_call = 'call'
+                        if day_residue_int > 2:
+                            month_mall_type = 'center_index'
+                            # center_index / center_index_45
+                        else:
+                            month_mall_type = 'center_index_45'
+                            # center_index / center_index_45
+                        item_list_cnt = self.option_items_search(option_s_sell_buy_point, put_or_call, month_mall_type, basket_cnt)
+                        # print(item_list_cnt)
+                        # item_list_cnt = {'code_no': ['201SA307'], 'cnt': [3]}   # 텍스트 읽은 결과값
+                        for i in range(len(item_list_cnt['code_no'])):
+                            item_list_cnt_type['code_no'].append(item_list_cnt['code_no'][i])
+                            item_list_cnt_type['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                            item_list_cnt_type['sell_buy_type'].append(1)
+                        self.printt('(3~2)옵션 종목검색(콜매도)')
+                        self.printt(item_list_cnt_type)
+                        # 텍스트 저장은 종목이 있을경우에만
+                        if len(item_list_cnt['code_no']) > 0:
+                            item_list_cnt_for_store = {'code_no': [], 'cnt': []}
+                            for i in range(len(item_list_cnt['code_no'])):
+                                item_list_cnt_for_store['code_no'].append(item_list_cnt['code_no'][i])
+                                item_list_cnt_for_store['cnt'].append(item_list_cnt['cnt'][i] * basket_cnt)
+                            # 종목코드와 수량(텍스트에 저장하기)
+                            self.today_call_order_list_text_store(item_list_cnt_for_store)
+                    elif myhave_buy_total_mall_basket_cnt_remove == 1:
+                        # 일반 진입
+                        self.printt('(1)일반 진입')
+                        pass
+
+                    # 선물매수
                     item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
                     item_list_cnt_type['cnt'].append(basket_cnt)
                     item_list_cnt_type['sell_buy_type'].append(2)
+                    # print(item_list_cnt_type)
+
         # 계좌내 당월물 & 차월물 재고없음
         else:
             # 바스켓 재설정
@@ -5934,14 +7856,11 @@ class MyWindow(Layout):
             # # 신규가능수량
             # print('self.future_s_option_s_new_order_able_cnt')
             # print(self.future_s_option_s_new_order_able_cnt)
-            # # 필요증거금총액
-            # print('self.future_s_option_s_need_deposit_total_money')
-            # print(format(self.future_s_option_s_need_deposit_total_money, ','))
 
             # stock 추정예탁자산과 합쳐서 총 신규가능수량 다시 구하기
             # 선물 1건 계약시 필요증거금
             need_deposit_money = math.floor(
-                self.future_s_option_s_need_deposit_total_money / self.future_s_option_s_new_order_able_cnt)
+                self.order_able_cash / self.future_s_option_s_new_order_able_cnt)
 
             # 선물옵션 순자산금액 + stock 추정예탁자산
             option_have_money_plus_estimated_deposit = self.option_have_money + self.estimated_deposit
@@ -5962,46 +7881,40 @@ class MyWindow(Layout):
             # 바스켓 재설정
 
             # 신규진입
-            # 월봉 3차원 기울기 하향중
-            if future_s_month_poly_gradient == 'sell_time':
-                if future_s_day_poly_gradient == 'sell_time':
-                    if self.futrue_s_data['run_price'][0] > day_poly_max_price:
-                        self.printt('당월물 재고없음 선물매도(1)(신규진입)')
-                        # 롤오버 감안 미리 차월물 진입 여부
-                        # 재고수량과 비교하여 잔존일이 2일 이상 남았으면 당월물 그렇지 않으면 차월물
-                        if future_s_day_residue_int > 2:
-                            self.printt('당월물 진입')
-                            item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
-                            item_list_cnt_type['cnt'].append(basket_cnt)
-                            item_list_cnt_type['sell_buy_type'].append(1)
-                        elif future_s_day_residue_int <= 2:
-                            self.printt('차월물 진입')
-                            item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
-                            item_list_cnt_type['cnt'].append(basket_cnt)
-                            item_list_cnt_type['sell_buy_type'].append(1)
-            # 월봉 3차원 기울기 상향중
-            elif future_s_month_poly_gradient == 'buy_time':
-                if future_s_day_poly_gradient == 'buy_time':
-                    if self.futrue_s_data['run_price'][0] < day_poly_min_price:
-                        self.printt('당월물 재고없음 선물매수(2)(신규진입)')
-                        # 롤오버 감안 미리 차월물 진입 여부
-                        # 재고수량과 비교하여 잔존일이 2일 이상 남았으면 당월물 그렇지 않으면 차월물
-                        if future_s_day_residue_int > 2:
-                            self.printt('당월물 진입')
-                            item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
-                            item_list_cnt_type['cnt'].append(basket_cnt)
-                            item_list_cnt_type['sell_buy_type'].append(2)
-                        elif future_s_day_residue_int <= 2:
-                            self.printt('차월물 진입')
-                            item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
-                            item_list_cnt_type['cnt'].append(basket_cnt)
-                            item_list_cnt_type['sell_buy_type'].append(2)
+            if self.futrue_s_data['run_price'][0] > day_poly_max_price:
+                self.printt('당월물 재고없음 선물매도(1)(신규진입)')
+                # 롤오버 감안 미리 차월물 진입 여부
+                # 재고수량과 비교하여 잔존일이 2일 이상 남았으면 당월물 그렇지 않으면 차월물
+                if future_s_day_residue_int > 2:
+                    self.printt('당월물 진입')
+                    item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
+                    item_list_cnt_type['cnt'].append(basket_cnt)
+                    item_list_cnt_type['sell_buy_type'].append(1)
+                elif future_s_day_residue_int <= 2:
+                    self.printt('차월물 진입')
+                    item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
+                    item_list_cnt_type['cnt'].append(basket_cnt)
+                    item_list_cnt_type['sell_buy_type'].append(1)
+            if self.futrue_s_data['run_price'][0] < day_poly_min_price:
+                self.printt('당월물 재고없음 선물매수(2)(신규진입)')
+                # 롤오버 감안 미리 차월물 진입 여부
+                # 재고수량과 비교하여 잔존일이 2일 이상 남았으면 당월물 그렇지 않으면 차월물
+                if future_s_day_residue_int > 2:
+                    self.printt('당월물 진입')
+                    item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
+                    item_list_cnt_type['cnt'].append(basket_cnt)
+                    item_list_cnt_type['sell_buy_type'].append(2)
+                elif future_s_day_residue_int <= 2:
+                    self.printt('차월물 진입')
+                    item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
+                    item_list_cnt_type['cnt'].append(basket_cnt)
+                    item_list_cnt_type['sell_buy_type'].append(2)
         self.printt('item_list_cnt_type')
         self.printt(item_list_cnt_type)
 
         # 검색된 종목코드 여부
         item_list_cnt = len(item_list_cnt_type['code_no'])
-        if item_list_cnt >= 1:
+        if item_list_cnt > 0:
             self.future_s_market_sell_buy(item_list_cnt_type)
 
     # 선물 롤오버
@@ -6022,6 +7935,28 @@ class MyWindow(Layout):
         # 선물 영업일 기준 잔존일
         future_s_day_residue_int = self.futrue_s_data['day_residue'][0]  # int
         # print(future_s_day_residue_int)
+
+        # 옵션 롤오버
+        day_residue_int = self.output_put_option_data['day_residue'][self.center_index]  # int
+        # print(day_residue_int)
+        # 옵션재고와 당월물 앞자리 5자리 코드가 같으면 롤오버 실행
+        option_s_roll_over_run = False
+        if day_residue_int <= 2:
+            center_index_put_code_5dig = self.output_put_option_data['code'][self.center_index][:5]
+            center_index_call_code_5dig = self.output_call_option_data['code'][self.center_index][:5]
+            # print(center_index_put_code_5dig)
+            # print(center_index_call_code_5dig)
+            for m in range(len(self.option_myhave['code'])):
+                # 재고 확인
+                if self.option_myhave['code'][m][:5] == center_index_put_code_5dig:
+                    option_s_roll_over_run = True
+                if self.option_myhave['code'][m][:5] == center_index_call_code_5dig:
+                    option_s_roll_over_run = True
+        if option_s_roll_over_run == True:
+            # 중심가 변경시 옵션 튜닝 준비 = > 항상 현재에 맞춰서 <= 롤오버에도 활용
+            self.printt('# 중심가 변경시 옵션 튜닝 준비 = > 항상 현재에 맞춰서 <= 롤오버에도 활용')
+            self.option_s_center_index_change_ready()
+            return
 
         # 계좌내 선물 재고 확인
         myhave_sell_current_mall_cnt = 0
@@ -6234,6 +8169,31 @@ class MyWindow(Layout):
                         self.future_s_chain_day_poly_max_price_str = str(format(self.stock_trend_line_of_ai_day['poly_sell_max_price'][i], '.2f'))
                         self.future_s_chain_day_poly_min_price_str = str(format(self.stock_trend_line_of_ai_day['poly_buy_min_price'][i], '.2f'))
 
+        # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+        # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+        self.future_s_simul_of_trend_line_day = self.future_s_simul_of_trend_line_day_data_fn()
+        # self.printt('# self.future_s_simul_of_trend_line_day')
+        # self.printt(self.future_s_simul_of_trend_line_day)
+        # 시뮬레이터 구한 값 있을때만 실행
+        sell_mode_cnt = 0
+        buy_mode_cnt = 0
+        self.sell_second_price = []
+        self.buy_second_price = []
+        if self.future_s_simul_of_trend_line_day != None:
+            # sell_second_price = 2
+            for i in range(len(self.future_s_simul_of_trend_line_day['deal_day'])):
+                # mode 더해보기(+-)
+                sell_mode_cnt = sell_mode_cnt + self.future_s_simul_of_trend_line_day['sell_mode'][i] - self.future_s_simul_of_trend_line_day['buy_mode'][i]
+                buy_mode_cnt = buy_mode_cnt + self.future_s_simul_of_trend_line_day['buy_mode'][i] - self.future_s_simul_of_trend_line_day['sell_mode'][i]
+                if sell_mode_cnt == 2:
+                    self.sell_second_price.append(self.future_s_simul_of_trend_line_day['poly_sell_max_price'][i])
+                if buy_mode_cnt == 2:
+                    self.buy_second_price.append(self.future_s_simul_of_trend_line_day['poly_buy_min_price'][i])
+        # [313.97624597998293, 319.3358123569823, 328.04294093755414, 327.4622603066631, 330.33129653359316]
+        # [327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874]
+        # print(self.sell_second_price)
+        # print(self.buy_second_price)
+
         self.printt('# deal_power_tarket_item_list')
         self.printt(len(deal_power_tarket_item_list))
         self.printt(deal_power_tarket_item_list)
@@ -6248,7 +8208,7 @@ class MyWindow(Layout):
         self.printt(self.stock_have_data)
 
         # 추정예탁자산/총평가금액
-        self.printt('# 추정예탁자산 :: only stock(임의로 입출금 대략 40%정도)')
+        self.printt('# 추정예탁자산 :: only stock(전체자신의 2/12 수동으로 수시로 맞추기)')   #  :: 202209 전략수정 (자산배정 참조)
         self.printt(format(self.estimated_deposit, ','))
         self.printt('# 총평가금액')
         self.printt(format(self.total_eval_price, ','))
@@ -6569,6 +8529,79 @@ class MyWindow(Layout):
         # print(stock_trend_line_of_ai_day)
 
         return stock_trend_line_of_ai_day
+
+    # 일봉 시뮬레이터
+    # future_s_simul_of_trend_line_day 데이타 미리 가져다 놓기
+    def future_s_simul_of_trend_line_day_data_fn(self):
+        # 일봉 시뮬레이터 자료
+        future_s_simul_of_trend_line_day = {'deal_day': [],
+                                  'running_y_h': [], 'running_y_l': [],
+                                  'sell_mode': [], 'buy_mode': [],
+                                  'poly_h_gradient': [], 'poly_l_gradient': [],
+                                  'poly_sell_max_price': [], 'poly_buy_min_price': []}
+        # 폴더
+        current_year = datetime.datetime.today().strftime("%Y")
+        # print(current_year)
+        db_file_path = os.getcwd() + '/' + Folder_Name_DB_Store
+        # print(db_file_path)
+        is_db_file = os.path.isdir(db_file_path)
+        # print(is_db_file)
+        if is_db_file == False:
+            return
+
+        # db명 설정
+        db_name = 'future_s_simul_of_trend_line_day' + '.db'
+        # print(db_name)
+        db_name_db = db_file_path + '/' + db_name
+        # print(db_name_db)
+
+        # 테이블명 가져오기
+        con = sqlite3.connect(db_name_db)
+        cursor = con.cursor()
+        cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
+        total_table_name = cursor.fetchall()
+        con.close()
+        # print(total_table_name)
+        if len(total_table_name) == 0:
+            return
+
+        table_name_list = []
+        # 가장 최근일자 1건만 취하기
+        table_name_list.append(total_table_name[-1][0])
+        self.printt('future_s_simul_of_trend_line_day 가장 최근 테이블')
+        self.printt(table_name_list)
+        # print('stock_trend_line_of_ai_day 가장 최근 테이블')
+        # print(table_name_list)
+
+        # 데이타 가져오기 함수 호출
+        for table_name in table_name_list:
+            data_pickup_ret = data_pickup(db_name_db, table_name)
+            # print(table_name)
+            # print(data_pickup_ret)
+            deal_day = data_pickup_ret['deal_day'].values
+            running_y_h = data_pickup_ret['running_y_h'].values
+            running_y_l = data_pickup_ret['running_y_l'].values
+            sell_mode = data_pickup_ret['sell_mode'].values
+            buy_mode = data_pickup_ret['buy_mode'].values
+            poly_h_gradient = data_pickup_ret['poly_h_gradient'].values
+            poly_l_gradient = data_pickup_ret['poly_l_gradient'].values
+            poly_sell_max_price = data_pickup_ret['poly_sell_max_price'].values
+            poly_buy_min_price = data_pickup_ret['poly_buy_min_price'].values
+
+            for i in range(len(deal_day)):
+                # 테이타 생성
+                future_s_simul_of_trend_line_day['deal_day'].append(deal_day[i])
+                future_s_simul_of_trend_line_day['running_y_h'].append(running_y_h[i])
+                future_s_simul_of_trend_line_day['running_y_l'].append(running_y_l[i])
+                future_s_simul_of_trend_line_day['sell_mode'].append(sell_mode[i])
+                future_s_simul_of_trend_line_day['buy_mode'].append(buy_mode[i])
+                future_s_simul_of_trend_line_day['poly_h_gradient'].append(poly_h_gradient[i])
+                future_s_simul_of_trend_line_day['poly_l_gradient'].append(poly_l_gradient[i])
+                future_s_simul_of_trend_line_day['poly_sell_max_price'].append(poly_sell_max_price[i])
+                future_s_simul_of_trend_line_day['poly_buy_min_price'].append(poly_buy_min_price[i])
+        # print(future_s_simul_of_trend_line_day)
+
+        return future_s_simul_of_trend_line_day
 
     # stock_have_data db
     def stock_have_db_pickup(self, db_name):

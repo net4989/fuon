@@ -1,0 +1,320 @@
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매도재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+sell_ref_price
+[312.9172954474103]
+sell_second_price
+[312.42165143153204, 316.41154787689953, 314.88934353437463, 306.06329684359383, 310.7, 309.30143735879915]
+sell_ref_price
+[313.97624597998293]
+sell_second_price
+[316.11987236750423, 317.96224652540394, 326.9687820457937, 308.15, 320.6334742051584, 314.25, 325.0646245059244, 317.04323759876263]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매도재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+sell_ref_price
+[312.9172954474103]
+sell_second_price
+[312.42165143153204, 316.41154787689953, 314.88934353437463, 306.06329684359383, 310.7, 309.30143735879915]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매도재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+sell_ref_price
+[312.9172954474103]
+sell_second_price
+[312.42165143153204, 316.41154787689953, 314.88934353437463, 306.06329684359383, 310.7, 309.30143735879915]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매도재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+sell_ref_price
+[312.9172954474103]
+sell_second_price
+[312.42165143153204, 316.41154787689953, 314.88934353437463, 306.06329684359383, 310.7, 309.30143735879915]
+sell_ref_price
+[313.97624597998293]
+sell_second_price
+[316.11987236750423, 317.96224652540394, 326.9687820457937, 308.15, 320.6334742051584, 314.25, 325.0646245059244, 317.04323759876263]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매도재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+sell_ref_price
+[312.9172954474103]
+sell_second_price
+[312.42165143153204, 316.41154787689953, 314.88934353437463, 306.06329684359383, 310.7, 309.30143735879915]
+sell_ref_price
+[313.97624597998293]
+sell_second_price
+[316.11987236750423, 317.96224652540394, 326.9687820457937, 308.15, 320.6334742051584, 314.25, 325.0646245059244, 317.04323759876263]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매도재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매도재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매도재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+sell_ref_price
+[313.97624597998293]
+sell_second_price
+[316.11987236750423, 317.96224652540394, 326.9687820457937, 308.15, 320.6334742051584, 314.25, 325.0646245059244, 317.04323759876263]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매도재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+sell_ref_price
+[313.97624597998293]
+sell_second_price
+[316.11987236750423, 317.96224652540394, 326.9687820457937, 308.15, 320.6334742051584, 314.25, 325.0646245059244, 317.04323759876263]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[292.6404365657237]
+buy_second_price
+[327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874, 348.36260373089937, 346.9531846064773]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+buy_ref_price
+[292.6404365657237]
+buy_second_price
+[327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874, 348.36260373089937, 346.9531846064773]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+option_s_delta
+46.1852
+option_s_delta_change
+2.1651957770021566
+option_s_sell_buy_point_plus_delta
+97.12781075887249
+option_s_delta
+46.1852
+option_s_delta_change
+2.1651957770021566
+option_s_sell_buy_point_plus_delta
+21.868477347721782
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+option_s_delta
+41.3172
+option_s_delta_change
+2.420299536270609
+option_s_sell_buy_point_plus_delta
+108.57142704395936
+option_s_delta
+41.3172
+option_s_delta_change
+2.420299536270609
+option_s_sell_buy_point_plus_delta
+24.445025316333147
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+option_s_delta
+46.3283
+option_s_delta_change
+2.15850786668192
+option_s_sell_buy_point_plus_delta
+96.82779997238573
+option_s_delta
+46.3283
+option_s_delta_change
+2.15850786668192
+option_s_sell_buy_point_plus_delta
+21.80092945348739
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+option_s_delta
+40.9267
+option_s_delta_change
+2.4433926996312922
+option_s_sell_buy_point_plus_delta
+109.60735572280878
+buy_ref_price
+[292.6404365657237]
+buy_second_price
+[327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874, 348.36260373089937, 346.9531846064773]
+option_s_delta
+40.9267
+option_s_delta_change
+2.4433926996312922
+option_s_sell_buy_point_plus_delta
+86.14704845698952
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+option_s_delta
+49.275
+option_s_delta_change
+2.0294266869609334
+option_s_sell_buy_point_plus_delta
+91.03738945633033
+buy_ref_price
+[292.6404365657237]
+buy_second_price
+[327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874, 348.36260373089937, 346.9531846064773]
+option_s_delta
+49.275
+option_s_delta_change
+2.0294266869609334
+option_s_sell_buy_point_plus_delta
+71.55178910369706
+콜/풋 월별시세요청 완료 timer1 시작
+stock_trend_line_of_ai_month 가장 최근 테이블
+['20220926']
+stock_trend_line_of_ai_day 가장 최근 테이블
+['20220926']
+선물 매수재고 있음
+future_s_simul_of_trend_line_day 가장 최근 테이블
+['20220926']
+buy_ref_price
+[301.22602227494014]
+buy_second_price
+[346.0846959295469, 344.5187754028184, 347.3732618572722, 351.693579420533]
+option_s_delta
+45.4934
+option_s_delta_change
+2.198121046129768
+option_s_sell_buy_point_plus_delta
+98.6047946616581
+buy_ref_price
+[292.6404365657237]
+buy_second_price
+[327.8975806465704, 340.01125168186525, 343.00473614867394, 341.4551787222071, 339.87645281536874, 348.36260373089937, 346.9531846064773]
+option_s_delta
+45.4934
+option_s_delta_change
+2.198121046129768
+option_s_sell_buy_point_plus_delta
+77.49947043053876

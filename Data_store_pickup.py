@@ -259,6 +259,56 @@ def stock_have_data_store(Folder_Name_DB_Store, db_name_stock_have_data, stock_h
     # 'append'는 테이블이 존재하면 데이터만을 추가
     # index_label	인덱스 칼럼에 대한 라벨을 지정
 
+# 중심가 변경시 현황 저장
+def center_option_s_change_data_store(Folder_Name_DB_Store, db_name_center_option_s_change_data, center_option_s_change_data):
+    # 딕셔너리 선언 / 저장준비
+    store_data = {'time': [], 'center_option_price': [], 'fu_run_price': [], 'sell_or_buy': [], 'myhave_fu_cnt': [], 'basket_cnt': [], 'option_s_point_sum': [], 'option_s_point_in': [], 'option_s_point_myhave': [], 'day_residue_int': [], 'my_total_money': []}
+    # 폴더
+    # db_store 폴더
+    is_store_folder = os.path.isdir(os.getcwd() + '/' + Folder_Name_DB_Store)
+    if is_store_folder == False:
+        os.mkdir(os.getcwd() + '/' + Folder_Name_DB_Store)
+    # # year 폴더
+    # folder_name_year = datetime.datetime.today().strftime("%Y")
+    # is_folder_year = os.path.isdir(os.getcwd() + '/' + Folder_Name_DB_Store + '/' + folder_name_year)
+    # if is_folder_year == False:
+    #     os.mkdir(os.getcwd() + '/' + Folder_Name_DB_Store + '/' + folder_name_year)
+
+    # db명
+    db_name_db = db_name_center_option_s_change_data + '.db'
+    # 테이블명 설정
+    table_name = 'center_option_s_change_state'
+    y_m_d_str = datetime.datetime.today().strftime("%Y%m%d")
+    # 시분초(인덱스)::time(): 시간 정보만 가지는 datetime.time 클래스 객체 반환
+    current_time = datetime.datetime.now()
+    # print(current_time)
+    # print(current_time.time())
+    now_time_str = current_time.time().strftime("%H%M")
+    store_time_var = y_m_d_str + ' ' + now_time_str
+    # center_option_s_change_data
+    for i in range(len(center_option_s_change_data['center_option_price'])):
+        store_data['time'].append(store_time_var)
+        store_data['center_option_price'].append(center_option_s_change_data['center_option_price'][i])
+        store_data['fu_run_price'].append(center_option_s_change_data['fu_run_price'][i])
+        store_data['sell_or_buy'].append(center_option_s_change_data['sell_or_buy'][i])
+        store_data['myhave_fu_cnt'].append(center_option_s_change_data['myhave_fu_cnt'][i])
+        store_data['basket_cnt'].append(center_option_s_change_data['basket_cnt'][i])
+        store_data['option_s_point_sum'].append(center_option_s_change_data['option_s_point_sum'][i])
+        store_data['option_s_point_in'].append(center_option_s_change_data['option_s_point_in'][i])
+        store_data['option_s_point_myhave'].append(center_option_s_change_data['option_s_point_myhave'][i])
+        store_data['day_residue_int'].append(center_option_s_change_data['day_residue_int'][i])
+        store_data['my_total_money'].append(center_option_s_change_data['my_total_money'][i])
+
+# 저장
+    df = pd.DataFrame(store_data,
+                      columns=['center_option_price', 'fu_run_price', 'sell_or_buy', 'myhave_fu_cnt', 'basket_cnt', 'option_s_point_sum', 'option_s_point_in', 'option_s_point_myhave', 'day_residue_int', 'my_total_money'],
+                      index=store_data['time'])
+
+    con = sqlite3.connect(os.getcwd() + '/' + Folder_Name_DB_Store + '/' + db_name_db)
+    df.to_sql(table_name, con, if_exists='append', index_label='time')
+    # 'append'는 테이블이 존재하면 데이터만을 추가
+    # index_label	인덱스 칼럼에 대한 라벨을 지정
+
 # 가저오기 함수
 def data_pickup(db_name, table_name):
     con = sqlite3.connect(db_name)
