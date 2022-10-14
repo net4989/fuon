@@ -254,8 +254,10 @@ class MyWindow(Layout):
         # 옵션매도주문증거금 요청
         self.option_s_sell_deposit_money_data_rq()
 
-        # 롤오버 변수 False :: 롤오버 함수 입장 가능
+        # 롤오버 변수 False :: 선물 롤오버 함수 입장 가능
         self.future_s_roll_over_run_var = False
+        # 롤오버 변수 False :: 옵션 롤오버 함수 입장 가능
+        self.option_s_roll_over_run_var = False
 
         # 당일날 재부팅이면 self.future_s_change 선물 현재값 넣어주고 가기
         self.data_pickup_today_rebooting()
@@ -4057,7 +4059,7 @@ class MyWindow(Layout):
                     self.printt('item_list_cnt_type')
                     self.printt(item_list_cnt_type)
                     self.printt('Send Option Order')
-                    self.printt('# 풋청산')
+                    self.printt('# 풋매도')
                     cross_winner_cell = 9004
                     self.printt(cross_winner_cell)
                     sOrgOrdNo_cell = ''
@@ -4091,7 +4093,7 @@ class MyWindow(Layout):
                     self.printt('item_list_cnt_type')
                     self.printt(item_list_cnt_type)
                     self.printt('Send Option Order')
-                    self.printt('# 콜청산')
+                    self.printt('# 콜매도')
                     cross_winner_cell = 8004
                     self.printt(cross_winner_cell)
                     sOrgOrdNo_cell = ''
@@ -7919,8 +7921,8 @@ class MyWindow(Layout):
 
     # 선물 롤오버
     def future_s_roll_over_fn(self):
-        # 당일날 선물 롤오버 있었으면 return
-        if self.future_s_roll_over_run_var == True:
+        # 당일날 선물 롤오버 있었거나 현재 주문중이면(혹시 옵션 롤오버 중 일경우를 대비하여) return
+        if ((self.future_s_roll_over_run_var == True) or (self.progressBar_order.value() == 100)):
             return
 
         # 주문변수 초기화
@@ -7936,27 +7938,31 @@ class MyWindow(Layout):
         future_s_day_residue_int = self.futrue_s_data['day_residue'][0]  # int
         # print(future_s_day_residue_int)
 
-        # 옵션 롤오버
-        day_residue_int = self.output_put_option_data['day_residue'][self.center_index]  # int
-        # print(day_residue_int)
-        # 옵션재고와 당월물 앞자리 5자리 코드가 같으면 롤오버 실행
-        option_s_roll_over_run = False
-        if day_residue_int <= 2:
-            center_index_put_code_5dig = self.output_put_option_data['code'][self.center_index][:5]
-            center_index_call_code_5dig = self.output_call_option_data['code'][self.center_index][:5]
-            # print(center_index_put_code_5dig)
-            # print(center_index_call_code_5dig)
-            for m in range(len(self.option_myhave['code'])):
-                # 재고 확인
-                if self.option_myhave['code'][m][:5] == center_index_put_code_5dig:
-                    option_s_roll_over_run = True
-                if self.option_myhave['code'][m][:5] == center_index_call_code_5dig:
-                    option_s_roll_over_run = True
-        if option_s_roll_over_run == True:
-            # 중심가 변경시 옵션 튜닝 준비 = > 항상 현재에 맞춰서 <= 롤오버에도 활용
-            self.printt('# 중심가 변경시 옵션 튜닝 준비 = > 항상 현재에 맞춰서 <= 롤오버에도 활용')
-            self.option_s_center_index_change_ready()
-            return
+        # 당일날 옵션 롤오버 없었을경우에만 실행
+        if self.option_s_roll_over_run_var == False:
+            # 이미 옵션 로오버 실행예정 변수 True 다시 실행 않하기
+            self.option_s_roll_over_run_var = True
+            # 옵션 롤오버
+            day_residue_int = self.output_put_option_data['day_residue'][self.center_index]  # int
+            # print(day_residue_int)
+            # 옵션재고와 당월물 앞자리 5자리 코드가 같으면 롤오버 실행
+            option_s_roll_over_run = False
+            if day_residue_int <= 2:
+                center_index_put_code_5dig = self.output_put_option_data['code'][self.center_index][:5]
+                center_index_call_code_5dig = self.output_call_option_data['code'][self.center_index][:5]
+                # print(center_index_put_code_5dig)
+                # print(center_index_call_code_5dig)
+                for m in range(len(self.option_myhave['code'])):
+                    # 재고 확인
+                    if self.option_myhave['code'][m][:5] == center_index_put_code_5dig:
+                        option_s_roll_over_run = True
+                    if self.option_myhave['code'][m][:5] == center_index_call_code_5dig:
+                        option_s_roll_over_run = True
+            if option_s_roll_over_run == True:
+                # 중심가 변경시 옵션 튜닝 준비 = > 항상 현재에 맞춰서 <= 롤오버에도 활용
+                self.printt('# 중심가 변경시 옵션 튜닝 준비 = > 항상 현재에 맞춰서 <= 롤오버에도 활용')
+                self.option_s_center_index_change_ready()
+                return
 
         # 계좌내 선물 재고 확인
         myhave_sell_current_mall_cnt = 0
