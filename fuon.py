@@ -265,6 +265,18 @@ class MyWindow(Layout):
         # 선물변화 프로세스 실행중 여부
         self.future_s_change_running = False
 
+    # 부팅 바로 이후 중심가 변경시 self.selled_today_items 변수 선언이전 발생되는 에러 수정(20221123)
+        # 당일 매도 종목 찾기
+        self.selled_today_items = self.selled_today_items_search_fn()
+        self.printt('# 당일 매도 종목 찾기')
+        self.printt(self.selled_today_items)
+
+        # 당일 매수 종목 찾기
+        self.buyed_today_items = self.buyed_today_items_search_fn()
+        self.printt('# 당일 매수 종목 찾기')
+        self.printt(self.buyed_today_items)
+    # 부팅 바로 이후 중심가 변경시 self.selled_today_items 변수 선언이전 발생되는 에러 수정(20221123)
+
     # 이벤트 처리 슬롯
     def _set_signal_slots(self):
         self.kiwoom.OnEventConnect.connect(self.kiwoom._event_connect)              # 로그인 이벤트
