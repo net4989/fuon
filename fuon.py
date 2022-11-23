@@ -2521,14 +2521,7 @@ class MyWindow(Layout):
 
         if order_run_result_var[0] == '전송':
             self.printt('전송')
-            # 타이머 중지
-            self.timer1.stop()
-            self.printt('타이머 중지')
-            # 1분에 한번씩 클럭 발생
-            self.timer60.start(1000 * 60)
-            self.printt('정정 타이머 시작')
-            # 진행바 표시(주문중)
-            self.progressBar_order.setValue(100)
+
             # 주문 전송 결과
             self.order_trans_var['OrderRunKind'].append(order_run_result_var[0])
             self.order_trans_var['SellBuyType'].append(order_run_result_var[1])
@@ -2560,6 +2553,18 @@ class MyWindow(Layout):
             self.printt(self.order_trans_var['OrgOrderNo'])
             if len(self.order_trans_var['OrderRunCode']) != 0:        # 이 프로그래에서 실행하지 않는 접수가 오는경우를 대비하여
                 if not(order_run_result_var[5] in self.order_trans_var['OrgOrderNo']):      # 선물 정정 전송시 따라오는 접수번호는 원접수번호, 이므로 그 번호가 없을때만 접수변수에 저장(2021년 12월 7일 - 선물 트레이딩 작업시)
+
+                    # 타이머 중지
+                    self.timer1.stop()
+                    self.printt('타이머 중지')
+                    # 1분에 한번씩 클럭 발생
+                    self.timer60.start(1000 * 60)
+                    self.printt('정정 타이머 시작')
+                    # 진행바 표시(주문중)
+                    self.progressBar_order.setValue(100)
+                    # 전송시 중지하던 정정타이머를 접수되면 중지하는것으로 변경(202211월 선물매도 신규불가능시에도 계속 정정타이머 작동하여 프로그램 모니터링 먹통 :: 선물옵션 기본예탁금 C형 1단계로 변겅처리하여 필요없어 보이지만...
+                    # 그래도 전송되고 접수도 되지 않는 건으로 인하여 프로그램 에러를 방지하기 위하여~~~
+
                     for i in range(len(self.order_input_var['OrderRunCode'])):
                         if self.order_input_var['OrderRunCode'][i] == order_run_result_var[2]:
 
