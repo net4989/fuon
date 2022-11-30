@@ -2172,34 +2172,40 @@ class MyWindow(Layout):
                 OrderDealOk_price = self.get_chejan_data(910)
                 OrgOrderNo = self.get_chejan_data(9203)
 
-                # option 자릿수 8
-                if len(OrderRunCode) == 8:
-                    # option
-                    order_run_result_var = []
-                    order_run_result_var.append(OrderRunKind)
-                    order_run_result_var.append(abs(int(SellBuyType)))
-                    order_run_result_var.append(OrderRunCode)
-                    order_run_result_var.append(abs(int(OrderDealOk_cnt)))
-                    order_run_result_var.append(abs(float(OrderDealOk_price)))
-                    order_run_result_var.append(OrgOrderNo)
+                # 문자열을 정수로 바꾸려고 int함수를 사용하였는데,
+                # 아래와 같이 ValueError 가 발생
+                # ValueError: invalid literal for int() with base 10: ''
+                if OrderDealOk_cnt != '':
+                # 20221130 :: 정정 주문 실행 이후 체결정보가 '' 공백으로 오는 경우가 있었음(공백은 int,  float 모두 형변환시 에러 발생함)
 
-                    # 주문 실행 결과로
-                    self.order_run_result(order_run_result_var)
+                    # option 자릿수 8
+                    if len(OrderRunCode) == 8:
+                        # option
+                        order_run_result_var = []
+                        order_run_result_var.append(OrderRunKind)
+                        order_run_result_var.append(abs(int(SellBuyType)))
+                        order_run_result_var.append(OrderRunCode)
+                        order_run_result_var.append(abs(int(OrderDealOk_cnt)))
+                        order_run_result_var.append(abs(float(OrderDealOk_price)))
+                        order_run_result_var.append(OrgOrderNo)
 
-                else:
-                    # stock
-                    order_run_result_var = []
-                    order_run_result_var.append(OrderRunKind)
-                    order_run_result_var.append(abs(int(SellBuyType)))
-                    # 종목코드 앞에 A 제거
-                    OrderRunCode = OrderRunCode_A[-6:]
-                    order_run_result_var.append(OrderRunCode)
-                    order_run_result_var.append(abs(int(OrderDealOk_cnt)))
-                    order_run_result_var.append(abs(int(OrderDealOk_price)))
-                    order_run_result_var.append(OrgOrderNo)
+                        # 주문 실행 결과로
+                        self.order_run_result(order_run_result_var)
 
-                    # 주문 실행 결과로
-                    self.order_run_result_stock(order_run_result_var)
+                    else:
+                        # stock
+                        order_run_result_var = []
+                        order_run_result_var.append(OrderRunKind)
+                        order_run_result_var.append(abs(int(SellBuyType)))
+                        # 종목코드 앞에 A 제거
+                        OrderRunCode = OrderRunCode_A[-6:]
+                        order_run_result_var.append(OrderRunCode)
+                        order_run_result_var.append(abs(int(OrderDealOk_cnt)))
+                        order_run_result_var.append(abs(int(OrderDealOk_price)))
+                        order_run_result_var.append(OrgOrderNo)
+
+                        # 주문 실행 결과로
+                        self.order_run_result_stock(order_run_result_var)
 
         # 특이신호
         # else:
