@@ -1618,6 +1618,7 @@ class MyWindow(Layout):
 
 
 
+
     # 장마감 c_to_cf_hand
     def c_to_cf_hand(self):
         # 장마감 c 이후
@@ -2691,6 +2692,9 @@ class MyWindow(Layout):
     def timer1min(self):
         # 1분 타이머::정정 주문
         self.printt('1분 경과 정정 주문 실행')
+        # 시간표시
+        current_time = time.ctime()
+        self.printt(current_time)
         self.printt(self.order_input_var['modify_item'])
 
         # 주문할 때 필요한 계좌 정보를 QComboBox 위젯으로부터
@@ -2841,7 +2845,18 @@ class MyWindow(Layout):
                 # 정정 아이템 건수(접수건수 - 체결건수)
                 modify_item_cnt = self.order_input_var['OrderRunVolume'][i] - \
                                   self.order_result_var['OrderRunVolume'][i]
+
+                # 20230114 test
+                self.printt('정정 아이템 건수(접수건수 - 체결건수)')
+                self.printt(self.order_input_var['OrderRunVolume'][i])
+                self.printt(self.order_result_var['OrderRunVolume'][i])
+
                 if modify_item_cnt > 0:
+
+                    # 20230114 test
+                    self.printt('정정 아이템 건수(접수건수 - 체결건수)')
+                    self.printt(modify_item_cnt)
+
                     # 매도/매수 구분 SellBuyType
                     if self.order_input_var['SellBuyType'][i] == 1:
                         # 매도일때
@@ -2852,6 +2867,12 @@ class MyWindow(Layout):
                                 # 원 주문가격과 현재의 주문가격이 다를때만
                                 if self.order_input_var['OrderRunPrice'][i] > \
                                         self.output_put_option_data['run_price'][j]:
+
+                                    # 20230114 test
+                                    self.printt('원 주문가격과 현재의 주문가격이 다를때만')
+                                    self.printt(self.order_input_var['OrderRunPrice'][i])
+                                    self.printt(self.output_put_option_data_45['run_price'][j])
+
                                     #  "주문유형"(1:신규매매, 2:정정, 3:취소)
                                     IOrdKind = 2
                                     # "매매구분"(1:매도, 2:매수)
@@ -2940,7 +2961,18 @@ class MyWindow(Layout):
                 # 정정 아이템 건수(접수건수 - 체결건수)
                 modify_item_cnt = self.order_input_var['OrderRunVolume'][i] - \
                                   self.order_result_var['OrderRunVolume'][i]
+
+                # 20230114 test
+                self.printt('정정 아이템 건수(접수건수 - 체결건수)')
+                self.printt(self.order_input_var['OrderRunVolume'][i])
+                self.printt(self.order_result_var['OrderRunVolume'][i])
+
                 if modify_item_cnt > 0:
+
+                    # 20230114 test
+                    self.printt('정정 아이템 건수(접수건수 - 체결건수)')
+                    self.printt(modify_item_cnt)
+
                     # 매도/매수 구분 SellBuyType
                     if self.order_input_var['SellBuyType'][i] == 1:
                         # 매도일때
@@ -2951,6 +2983,12 @@ class MyWindow(Layout):
                                 # 원 주문가격과 현재의 주문가격이 다를때만
                                 if self.order_input_var['OrderRunPrice'][i] > \
                                         self.output_put_option_data_45['run_price'][j]:
+
+                                    # 20230114 test
+                                    self.printt('원 주문가격과 현재의 주문가격이 다를때만')
+                                    self.printt(self.order_input_var['OrderRunPrice'][i])
+                                    self.printt(self.output_put_option_data_45['run_price'][j])
+
                                     #  "주문유형"(1:신규매매, 2:정정, 3:취소)
                                     IOrdKind = 2
                                     # "매매구분"(1:매도, 2:매수)
@@ -2984,6 +3022,9 @@ class MyWindow(Layout):
                                     sOrgOrdNo_cell = self.order_input_var['OrgOrderNo'][i]
                                     # 종목코드
                                     CodeCallPut = self.order_input_var['modify_item'][i]
+
+            self.printt('정정 주문 실행 여부')
+            self.printt(CodeCallPut[:3])
 
             # 신규주문과 달리 정정주문은 사전 종목검색 별도 없으므로 현재의 주문종목 코드가 [선물/콜/옵션] 일때만 주문실행
             if CodeCallPut[:3] in ['101', '201', '301']:
@@ -3816,8 +3857,8 @@ class MyWindow(Layout):
         item_list_cnt = {'code_no': [], 'cnt': [], 'point': []}
         self.pushButton_call_item_list.setText('')
         self.pushButton_put_item_list.setText('')
-        option_items_search_max_space = 1.25
-        option_items_search_min_space = 0.75
+        option_items_search_max_space = 1.25    # +25%
+        option_items_search_min_space = 0.75    # -25%
 
         # 옵션 매도 최대금액
         # 선물옵션 순자산금액 + stock 추정예탁자산
@@ -5686,12 +5727,26 @@ class MyWindow(Layout):
 
     # 중심가 변경시 옵션 튜닝 준비 = > 항상 현재에 맞춰서
     def option_s_center_index_change_ready(self):
+        # # 중심가 중심인덱스 / # 차월물 중심가 중심인덱스 == 0 => return  ### 20230127 중심가 중심인덱스 0일경우에 실행되는 것을 방지하기 위하여~~
+        if ((self.center_index == 0) or (self.center_index_45 == 0)):
+            return
+
         # 초기화
         item_list_cnt_items_search = {'code_no': [], 'cnt': [], 'sell_buy_type': [], 'point': []}
         item_list_cnt_type = {'code_no': [], 'cnt': [], 'sell_buy_type': []}
         # 선물 바스켓 가져오기
         basket_cnt = self.future_s_basket_cnt_text_read()   #int
         # print(basket_cnt)
+
+        # 계좌잔고 시세요청
+        self.stock_have_data_rq()
+        # # 테이블 위젯에 표시하기
+        # self.stock_listed_slot(self.stock_have_data)
+        # 서버에서 수신받은 stock_data
+        self.printt('# 서버에서 수신받은 stock_data')
+        self.printt(len(self.stock_have_data['stock_no']))
+        self.printt(self.stock_have_data)
+
         # 선옵잔고요청 - 이벤트 슬롯
         self.myhave_option_rq()
         # # 예탁금및증거금조회 - 이벤트 슬롯
@@ -7164,6 +7219,16 @@ class MyWindow(Layout):
         # 선물 바스켓 가져오기
         basket_cnt = self.future_s_basket_cnt_text_read()   #int
         # print(basket_cnt)
+
+        # 계좌잔고 시세요청
+        self.stock_have_data_rq()
+        # # 테이블 위젯에 표시하기
+        # self.stock_listed_slot(self.stock_have_data)
+        # 서버에서 수신받은 stock_data
+        self.printt('# 서버에서 수신받은 stock_data')
+        self.printt(len(self.stock_have_data['stock_no']))
+        self.printt(self.stock_have_data)
+
         # 선옵잔고요청 - 이벤트 슬롯
         self.myhave_option_rq()
         # # 예탁금및증거금조회 - 이벤트 슬롯
