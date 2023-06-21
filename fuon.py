@@ -7268,6 +7268,22 @@ class MyWindow(Layout):
         myhave_sell_total_mall_basket_cnt_remove = int(myhave_sell_total_mall_cnt / basket_cnt)
         myhave_buy_total_mall_basket_cnt_remove = int(myhave_buy_total_mall_cnt / basket_cnt)
         # ai
+        # 월봉
+        # 3차원 기울기 체크
+        future_s_month_poly_gradient = 'sell_or_buy_time'
+        if self.stock_trend_line_of_ai_month != None:
+            for i in range(len(self.stock_trend_line_of_ai_month['stock_no'])):
+                # 연결선물
+                if Chain_Future_s_Item_Code[0] == self.stock_trend_line_of_ai_month['stock_no'][i]:
+                    # 월봉 3차원 기울기 하향중
+                    if ((self.stock_trend_line_of_ai_month['poly_h_gradient'][i] < 0) and (
+                            self.stock_trend_line_of_ai_month['poly_l_gradient'][i] < 0)):
+                        future_s_month_poly_gradient = 'sell_time'
+                    # 월봉 3차원 기울기 상향중
+                    elif ((self.stock_trend_line_of_ai_month['poly_h_gradient'][i] > 0) and (
+                            self.stock_trend_line_of_ai_month['poly_l_gradient'][i] > 0)):
+                        future_s_month_poly_gradient = 'buy_time'
+        # print(future_s_month_poly_gradient)
         # 일봉
         day_poly_max_price = 9999999
         day_poly_min_price = 0
@@ -7971,34 +7987,38 @@ class MyWindow(Layout):
             # 바스켓 재설정
 
             # 신규진입
-            if self.futrue_s_data['run_price'][0] > day_poly_max_price:
-                self.printt('당월물 재고없음 선물매도(1)(신규진입)')
-                # 롤오버 감안 미리 차월물 진입 여부
-                # 재고수량과 비교하여 잔존일이 2일 이상 남았으면 당월물 그렇지 않으면 차월물
-                if future_s_day_residue_int > 2:
-                    self.printt('당월물 진입')
-                    item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
-                    item_list_cnt_type['cnt'].append(basket_cnt)
-                    item_list_cnt_type['sell_buy_type'].append(1)
-                elif future_s_day_residue_int <= 2:
-                    self.printt('차월물 진입')
-                    item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
-                    item_list_cnt_type['cnt'].append(basket_cnt)
-                    item_list_cnt_type['sell_buy_type'].append(1)
-            if self.futrue_s_data['run_price'][0] < day_poly_min_price:
-                self.printt('당월물 재고없음 선물매수(2)(신규진입)')
-                # 롤오버 감안 미리 차월물 진입 여부
-                # 재고수량과 비교하여 잔존일이 2일 이상 남았으면 당월물 그렇지 않으면 차월물
-                if future_s_day_residue_int > 2:
-                    self.printt('당월물 진입')
-                    item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
-                    item_list_cnt_type['cnt'].append(basket_cnt)
-                    item_list_cnt_type['sell_buy_type'].append(2)
-                elif future_s_day_residue_int <= 2:
-                    self.printt('차월물 진입')
-                    item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
-                    item_list_cnt_type['cnt'].append(basket_cnt)
-                    item_list_cnt_type['sell_buy_type'].append(2)
+            # 월봉 3차원 기울기 하향중
+            if future_s_month_poly_gradient == 'sell_time':
+                if self.futrue_s_data['run_price'][0] > day_poly_max_price:
+                    self.printt('당월물 재고없음 선물매도(1)(신규진입)')
+                    # 롤오버 감안 미리 차월물 진입 여부
+                    # 재고수량과 비교하여 잔존일이 2일 이상 남았으면 당월물 그렇지 않으면 차월물
+                    if future_s_day_residue_int > 2:
+                        self.printt('당월물 진입')
+                        item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
+                        item_list_cnt_type['cnt'].append(basket_cnt)
+                        item_list_cnt_type['sell_buy_type'].append(1)
+                    elif future_s_day_residue_int <= 2:
+                        self.printt('차월물 진입')
+                        item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
+                        item_list_cnt_type['cnt'].append(basket_cnt)
+                        item_list_cnt_type['sell_buy_type'].append(1)
+            # 월봉 3차원 기울기 상향중
+            elif future_s_month_poly_gradient == 'buy_time':
+                if self.futrue_s_data['run_price'][0] < day_poly_min_price:
+                    self.printt('당월물 재고없음 선물매수(2)(신규진입)')
+                    # 롤오버 감안 미리 차월물 진입 여부
+                    # 재고수량과 비교하여 잔존일이 2일 이상 남았으면 당월물 그렇지 않으면 차월물
+                    if future_s_day_residue_int > 2:
+                        self.printt('당월물 진입')
+                        item_list_cnt_type['code_no'].append(self.futrue_s_data['item_code'][0])
+                        item_list_cnt_type['cnt'].append(basket_cnt)
+                        item_list_cnt_type['sell_buy_type'].append(2)
+                    elif future_s_day_residue_int <= 2:
+                        self.printt('차월물 진입')
+                        item_list_cnt_type['code_no'].append(self.futrue_s_data_45['item_code'][0])
+                        item_list_cnt_type['cnt'].append(basket_cnt)
+                        item_list_cnt_type['sell_buy_type'].append(2)
         self.printt('item_list_cnt_type')
         self.printt(item_list_cnt_type)
 

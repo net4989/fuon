@@ -1,143 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b1a81a8-2883-4853-9645-788edc81c87e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/stock_trend_line_module_nodb_day_simul.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/stock_trend_line_module_nodb_month_simul.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fuon.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data_store_pickup.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_store_pickup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Layout_ui_chart.py" beforeDir="false" afterPath="$PROJECT_DIR$/Layout_ui_chart.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/2022/K200_k200_s_202207.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/2022/K200_k200_s_202207.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/favorites_stock_shlc_data_day.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/favorites_stock_shlc_data_day.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/favorites_stock_shlc_data_month.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/favorites_stock_shlc_data_month.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/future_s_shlc_data_day.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/future_s_shlc_data_day.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/future_s_shlc_data_month.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/future_s_shlc_data_month.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/k95_max_stock_shlc_data_day.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/k95_max_stock_shlc_data_day.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/k95_max_stock_shlc_data_month.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/k95_max_stock_shlc_data_month.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/stock_trend_line_of_ai_day.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/stock_trend_line_of_ai_day.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_store/stock_trend_line_of_ai_month.db" beforeDir="false" afterPath="$PROJECT_DIR$/db_store/stock_trend_line_of_ai_month.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fuon.py" beforeDir="false" afterPath="$PROJECT_DIR$/fuon.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/k200_auto_layout.ui" beforeDir="false" afterPath="$PROJECT_DIR$/k200_auto_layout.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_trend_line_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_trend_line_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock_trend_line_module_nodb.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock_trend_line_module_nodb.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt_store/2022/K200_k200_s_20220610(25)_fuon-net4989.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt_store/2022/K200_k200_s_20220610(25)_fuon-net4989.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt_store/K200_k200_s_call_item_list_cnt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt_store/K200_k200_s_put_item_list_cnt.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt_store/favorites_item_list.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt_store/favorites_item_list.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt_store/future_s_basket_cnt_text.txt" beforeDir="false" afterPath="$PROJECT_DIR$/txt_store/future_s_basket_cnt_text.txt" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="8b1a81a8-2883-4853-9645-788edc81c87e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1528018091">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="py" value="16" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Python" value="16" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="py" value="16530" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="Python" value="16530" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fuon.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2419">
-              <caret line="1163" column="18" selection-start-line="1163" selection-start-column="18" selection-end-line="1163" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Layout_ui_chart.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="41" column="26" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data_store_pickup.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-139">
-              <caret line="264" column="154" selection-start-line="264" selection-start-column="136" selection-end-line="264" selection-end-column="154" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Api_server_rq.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="71" column="32" selection-start-line="71" selection-start-column="15" selection-end-line="71" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock_trend_line_module.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="306" column="42" selection-start-line="306" selection-start-column="4" selection-end-line="306" selection-end-column="42" />
-              <folding>
-                <element signature="e#332#342#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stock_trend_line_module_nodb_day_simul.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="401">
-              <caret line="318" selection-start-line="318" selection-end-line="322" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -204,6 +72,7 @@
     <option name="width" value="3860" />
     <option name="height" value="1100" />
   </component>
+  <component name="ProjectId" id="2RVI3vDGwywekkqKAnpvewGIyaA" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -225,25 +94,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/ceo/Desktop/fuon/Api_server_rq.py" />
-    <property name="last_opened_file_path" value="C:/Anaconda3/Scripts/conda.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Anaconda3/Scripts/conda.exe" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ceo\Desktop\fuon" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.fuon">
     <configuration name="fuon" type="PythonConfigurationType" factoryName="Python">
@@ -352,8 +209,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.stock_trend_line_module_nodb" />
       <item itemvalue="Python.fuon" />
+      <item itemvalue="Python.stock_trend_line_module_nodb" />
       <item itemvalue="Python.stock_trend_line_module_nodb_month_simul" />
       <item itemvalue="Python.stock_trend_line_module_nodb_day_simul" />
       <item itemvalue="Python.stock_trend_line_module" />
@@ -367,6 +224,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
