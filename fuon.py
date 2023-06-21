@@ -8268,12 +8268,12 @@ class MyWindow(Layout):
                                 # <= 2021년 03월 29일 월봉 기울기 추가하면서 제외
                                 # 신규진입일때는 샹향중일때만 진입(월봉)
                                 if self.stock_trend_line_of_ai_day['stock_no'][i] in stock_trend_line_of_ai_month_able:
-                                    # 신규진입일때는 샹향중일때만 진입(일봉)
-                                    if ((self.stock_trend_line_of_ai_day['poly_h_gradient'][i] > 0) and (
-                                            self.stock_trend_line_of_ai_day['poly_l_gradient'][i] > 0)):
-                                        # 매수가능 종목 저장용
-                                        if self.stock_trend_line_of_ai_day['stock_no'][i] in buy_able_item_code:
-                                            deal_power_tarket_item_list.append(self.stock_trend_line_of_ai_day['stock_no'][i])
+                                    # # 신규진입일때는 샹향중일때만 진입(일봉)
+                                    # if ((self.stock_trend_line_of_ai_day['poly_h_gradient'][i] > 0) and (
+                                    #         self.stock_trend_line_of_ai_day['poly_l_gradient'][i] > 0)):
+                                    # 매수가능 종목 저장용
+                                    if self.stock_trend_line_of_ai_day['stock_no'][i] in buy_able_item_code:
+                                        deal_power_tarket_item_list.append(self.stock_trend_line_of_ai_day['stock_no'][i])
 
                     # 연결선물
                     if Chain_Future_s_Item_Code[0] == self.stock_trend_line_of_ai_day['stock_no'][i]:
